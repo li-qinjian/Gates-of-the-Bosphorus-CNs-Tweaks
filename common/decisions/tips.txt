@@ -1,0 +1,816 @@
+# Macau Treaty Port
+# create_treaty = {
+# 	name = treaty_name_luso_chinese_agreement
+# 	first_country = c:POR
+# 	second_country = c:CHI
+
+# 	is_draft = no
+# 	entered_into_force_on = 1554.1.1 # Establishment of Portugese Macau
+# 	binding_period = { years = 381 } # 99 year binding period after start of game
+
+# 	articles_to_create = {
+# 		{
+# 			article = treaty_port
+# 			source_country = c:CHI
+# 			target_country = c:POR
+# 			inputs = {
+# 				{ state = s:STATE_GUANGDONG.region_state:CHI }
+# 			}
+# 		}
+# 		{
+# 			article = money_transfer
+# 			source_country = c:POR
+# 			target_country = c:CHI
+# 			inputs = {
+# 				{ quantity = 150 } # The rent of Macau was 500 taels, about 700 spanish dollars or 145 pounds in 1840 (based on silver prices)
+# 			}
+# 		}
+# 	}
+# }
+
+# HK Treaty Port
+# create_treaty = {
+# 	name = treaty_name_gbr_chinese_agreement
+# 	first_country = c:GBR
+# 	second_country = c:CHI
+
+# 	is_draft = no
+# 	entered_into_force_on = 1840.1.1 # Establishment of British Hong Kong
+# 	binding_period = { years = 99 } # 99 year binding period after start of game
+
+# 	articles_to_create = {
+# 		{
+# 			article = treaty_port
+# 			source_country = c:CHI
+# 			target_country = c:GBR
+# 			inputs = {
+# 				{ state = s:STATE_SHAOZHOU.region_state:CHI }
+# 			}
+# 		}
+# 	}
+# }
+
+# Prussia Military Access
+# create_treaty = {
+# 	first_country = c:PRU
+# 	second_country = c:HAN
+
+# 	is_draft = no
+# 	#entered_into_force_on = 1836.1.1
+# 	binding_period = { years = 10 } # 10 year binding period after start of game
+
+# 	articles_to_create = {
+# 		{
+# 			article = military_access
+# 			source_country = c:HAN
+# 			target_country = c:PRU
+# 		}
+# 		{
+# 			article = military_access
+# 			source_country = c:PRU
+# 			target_country = c:HAN
+# 		}
+# 	}
+# }
+
+# every_state_region = {
+#     limit = {
+#         OR = {
+#             region = sr:region_anatolia
+#             region = sr:region_balkans
+#         }
+#         any_scope_state = {
+#             NOT = { owner = ROOT }
+#             NOT = { has_claim_by = ROOT }
+#             is_homeland_of_country_cultures = root
+#         }
+#     }
+#     add_claim = ROOT
+# }
+
+# show_as_tooltip = {
+#     c:TUR ?= {
+#         random_scope_state = {
+#             limit = {
+#                 state_region = s:STATE_THESSALIA
+#             }
+#             set_state_owner = c:GRE
+#         }
+#     }
+# }
+
+# YEM: "也门"
+# YEM_ADJ: "也门"
+# MAH: "迈赫拉"
+# MAH_ADJ: "迈赫拉"
+# KAT: "卡迪里"
+# KAT_ADJ: "卡迪里"
+# ZAI: "阿扎勒"
+# ZAI_ADJ: "阿扎勒"
+# LAH: "拉赫季"
+# LAH_ADJ: "拉赫季"
+# JOH: "柔佛"
+# JOH_ADJ: "柔佛"
+# SEL: "雪兰莪"
+# SEL_ADJ: "雪兰莪"
+# PRK: "霹雳"
+# PRK_ADJ: "霹雳"
+
+# c:MAH ?= {
+#     create_diplomatic_play = {
+#         name = annex_country
+#         target_country = c:LAH
+#         type = dp_annex_country
+#     }
+# }
+
+# c:USA ?= {
+# 	every_scope_state = {
+# 		limit = {
+# 			is_incorporated = no
+# 			region = sr:region_mexico
+# 			state_region = {
+# 				is_homeland = cu:mexican
+# 			}
+# 		}
+# 		set_state_owner = c:MEX
+# 	}
+# }
+
+# c:MEX ?= {
+# 	every_scope_state = {
+# 		limit = {
+# 			region = sr:region_great_plains
+# 		}
+# 		set_state_owner = c:USA
+# 	}
+# }
+
+# any_scope_state = {
+#     state_region = {
+#         is_homeland = cu:japanese
+#     }
+#     has_famine = yes
+# }
+
+# c:DEI ?= {
+# 	create_bidirectional_truce = { country = c:GBR months = 60 }
+# }
+
+# if = {
+#     limit = {
+#         NOT = { owes_obligation_to = c:RUS }
+#     }
+#     c:RUS = {
+#         set_owes_obligation_to = {
+#             country = root
+#             setting = yes
+#         }
+#     }
+# }
+
+# add_culture_acceptance_modifier = {
+# 	culture = cu:han
+# 	multiplier = 40
+# }
+
+# c:SPA ?= {
+# 	create_diplomatic_play = {
+# 		name = transfer_subject
+# 		target_country = c:CON
+# 		type = dp_transfer_subject
+        
+# 		#add_initiator_backers = { c:AUS }
+        
+# 		# add_war_goal = {
+# 		# 	holder = c:PRU
+# 		# 	type = annex_country
+# 		# 	target_country = c:HOL
+# 		# }
+# 	}
+# }
+
+# c:LAN ?= {
+# 	#add_modifier = { name = colonial_administration }
+# 	add_culture_acceptance_modifier = {
+# 		culture = cu:bornean
+# 		multiplier = 40
+# 	}
+# 	# remove_modifier = bornean_cultural_acceptance_modifier_positive
+# 	# remove_modifier = bornean_cultural_acceptance_modifier_negative
+# }
+
+
+# c:GRE = {
+# 	create_diplomatic_play = {
+# 		target_state = s:STATE_THESSALIA.region_state:TUR
+# 		name = return_state
+# 		type = dp_return_state
+        
+# 		add_initiator_backers = { c:RUS }
+# 	}
+# }
+
+# c:GBR ?= {
+# 	create_diplomatic_play = {
+# 		name = opium_war
+# 		target_state = s:STATE_SHAOZHOU.region_state:CHI
+# 		target_country = c:CHI
+# 		type = dp_take_treaty_port
+# 	}
+# }
+
+# c:NGF ?= {
+# 	create_diplomatic_play = {
+# 		name = unify_germany
+# 		target_country = c:FRA
+# 		type = dp_unify_germany
+# 	}
+# }
+
+# c:ION ?= {
+# 	change_relations = {
+# 		country = root
+# 		value = 25
+# 	}
+# }
+
+#add_banned_goods = g:opium
+# c:ZUL ?= {
+# 	make_independent = yes
+# 	create_bidirectional_truce = { country = c:GBR months = 60 }
+# }
+# c:GBR ?= {
+# 	change_infamy = -3
+# }
+
+# random_scope_state = {
+# 	limit = {
+# 		state_region = s:STATE_SINAI
+# 	}
+# 	if = {
+# 		limit = {
+# 			NOT = {
+# 				any_scope_building = {
+# 					is_building_type = building_port
+# 				}
+# 			}
+# 		}
+# 		create_building = {
+# 			building = building_port
+# 			level = 1
+# 		}
+# 	}
+# }
+
+# random_scope_state = {
+# 	limit = {
+# 		state_region = s:STATE_PELOPONNESE
+# 	}
+# 	if = {
+# 		limit = {
+# 			any_scope_building = {
+# 				is_building_type = building_tooling_workshop
+# 			}
+# 		}
+# 		remove_building = building_tooling_workshop
+# 	}
+# }
+
+#owns_entire_state_region = STATE_EASTERN_THRACE
+# every_state_region = {
+# 	limit = {
+# 		region = sr:region_balkans
+# 		any_scope_state = {
+# 			owner = ROOT
+# 			is_homeland = cu:turkish
+# 			NOT = { has_claim_by = c:TUR }
+# 			culture_percent_state = {
+# 				target = cu:turkish
+# 				value < 0.25
+# 			}
+# 		}
+# 	}
+# 	remove_homeland = cu:turkish
+# }
+
+# c:PON ?= {
+# 	make_independent = yes
+# 	create_bidirectional_truce = { country = c:GRE months = 60 }
+# }
+
+
+
+# c:AUS ?= {
+# 	if = {
+# 		limit = {
+# 			has_law = law_type:law_monarchy
+# 		}
+# 		hidden_effect = {
+# 			if = {
+# 				limit = {
+# 					any_scope_character = {
+# 						is_heir = yes
+# 					}
+# 				}
+# 				random_scope_character = {
+# 					limit = {
+# 						is_heir = yes
+# 					}
+# 					kill_character = yes
+# 				}
+# 			}
+# 		}
+
+# 		create_character = {
+# 			# Franz Joseph I of Austria
+# 			template = aus_franz_josef_I_habsburg_template
+# 			on_created = {
+# 				set_character_as_ruler = yes
+# 			}
+# 		}
+# 		annex_country = c:BOH
+# 		# create_diplomatic_pact = {
+# 		# 	country = c:BOH
+# 		# 	type = puppet
+# 		# }
+# 	}
+# }
+#c:GRE = {
+#	create_diplomatic_play = {
+#		target_state = s:STATE_CRETE.region_state:EGY
+#		name = return_state
+#		type = dp_return_state
+#		
+#		add_initiator_backers = { c:GBR }
+#	}
+#}
+# c:PRU = {
+# 	if = {
+# 		limit = { 
+# 			country_rank >= rank_value:great_power
+# 			NOT = { has_journal_entry = je_north_german_unification } 
+# 		}
+# 		add_journal_entry = {
+# 			type = je_north_german_unification
+# 		}
+# 	}
+# }
+# c:HAW = {
+# 	add_culture_acceptance_modifier = {
+# 		culture = cu:han
+# 		multiplier = 20
+# 	}
+# }
+
+
+# tpg_restore_china = {
+# 	is_shown = {
+# 		c:TPG ?= THIS
+# 		NOT = { exists = c:CHI }
+# 	}
+
+# 	possible = {
+# 		is_diplomatic_play_committed_participant = no
+# 	}
+
+# 	when_taken = {
+# 		c:TPG ?= {
+# 			if = {
+# 				limit = {
+# 					any_scope_state = {
+# 						state_region = s:STATE_NANJING
+# 					}
+# 				}
+# 				set_capital = STATE_NANJING
+
+# 				s:STATE_NANJING = {
+# 					random_scope_state = {
+# 						set_hub_name = {
+# 							type = city
+# 							name = HUB_NAME_STATE_NANJING_city_heavenly_capital
+# 						}
+# 					}
+# 				}
+# 			}
+# 		} 
+
+# 		c:TPG ?= {
+# 			if = {
+# 				limit = {
+# 					NOT = {
+# 						has_law = law_type:law_canton_system
+# 					}
+# 				}
+# 				activate_law = law_type:law_canton_system
+# 			}
+# 		}
+
+# 		# if = {
+# 		# 	limit = {
+# 		# 		NOT = { exists = c:CHI }
+# 		# 	}
+# 		# 	change_tag = CHI
+# 		# }
+		
+# 		# c:CHI ?= {
+# 		# 	set_variable = {
+# 		# 		name = china_warlord_explosion
+# 		# 		value = 0
+# 		# 	}
+# 		# 	add_journal_entry = { type = je_warlord_china }
+# 		# }
+# 	}
+
+# 	ai_chance = {
+# 		value = 100
+# 	}
+# }
+
+# c:LAN ?= {
+#     capital = {
+#         create_mass_migration = {
+#             origin = c:CHI
+#             culture = cu:hakka
+#         }
+#     }
+# }
+
+# if = {
+# 	limit = {
+# 		owes_obligation_to = c:RUS
+#     }
+#     c:RUS = {
+#         trigger_event = {
+#             id = obligation_events.5
+#             days = 0
+#             popup = yes
+#         }
+#     }
+# }
+
+# if = {
+#     limit = {
+#         num_subjects >= 1
+#     }
+#     every_direct_subject = {
+#         limit = {
+#             is_in_geographic_region = geographic_region_africa
+#         }
+#         c:ZAN ?= { transfer_subject = prev }
+#     }
+# }
+
+
+# Remove the East India Company's ownership of the BIC country and then disband the company
+# c:BIC ?= {
+# save_scope_as = company_country
+# }
+# scope:company_country = {
+#     owning_company ?= {
+#         if = {
+#             limit = {
+#                 is_company_type = company_type:company_east_india_company
+#             }
+#             remove_owned_country = scope:company_country
+#             owner ?= {
+#                 remove_company = prev.type
+#             }
+#         }
+#     }
+# }
+
+######################################## Laws ########################################
+# c:GBR ?= {
+#     if = {
+#         limit = { enacting_any_law = yes }
+#         cancel_enactment = yes
+#     }
+# }
+
+# c:TPG ?= {
+#     if = {
+#         limit = {
+#             NOT = {
+#                 has_law = law_type:law_canton_system
+#             }
+#         }
+#         activate_law = law_type:law_canton_system
+#     }
+# # 		}
+# KOR ?= {
+#     if = {
+#         limit = {
+#             NOT = {
+#                 has_law = law_type:law_closed_borders
+#             }
+#         }
+#         activate_law = law_type:law_closed_borders
+#     }
+# }
+
+# Discarded decisions
+# assemble_serbia_arms_industry = {
+# 	is_shown = {
+# 		is_player = yes
+# 		exists = c:SER
+# 		c:SER ?= {
+# 			is_subject_of = root
+# 		}
+# 		year < 1860
+# 	}
+
+# 	possible = {
+# 		c:SER ?= {
+# 			is_diplomatic_play_committed_participant = no
+# 			owns_entire_state_region = STATE_WESTERN_SERBIA
+# 			owns_entire_state_region = STATE_EASTERN_SERBIA
+# 			owns_entire_state_region = STATE_BOSNIA
+# 		}
+
+# 		# s:STATE_EASTERN_SERBIA = {
+# 		# 	has_claim_by = c:SER
+# 		# 	state_region = {
+# 		# 		any_scope_state = { owner = c:SER }
+# 		# 	}
+# 		# }
+# 	}
+
+# 	when_taken = {
+# 		c:SER ?= {
+# 			# create_diplomatic_play = {
+# 			# 	target_state = s:STATE_EASTERN_SERBIA.region_state:TUR
+# 			# 	name = return_state
+# 			# 	type = dp_return_state
+# 			# }
+# 			random_scope_state = {
+# 				limit = {
+# 					state_region = s:STATE_EASTERN_SERBIA
+# 				}
+# 				if = {
+# 					limit = {
+# 						any_scope_building = {
+# 							is_building_type = building_arms_industry
+# 						}
+# 					}
+# 					remove_building = building_arms_industry
+# 				}
+# 			}
+# 			random_scope_state = {
+# 				limit = {
+# 					state_region = s:STATE_BOSNIA
+# 				}
+# 				if = {
+# 					limit = {
+# 						any_scope_building = {
+# 							is_building_type = building_arms_industry
+# 						}
+# 					}
+# 					remove_building = building_arms_industry
+# 				}
+# 			}
+# 			random_scope_state = {
+# 				limit = {
+# 					state_region = s:STATE_WESTERN_SERBIA
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							any_scope_building = {
+# 								is_building_type = building_arms_industry
+# 							}
+# 						}
+# 					}
+# 					create_building = {
+# 						building = building_arms_industry
+# 						level = 3
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	ai_chance = {
+# 		value = 0
+# 	}
+# }
+
+# annex_poland = {
+# 	is_shown = {
+# 		is_player = yes
+# 		exists = c:POL
+# 		year < 1860
+# 	}
+
+# 	possible = {
+# 		is_player = yes
+# 		c:AUS ?= {
+# 			NOT = { has_truce_with = c:POL }
+# 		}
+
+# 		s:STATE_WEST_GALICIA = {
+# 			has_claim_by = c:AUS
+# 			state_region = {
+# 				any_scope_state = { owner = c:AUS }
+# 			}
+# 		}
+# 	}
+
+# 	when_taken = {
+# 		c:AUS ?= {
+# 			create_diplomatic_play = {
+# 				target_state = s:STATE_WEST_GALICIA.region_state:POL
+# 				name = return_state
+# 				type = dp_return_state
+				
+# 				add_initiator_backers = { c:RUS }
+# 			}
+# 		}
+		# c:AUS ?= {
+		# 	create_bidirectional_truce = { country = c:NGF months = 60 }
+		# 	# create_diplomatic_play = {
+		# 	# 	target_state = s:STATE_MORAVIA.region_state:BOH
+		# 	# 	name = return_state
+		# 	# 	type = dp_return_state	
+		# 	# 	#add_initiator_backers = { c:RUS }
+		# 	# }
+		# }
+# 	}
+
+# 	ai_chance = {
+# 		value = 0
+# 	}
+# }
+
+
+# play_as_hellas = {
+# 	is_shown = {
+# 		is_player = yes
+# 		NOT = { c:GRE = THIS }
+# 	}
+
+# 	possible = {
+# 		is_player = yes
+# 		NOT = { c:GRE = THIS }
+# 	}
+
+# 	when_taken = {
+# 		play_as = c:GRE
+# 	}
+
+# 	ai_chance = {
+# 		value = 0
+# 	}
+# }
+
+# unify_tiny_countries = {
+# 	is_shown = {
+# 		is_player = yes
+# 	}
+
+#     possible = {
+# 		is_diplomatic_play_committed_participant = no
+# 		year < 1860
+# 	}
+
+#     when_taken = {
+# 		if = {
+# 			limit = {
+# 				exists = c:ZAI
+# 				exists = c:KAT
+# 				exists = c:MAH
+# 				exists = c:LAH
+# 			}
+# 			c:ZAI ?= {
+# 				annex = c:KAT
+# 				annex = c:MAH
+# 				annex = c:LAH
+# 			}
+# 		}
+
+# 		if = {
+# 			limit = {
+# 				exists = c:JOH
+# 				exists = c:SEL
+# 				exists = c:PRK
+# 			}
+# 			c:JOH ?= {
+# 				annex = c:SEL
+# 				annex = c:PRK
+# 			}
+# 		}
+
+# 		if = {
+# 			limit = {
+# 				exists = c:ISQ
+# 				exists = c:WSG
+# 				exists = c:GLD
+# 				exists = c:MJT
+# 			}
+# 			c:GLD ?= {
+# 				annex = c:WSG
+# 				annex = c:ISQ
+# 				annex = c:MJT
+# 			}
+# 		}
+#     }
+
+#     ai_chance = {
+# 		value = 0
+#     }
+# }
+
+# turkey_move_capital_to_ankara = {
+# 	is_shown = {
+# 		is_player = yes
+# 		is_in_geographic_region = geographic_region_megali_greece
+# 		c:TUR ?= {
+# 			NOT = { has_variable = moved_capital_to_ankara }
+# 			capital = {
+# 				state_region = s:STATE_EASTERN_THRACE
+# 			}
+# 		}
+# 	}
+
+# 	possible = {
+# 		is_player = yes
+# 		c:TUR ?= {
+# 			capital = { state_region = s:STATE_EASTERN_THRACE }
+# 			NOT = { owns_entire_state_region = STATE_WESTERN_THRACE }
+# 			NOT = { owns_entire_state_region = STATE_NORTHERN_THRACE }
+# 			owns_entire_state_region = STATE_ANKARA
+# 			is_diplomatic_play_committed_participant = no
+# 		}
+# 	}
+
+# 	when_taken = {
+# 		c:TUR ?= {
+# 			set_variable = moved_capital_to_ankara
+# 			set_capital = STATE_ANKARA
+# 		}
+# 	}
+
+# 	ai_chance = {
+# 		value = 100
+# 	}
+# }
+
+# hk_treatyport = {
+# 	is_shown = {
+# 		is_player = yes
+# 		year > 1840
+# 		year < 1850
+# 		c:CHI ?= {
+# 			NOT = { has_truce_with = c:GBR }
+# 			owns_entire_state_region = STATE_SHAOZHOU
+# 		}
+# 	}
+
+# 	possible = {
+# 		exists = c:GBR
+# 		exists = c:CHI
+# 		NOT = { c:GBR = THIS }
+# 		c:CHI ?= {
+# 			NOT = { has_truce_with = c:GBR }
+# 			owns_entire_state_region = STATE_SHAOZHOU
+# 		}
+# 	}
+
+# 	when_taken = {
+# 		# HK Treaty Port
+# 		create_treaty = {
+# 			name = treaty_name_gbr_chinese_agreement
+# 			first_country = c:GBR
+# 			second_country = c:CHI
+
+# 			is_draft = no
+# 			entered_into_force_on = 1840.1.1 # Establishment of British Hong Kong
+# 			binding_period = { years = 99 } # 99 year binding period after start of game
+
+# 			articles_to_create = {
+# 				{
+# 					article = treaty_port
+# 					source_country = c:CHI
+# 					target_country = c:GBR
+# 					inputs = {
+# 						{ state = s:STATE_SHAOZHOU.region_state:CHI }
+# 					}
+# 				}
+# 			}
+# 		}
+# 		# Lost Opium Wars
+# 		c:CHI ?= {
+# 			create_bidirectional_truce = { country = c:GBR months = 120 }
+# 			#add_primary_culture = cu:han
+# 			add_modifier = {
+# 				name = opium_wars_lost
+# 				days = very_long_modifier_time
+# 				is_decaying = yes
+# 			}
+# 		}
+# 	}
+
+# 	ai_chance = {
+# 		value = 0
+# 	}
+# }

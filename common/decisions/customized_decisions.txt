@@ -1,0 +1,509 @@
+﻿gernman_unification = {
+	is_shown = {
+		is_player = yes
+		NOT = { exists = c:GER }
+		is_diplomatic_play_committed_participant = no
+	}
+
+	possible = {
+		OR = {
+			c:PRU = {
+				has_technology_researched = nationalism
+				is_unification_candidate = GER
+				is_diplomatic_play_committed_participant = no
+			}
+			c:NGF = {
+				has_technology_researched = pan-nationalism
+				is_unification_candidate = GER
+				is_diplomatic_play_committed_participant = no
+			}
+			c:GER = {
+				has_strategy = ai_strategy_territorial_expansion
+			}
+		}
+	}
+
+	when_taken = {
+		#Prussia Military Access
+		# create_treaty = {
+		# 	first_country = c:PRU
+		# 	second_country = c:HAN
+
+		# 	is_draft = no
+		# 	#entered_into_force_on = 1836.1.1
+		# 	binding_period = { years = 10 } # 10 year binding period after start of game
+
+		# 	articles_to_create = {
+		# 		{
+		# 			article = military_access
+		# 			source_country = c:HAN
+		# 			target_country = c:PRU
+		# 		}
+		# 		{
+		# 			article = military_access
+		# 			source_country = c:PRU
+		# 			target_country = c:HAN
+		# 		}
+		# 	}
+		# }
+
+		# c:PRU ?= {
+		# 	create_diplomatic_play = {
+		# 		name = liberate_subject
+		# 		target_country = c:SCH
+		# 		type = dp_liberate_subject
+				
+		# 		#add_initiator_backers = { c:AUS }		
+		# 		add_war_goal = {
+		# 			holder = c:PRU
+		# 			type = annex_country
+		# 			target_country = c:HOL
+		# 		}
+		# 	}
+		# }
+
+		# c:NGF ?= {
+		# 	create_diplomatic_play = { 
+		# 		name = make_protectorate
+		# 		target_country = c:BAD
+		# 		type = dp_make_protectorate
+		# 	}
+		# }
+
+		# c:NGF ?= {
+		# 	remove_modifier = modifier_bul_militarisation_complete
+		# 	add_modifier = {
+		# 		name = modifier_bul_militarisation_complete
+		# 		days = very_long_modifier_time
+		# 		is_decaying = yes
+		# 	}
+		# }
+		c:GER ?= {
+			if = {
+				limit = {
+					has_strategy = ai_strategy_territorial_expansion
+				}
+				set_strategy = ai_strategy_maintain_power_balance
+			}
+			# set_mutual_secret_goal = {
+			# 	country = c:AUS
+			# 	secret_goal = none
+			# }
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+ban_opium = {
+	is_shown = {
+		is_player = yes
+		exists = market
+		market.owner = root
+		NOT = { is_banning_goods = g:opium }
+		any_primary_culture = {
+			has_cultural_obsession = opium
+		}
+	}
+
+	possible = {
+		is_player = yes
+		NOT = { has_law_or_variant = law_type:law_free_trade }
+		exists = market
+	}
+
+	when_taken = {
+		add_banned_goods = g:opium
+		every_primary_culture = {
+			limit = {
+				has_cultural_obsession = opium
+			}
+			remove_cultural_obsession = opium
+		}
+	}
+
+    ai_chance = {
+		value = 0
+    }
+}
+
+support_lanfang_independence = {
+	is_shown = {
+		is_player = yes
+		NOT = { c:LAN = THIS }
+		c:LAN ?= {
+			is_subject_of = c:CHI
+		}
+	}
+
+	possible = {
+		OR = {
+			exists = c:STG
+			c:LAN ?= {
+				liberty_desire < 30
+			}
+			c:LAN ?= {
+				is_subject_of = c:CHI
+			}
+			any_scope_state = {
+				owner = ROOT
+				state_region = s:STATE_GUANGDONG
+				#is_treaty_port = yes
+			}
+		}
+	}
+
+	when_taken = {
+		# c:LAN ?= {
+		# 	add_liberty_desire = 45
+		# }
+
+		# Decrease payments diplomatic pact between c:CHI and c:LAN
+		# c:CHI ?= {
+		# 	if = {
+		# 		limit = {
+		# 			NOT = {
+		# 				has_diplomatic_pact = {
+		# 					who = c:LAN
+		# 					type = decrease_payments
+		# 				}
+		# 			}
+		# 		}
+		# 		create_diplomatic_pact = {
+		# 			country = c:LAN
+		# 			type = decrease_payments
+		# 		}
+		# 	}
+		# }
+
+		# Create a diplomatic play for c:LAN
+		if = {
+			limit = {
+				c:LAN ?= {
+					is_diplomatic_play_committed_participant = no
+				}
+				exists = c:STG
+			}
+			c:LAN ?= {
+				create_diplomatic_play = {
+					target_state = s:STATE_WEST_BORNEO.region_state:STG
+					name = conquer_state
+					type = dp_conquer_state
+
+					add_initiator_backers = { c:BRU }
+				}
+				create_bidirectional_truce = { country = c:DEI months = 12 }
+			}
+		}
+
+		# Return Macau to tag c:CHI 
+		random_scope_state = {
+			limit = {
+				owner = ROOT
+				state_region = s:STATE_GUANGDONG
+				#is_treaty_port = yes
+			}
+			set_state_owner = c:CHI
+		}
+
+		# Transfer lanfang to player country
+		if = {
+			limit = {
+				c:LAN ?= {
+					is_subject_of = c:CHI
+				}
+			}
+			ROOT = { transfer_subject = c:LAN }
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+play_as_random_tag = {
+	is_shown = {
+		is_player = yes
+		is_diplomatic_play_committed_participant = no
+	}
+
+	possible = {
+		is_player = yes
+		is_diplomatic_play_committed_participant = no
+	}
+
+	when_taken = {
+		random_subject_or_below = {
+			limit = {
+				country_rank >= rank_value:minor_power
+				#liberty_desire > 50
+			}
+			save_scope_as = subject_target
+		}
+		if = {
+			limit = { exists = scope:subject_target }
+			play_as = scope:subject_target
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+dei_annex_split_puppet = {
+	is_shown = {
+		is_player = yes
+		is_diplomatic_play_committed_participant = no
+		c:DEI ?= {
+			any_subject_or_below = {
+				exists = this
+				count = 0
+			}
+		}
+	}
+
+	possible = {
+		c:DEI = {
+			#is_at_war = no
+			is_diplomatic_play_committed_participant = no
+			any_subject_or_below = {
+				is_subject_type = subject_type_puppet
+				liberty_desire < 25
+				num_states <= 1
+				capital = {
+					is_split_state = yes
+					state_region = {
+						any_scope_state = { owner = c:DEI }
+					}
+				}
+				NOT = { has_truce_with = c:DEI }
+			}
+		}
+	}
+
+	when_taken = {
+		c:DEI = {
+			random_subject_or_below = {
+				limit = {
+					is_subject_type = subject_type_puppet
+					liberty_desire < 25
+					num_states <= 1
+					capital = {
+						is_split_state = yes
+						state_region = {
+							any_scope_state = { owner = c:DEI }
+						}
+					}
+					NOT = { has_truce_with = c:DEI }
+				}
+				save_scope_as = dei_annexation_target
+			}
+			if = {
+				limit = { exists = scope:dei_annexation_target }
+				create_diplomatic_play = {
+					name = annex_subject
+					target_country = scope:dei_annexation_target
+					type = dp_annex_subject
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+disband_all_basic_companies = {
+	is_shown = {
+		is_player = yes
+	}
+
+	possible = {
+		is_diplomatic_play_committed_participant = no
+		is_player = yes
+	}
+
+	when_taken = {
+		every_country = {
+			limit = {
+				is_player = no
+				is_diplomatic_play_committed_participant = no
+				#country_rank >= rank_value:minor_power
+			}
+			every_company = {
+				if = {
+					limit = {
+						OR = {
+							is_company_type = company_type:company_basic_forestry
+							is_company_type = company_type:company_basic_wine_and_fruit
+							is_company_type = company_type:company_basic_agriculture_1
+							is_company_type = company_type:company_basic_agriculture_2
+							is_company_type = company_type:company_basic_silk_and_dye
+							is_company_type = company_type:company_basic_metal_mining
+							is_company_type = company_type:company_basic_mineral_mining
+							is_company_type = company_type:company_basic_paper
+							is_company_type = company_type:company_basic_metalworks
+							is_company_type = company_type:company_basic_fishing
+							is_company_type = company_type:company_basic_colonial_plantations_1
+							is_company_type = company_type:company_basic_colonial_plantations_2
+							is_company_type = company_type:company_basic_fabrics
+							is_company_type = company_type:company_basic_textiles
+						}
+					}
+					owner ?= {
+						remove_company = prev.type
+					}
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+turkey_annex_split_puppet = {
+	is_shown = {
+		is_player = yes
+		c:TUR ?= {
+			any_subject_or_below = {
+				exists = this
+				count = 0
+			}
+		}
+	}
+
+	possible = {
+		c:TUR = {
+			is_diplomatic_play_committed_participant = no
+			any_subject_or_below = {
+				capital = {
+					is_split_state = yes
+					state_region = {
+						any_scope_state = { owner = c:TUR }
+					}
+				}
+				NOT = { has_truce_with = c:TUR }
+			}
+		}
+	}
+
+	when_taken = {
+		c:TUR = {
+			random_subject_or_below = {
+				limit = {
+					capital = {
+						is_split_state = yes
+						state_region = {
+							any_scope_state = { owner = c:TUR }
+						}
+					}
+					NOT = { has_truce_with = c:TUR }
+				}
+				save_scope_as = turkey_annexation_target
+			}
+			if = {
+				limit = { exists = scope:turkey_annexation_target }
+				create_diplomatic_play = {
+					name = annex_subject
+					target_country = scope:turkey_annexation_target
+					type = dp_annex_subject
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				c:TRI ?= {
+					is_subject_of = c:TUR
+					NOT = { market.owner = c:TUR }
+				}
+			}
+			ROOT = { transfer_subject = c:TRI }
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+
+# relocate_african_pops_to_slaveholding_subject_capital = {
+# 	is_shown = {
+# 		is_player = yes
+# 		NOT = { 		
+# 			any_primary_culture = {
+# 				has_discrimination_trait_group = heritage_group_african
+# 			}
+# 		}
+# 	}
+
+# 	possible = {
+# 		has_law_or_variant = law_type:law_slavery_banned
+# 		any_subject_or_below = {
+# 			any_primary_culture = {
+# 				has_discrimination_trait_group = heritage_group_african
+# 			}
+# 			NOT = { has_law_or_variant = law_type:law_slavery_banned }
+# 		}
+# 		any_scope_state = {
+# 			#is_incorporated = yes
+# 			any_scope_pop = {
+# 				culture = {
+# 					has_discrimination_trait_group = heritage_group_african
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	when_taken = {
+# 		random_subject_or_below = {
+# 			limit = {
+# 				any_primary_culture = {
+# 					has_discrimination_trait_group = heritage_group_african
+# 				}
+# 				NOT = { has_law_or_variant = law_type:law_slavery_banned }
+# 			}
+# 			save_scope_as = african_relocation_subject
+# 		}
+
+# 		if = {
+# 			limit = { exists = scope:african_relocation_subject }
+# 			scope:african_relocation_subject = {
+# 				random_scope_state = {
+# 					limit = { is_capital = yes }
+# 					save_scope_as = african_relocation_target
+# 				}
+# 			}
+# 		}
+
+# 		if = {
+# 			limit = { exists = scope:african_relocation_target }
+# 			every_scope_state = {
+# 				limit = {
+# 					is_incorporated = yes
+# 				}
+# 				every_scope_pop = {
+# 					limit = {
+# 						culture = {
+# 							has_discrimination_trait_group = heritage_group_african
+# 						}
+# 					}
+# 					move_pop = scope:african_relocation_target
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	ai_chance = {
+# 		value = 0
+# 	}
+# }
+

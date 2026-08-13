@@ -1,0 +1,24 @@
+﻿DIPLOMACY = {
+	c:CHI ?= {
+		# create_diplomatic_pact = {
+		# 	country = c:TIB
+		# 	type = vassal
+		# }
+		# create_diplomatic_pact = {
+		# 	country = c:KOR
+		# 	type = tributary
+		# }
+		# create_diplomatic_pact = {
+		# 	country = c:LAN
+		# 	type = tributary
+		# }
+		# create_diplomatic_pact = {
+		# 	country = c:LAN
+		# 	type = grant_own_market
+		# }
+		create_diplomatic_pact = {
+			country = c:LAN
+			type = decrease_payments
+		}
+	}
+}

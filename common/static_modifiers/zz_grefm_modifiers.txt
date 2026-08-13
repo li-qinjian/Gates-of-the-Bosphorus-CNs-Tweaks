@@ -1,0 +1,18 @@
+REPLACE:modifier_grefm_bavarian_auxiliaries = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	unit_morale_loss_mult = -0.10
+	building_training_rate_mult = 0.10
+	country_military_tech_spread_mult = 0.10
+}
+
+# REPLACE:modifier_grefm_funding_bavarian_auxiliaries = {
+# 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+# 	country_expenses_add = 1
+# }
+
+# REPLACE:modifier_balkfm_yugoslavist_separatism = {
+# 	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+# 	country_liberty_desire_add = 5
+# 	state_radicals_from_political_movements_mult = 0.10
+# 	building_training_rate_mult = 0.10
+# }

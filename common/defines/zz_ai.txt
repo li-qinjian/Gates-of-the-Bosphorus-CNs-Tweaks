@@ -1,0 +1,6 @@
+﻿NAI = {
+	LAND_INVASION_MIN_SCORE = 25 									# 100	# AI won't bother launching land invasions against theaters with a lower total state score than this
+	MIN_RANK_TO_FORM_POWER_BLOC = 7									# 6	# AIs with a lower rank value than this will never try to form power blocs
+	CHANGE_LAW_CIVIL_WAR_AVERSION_MOVEMENT_SUPPORT_FACTOR = 0.05 	# 0.005 # Chance that the AI will stop enacting a law to avoid a civil war is multiplied by ( 1 + highest revolutionary movement support * this )
+	#AI_PEACE_AGREEMENT_BASE_VALUE = -10
+}
