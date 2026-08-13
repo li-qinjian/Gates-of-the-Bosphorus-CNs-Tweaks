@@ -1,0 +1,56 @@
+﻿BUILDINGS={
+	s:STATE_WEST_BORNEO={
+		region_state:LAN={
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					building={
+						type="building_fishing_wharf"
+						country="c:LAN"
+						levels=1
+						region="STATE_WEST_BORNEO"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated"  }
+			}
+		}
+	}
+
+	s:STATE_MINDANAO={
+		region_state:SUL={
+			remove_building = building_tobacco_plantation
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					building={
+						type="building_fishing_wharf"
+						country="c:SUL"
+						levels=1
+						region="STATE_MINDANAO"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated"  }
+			}
+		}
+	}
+
+	s:STATE_MOCAMBIQUE={
+		region_state:AGC={
+			create_building={
+				building="building_millet_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:AGC"
+						levels=1
+						region="STATE_MOCAMBIQUE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled"  }
+			}
+		}
+	}
+}

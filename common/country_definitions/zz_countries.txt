@@ -1,0 +1,33 @@
+REPLACE:LAN = {
+	color = { 100 150 20 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { hakka }
+	capital = STATE_WEST_BORNEO
+}
+
+REPLACE:CHI = {
+	color = { 252 185 61 }
+	country_type = unrecognized
+	tier = empire #hegemony
+	religion = confucian
+	cultures = { han }
+	capital = STATE_BEIJING
+}
+
+REPLACE:GRE = {
+	color = { 0  178  248 }
+	country_type = recognized
+	tier = kingdom
+	cultures = { greek }
+	capital = STATE_ATTICA
+}
+
+REPLACE:SYR = {
+	color = { 0 122 61 }
+	country_type = unrecognized
+	tier = kingdom
+	cultures = { mashriqi }
+	religion = sunni
+	capital = STATE_SYRIA
+}

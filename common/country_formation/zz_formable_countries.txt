@@ -1,0 +1,82 @@
+﻿REPLACE:BYZ = {
+	states = {
+		STATE_EASTERN_THRACE
+		STATE_IONIAN_ISLANDS
+		STATE_PELOPONNESE
+		STATE_ATTICA
+		STATE_SKOPIA
+		STATE_MACEDONIA
+		STATE_THESSALIA
+		STATE_WESTERN_THRACE
+		STATE_HUDAVENDIGAR
+		STATE_AYDIN
+		STATE_CYPRUS
+		STATE_TRABZON
+		STATE_CRETE
+		STATE_WEST_AEGEAN_ISLANDS
+		STATE_EAST_AEGEAN_ISLANDS
+		STATE_NORTHERN_THRACE
+		STATE_ALBANIA
+	}
+	required_states_fraction = 1.0
+	possible = {
+		country_has_monarchy_law = yes
+		is_subject = no
+		owns_entire_state_region = STATE_EASTERN_THRACE
+		country_has_primary_culture = cu:rhomaios
+	}
+	ai_will_do = { always = yes }
+}
+
+REPLACE:GER = {
+	geographic_region = geographic_region_lesser_germany
+
+	is_major_formation = yes
+
+	unification_play = dp_unify_germany
+	leadership_play = dp_leadership_germany
+
+	required_states_fraction = 1.0
+
+	ai_will_do = { has_technology_researched = nationalism }
+
+	possible = {
+		OR = {
+			has_technology_researched = pan-nationalism
+			custom_tooltip = {
+				text = je_german_unification_idea_trigger_desc
+				has_variable = je_german_unification_idea
+			}
+		}
+		custom_tooltip = {
+			text = no_confederation_of_the_rhine_tt
+			NOT = {
+				exists = c:RHN
+			}
+		}
+		custom_tooltip = {
+			text = no_dual_or_triple_monarchy_tt
+			NOR = {
+				has_government_type = gov_dual_monarchy
+				has_government_type = gov_triple_monarchy
+			}
+		}
+		NOT = {
+			c:KUK ?= this
+		}
+	}
+
+	max_num_formation_candidates = 3
+	can_be_formation_candidate = {
+		country_rank >= rank_value:major_power
+	}
+
+	can_be_unification_target = {
+		NOR = {
+			has_government_type = gov_dual_monarchy
+			has_government_type = gov_triple_monarchy
+		}
+	}
+
+	should_target_state_in_unification_play = {}
+}

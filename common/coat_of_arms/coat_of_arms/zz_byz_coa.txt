@@ -1,0 +1,33 @@
+BYZ = {
+	pattern = "pattern_solid.tga"
+	color1 = "red"
+	color2 = "yellow"
+
+	colored_emblem = {
+		texture = "ce_cross_england.dds"
+		color1 = color2
+		color2 = color2
+	}
+	colored_emblem = {
+		texture = "ce_letter_beta.dds"
+		color1 = color2
+		color2 = color2
+
+        instance = { position = { @[canton_scale_cross_x/2] @[canton_scale_cross_y/2] } scale = { @[-1/5*2] @[1/5*2] } } # top left
+        instance = { position = { @[1-(canton_scale_cross_x/2)] @[canton_scale_cross_y/2] } scale = { @[1/5*2] @[1/5*2] } } # top right
+        instance = { position = { @[canton_scale_cross_x/2] @[1-(canton_scale_cross_y/2)] } scale = { @[-1/5*2] @[1/5*2] } } # bottom left
+        instance = { position = { @[1-(canton_scale_cross_x/2)] @[1-(canton_scale_cross_y/2)] } scale = { @[1/5*2] @[1/5*2] } } # bottom right
+	}
+}
+
+BYZ_monarchy = {
+	pattern = "pattern_solid.tga"
+	color1 = "purple" #purple
+	color2 = "black"
+	color3 = "yellow"
+	
+	textured_emblem = {
+		texture = "BRFLAG2.dds"
+		instance = { scale = { 1.0 1.0 } position = { 0.5 0.5 } }
+	}
+}

@@ -1,0 +1,16 @@
+﻿######################
+# VERRIER ON ACTIONS #
+######################
+
+on_yearly_pulse_country = {
+	on_actions = {
+		delay = { days = { 1 360 } }
+		verrier_on_yearly_pulse_country
+	}
+}
+
+verrier_on_yearly_pulse_country = {
+	events = {
+		verrier.1013 #Verrier 1013: Othóneion Panepistímion opened in Athens (Greece)
+	}
+}

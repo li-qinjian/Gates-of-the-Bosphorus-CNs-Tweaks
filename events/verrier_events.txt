@@ -1,0 +1,81 @@
+###################
+# VERRIER EVENTS  #
+###################
+
+#by Marco Dandolo, Lord R, Overlos
+
+###################
+
+namespace = verrier
+
+###################
+
+verrier.1013 = { #verrier 1013: Othóneion Panepistímion opened in Athens (Greece)
+	dlc = dlc_morgenrote
+
+	type = country_event
+	placement = scope:othonian_university_state
+
+	title = verrier.1013.t
+	desc = verrier.1013.d
+	flavor = verrier.1013.f
+
+	event_image = {
+		texture = "gfx/event_pictures/verrier_pictures/verrier_othonian_university.dds"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/world_fair"
+
+	icon = "gfx/interface/icons/event_icons/event_astronomy.dds"
+
+	duration = 3
+
+	trigger = {
+		NOT = {
+			has_global_variable = othonian_university_opened_global_var
+		}
+		OR = {
+			AND = {
+				exists = c:GRE
+				c:GRE = ROOT
+			}
+			was_formed_from = GRE
+		}
+		year > 1836
+	}
+
+
+	immediate = {
+		set_global_variable = othonian_university_opened_global_var
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_ATTICA
+			}
+			save_scope_as = othonian_university_state
+		}
+	}
+
+	option = {
+		name = verrier.1013.g
+		default_option = yes
+
+		scope:othonian_university_state = {
+			create_building={
+ 				building="building_university"
+ 				level=1
+ 				reserves=1
+ 			}
+			activate_building = {
+				building = "building_university"
+			}
+		}
+	}
+
+	option = {
+		name = verrier.1013.h
+		trigger = {
+			is_player = yes
+		}
+	}
+}

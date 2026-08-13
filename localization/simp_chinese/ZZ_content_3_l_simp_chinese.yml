@@ -1,0 +1,59 @@
+﻿l_simp_chinese:
+ dyn_c_boni: "南華"
+ dyn_c_boni_adj: "南華"
+ BYZ: "东罗马"
+ BYZ_ADJ: "东罗马"
+ HUB_NAME_STATE_NANJING_city_heavenly_capital: "天京"
+ treaty_name_gbr_chinese_agreement: "南京条约"
+
+ # 希腊大学
+ verrier.1013.t: "奥森大学的第一批学生"
+ verrier.1013.d: "奥托国王利用他与欧洲各类科学家的联系，成立了一所新的大学，即奥森大学。大学的许多新教授是希腊人，他们在西方接受了教育。其中一位是天文学家乔治斯·康斯坦丁诺斯·武里斯，他在维也纳的约瑟夫·约翰·冯·利特罗的指导下成为一名博士。这些科学家和学者为希腊带来了至关重要的知识，并教育了新一代的希腊人。现在，大学依然位于建筑师塔马蒂奥斯·克林塞斯和爱德华·绍贝特所设计的建筑里，但将在新的主楼完工之后立刻搬入。"
+ verrier.1013.f: "乔治斯·康斯坦蒂诺斯·沃里斯，一位知名的[concept_verrier_astronomer]，正在为新建成的大学的第一批希腊学生授课。希腊正在迎来新的时代，这是一个学习和进步的时代。\n\n#b 历史背景：#!该大学于1836年进行规划设计，并于1837年5月3日正式成立。它是希腊主陆的第一所大学。当主楼于1841年完工后，大学被迁至新楼。大学两翼的建设一直持续到1864年。\n奥森大学后来改名为国家大学，因为奥托在1862年的政变后不得不逃离了希腊。\n\n今天雅典大学（全称雅典国立卡波季斯特里安大学）是希腊的首要大学之一。该大学的培养出了两位诗人校友，他们的作品赢得了诺贝尔奖，另外15位希腊总理和3位希腊总统曾在该大学学习。"
+ verrier.1013.g: "这些知识将帮助我们缩小与列强的差距！"
+ verrier.1013.h: "我们不需要外国人的帮助！"
+
+ # 切换TAG
+ play_as_hellas: "扮演希腊"
+ play_as_hellas_desc: "扮演希腊。"
+
+ play_as_random_tag: "扮演某随机国家"
+ play_as_random_tag_desc: "扮演某随机国家。"
+
+ unify_tiny_countries: "合并小国"
+ unify_tiny_countries_desc: "合并也门，马六甲。"
+
+ # 普鲁士-丹麦战争决议
+ trigger_prussia_danish_war: "促成石勒苏益格-荷尔斯泰因危机"
+ trigger_prussia_danish_war_desc: "石勒苏益格和荷尔斯泰因两个公国长期处于丹麦统治之下，但其中有大量德意志人居住。普鲁士作为德意志诸邦的领导者，一直寻求解放这些德意志同胞。我们可以促使普鲁士对丹麦采取行动，要求解放这两个公国。"
+
+ # 兰芳独立决议
+ support_lanfang_independence: "支持兰芳独立"
+ support_lanfang_independence_desc: "兰芳共和国虽然是大清的附庸，但是由汉人主导，反满情绪强烈。我们可以通过外交手段支持兰芳的独立运动，增强其摆脱宗主国控制的决心。"
+
+ # 太平天国恢复中华决议
+#  tpg_restore_china: "恢复中华"
+#  tpg_restore_china_desc: "太平天国已经推翻了满清的统治，现在是时候建立以天京（南京）为都城的新王朝，恢复汉人的荣光，重建中华正统。"
+
+#  enforce_closed_borders_for_subjecthood_countries: "关闭边境"
+#  enforce_closed_borders_for_subjecthood_countries_desc: "臣民制度国家，必须关闭边境以防止人口外流。"
+
+ relocate_african_pops_to_slaveholding_subject_capital: "迁移非洲族裔人口至蓄奴附庸首都"
+ relocate_african_pops_to_slaveholding_subject_capital_desc: "在我国已经废除奴隶制的前提下，将所有属于非洲文化传承组的人口迁移至仍在蓄奴的附庸国首都州。"
+
+ # DEI Annexation Decision
+ dei_annex_split_puppet: "让荷属东印度吞并附庸"
+ dei_annex_split_puppet_desc: "让荷属东印度对其首都位于分裂州的小型傀儡国发起吞并博弈。"
+
+ # 土耳其迁都决议
+ turkey_move_capital_to_ankara: "将首都迁至安卡拉"
+ turkey_move_capital_to_ankara_desc: "失去色雷斯地区后，首都伊斯坦布尔已经不再安全。奥斯曼土耳其政权不得不将首都迁至腹地安卡拉。"
+
+ annex_poland: "吞并波兰"
+ annex_poland_desc: "让奥地利对波兰发起吞并博弈。"
+
+ hk_treatyport: "香港条约港"
+ hk_treatyport_desc: "根据中英《南京条约》，香港成为英国的条约港。"
+
+#  kill_specified_character: "处决指定角色"
+#  kill_specified_character_desc: "处决指定角色。"
