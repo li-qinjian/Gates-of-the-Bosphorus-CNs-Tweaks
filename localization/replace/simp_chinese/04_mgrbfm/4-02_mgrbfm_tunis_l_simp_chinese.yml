@@ -1,0 +1,12 @@
+﻿l_simp_chinese:
+ je_mgrbfm_tunis_modernization: "突尼斯现代化进程"
+ je_mgrbfm_tunis_modernization_reason: "千百年来，[ROOT.GetCountry.GetName]始终是连接阿拉伯世界的西部#italic 马格里布#!与东端#italic 马什里克#!的桥梁。凭借得天独厚的地理位置，[ROOT.GetCountry.GetAdjectiveNoFormatting]王国成为了非洲、中东与欧洲之间重要的十字路口。尽管如此，[ROOT.GetCountry.GetRuler.GetFirstName][ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]察觉到，欧洲在#italic 马格里布#!地区的扩张已使国家深陷威胁。为了确保[ROOT.GetCountry.GetAdjectiveNoFormatting]未来的独立，知识分子与政治领袖们借镜于从$turkfm_sublime_porte$散发出的现代化浪潮，试图以此寻求自强之道。"
+ je_mgrbfm_tunis_modernization_lobby: "$gbbf_journal_lobby$\n凭借得天独厚的地理位置，突尼斯王国成为了非洲、中东与欧洲之间重要的十字路口。尽管如此，突尼斯贝伊察觉到，欧洲在#italic 马格里布#!地区的扩张已使国家深陷威胁。为了确保突尼斯未来的独立，知识分子与政治领袖们转而效仿从$turkfm_sublime_porte$兴起的现代化浪潮，试图以此寻求自强之策。"
+ modifier_mgrbfm_tribal_administration: "部落行政"
+ modifier_mgrbfm_western_inspirations: "西洋启迪"
+ modifier_mgrbfm_failed_reforms: "失败的改革"
+ modifier_mgrbfm_modernized_state: "现代化国家"
+ mgrbfm_visit_france_name: "筹划访法之旅"
+ mgrbfm_visit_france_desc: "$FRA_ADJ$帝国在马格里布的崛起，已然引起了[ROOT.GetCountry.GetAdjectiveNoFormatting]朝廷的警觉。继法兰西皇帝访问[ROOT.GetCountry.GetCapital.GetCityHubName]之后，$FRA_ADJ$宫廷现已发出正式邀请，提议[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]对其进行回访。"
+ mgrbfm_mustafa_dead_trigger: "#yellow 穆斯塔法·侯赛尼#!已死"
+ mgrbfm_recognition_gain_50: "#bold 赢得认可#!进度条将会#bold 推进#!#bold #green 50#!#!"

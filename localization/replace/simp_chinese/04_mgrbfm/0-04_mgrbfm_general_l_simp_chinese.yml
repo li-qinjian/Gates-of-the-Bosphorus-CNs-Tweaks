@@ -1,0 +1,7 @@
+﻿l_simp_chinese:
+ mgrbfm_arab: "#yellow #tooltip:[GetRawTextTooltipTag('mgrbfm_arab_desc')] 阿拉伯#!#!"
+ mgrbfm_arabs: "#yellow #tooltip:[GetRawTextTooltipTag('mgrbfm_arab_desc')] 阿拉伯#!#!"
+ mgrbfm_arab_culture: "#yellow #tooltip:[GetRawTextTooltipTag('mgrbfm_arab_desc')] 阿拉伯文化#!#!"
+ mgrbfm_arab_cultures: "#yellow #tooltip:[GetRawTextTooltipTag('mgrbfm_arab_desc')] 阿拉伯文化#!#!"
+ mgrbfm_arab_desc: "[GetCulture('maghrebi').GetName]、[GetCulture('misri').GetName]、[GetCulture('mashriqi').GetName]，[GetCulture('bedouin').GetName]和[GetCulture('yemenite').GetName]。"
+ mgrbfm_weaksauce: "[ROOT.GetCountry.GetName]将不再继续进行任何收复失地主义路线。"

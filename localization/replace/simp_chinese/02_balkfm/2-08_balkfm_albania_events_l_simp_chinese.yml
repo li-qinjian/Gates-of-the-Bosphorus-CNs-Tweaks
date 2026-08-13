@@ -1,0 +1,5 @@
+﻿l_simp_chinese:
+ balkfm_albania.001.t: "山鹰之子"
+ balkfm_albania.001.d: "数十年来，在$gbbf_bio_ali_of_jannina$的统治下，$ALB_YAN$的人民享受了一定程度的繁荣，并从$turkfm_porte$获得了相对的自治。随着他被废黜，[GetCulture('albanian').GetName]人民面临着与[GetGeographicRegion('geographic_region_rumelia').GetName]其他臣民相同的压力。虽然他们被分割在数个地区，且缺乏一个凝聚性的民族运动，但一种超越仅仅作为君士坦丁堡臣民的“$ALB$”意识正在悄然觉醒。"
+ balkfm_albania.001.f: "“阿尔巴尼亚地区极其崎岖，其人民强悍而勇敢……托斯克人从事各种劳务，而盖格人则是牧民。”——艾哈迈德·杰夫代特，约1889年"
+ balkfm_albania.001.a: "[ROOT.GetCountry.GetName]必将寻得属于它的道路。"

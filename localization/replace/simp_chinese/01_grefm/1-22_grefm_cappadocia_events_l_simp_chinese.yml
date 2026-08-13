@@ -1,0 +1,5 @@
+﻿l_simp_chinese:
+ grefm_cappadocia.001.t: "高地希腊人"
+ grefm_cappadocia.001.d: "[ROOT.GetCountry.GetName]的[GetCulture('rhomaios').GetName]人有史记载以来就将这片土地视为自己的家园。然而，随着[SCOPE.sCountry('ottoman_scope').GetName]人的到来，以及西方[GetCulture('greek').GetName]#yellow 主义#!的影响日益加剧，我们独特的文化和认同正遭遇前所未有的冲击。在这个快速变化的世界中，[ROOT.GetCountry.GetAdjectiveNoFormatting]人必须找到属于自己的位置。"
+ grefm_cappadocia.001.f: "“他们的穆斯林主子残酷的迫害，是导致他们如今处于无知、堕落状态的根源，甚至连他们的母语也未能幸免；曾经有一段时间，他们的土耳其主子严格禁止小亚细亚的希腊人彼此间使用希腊语……压迫者的语言早已几乎普及于全境，在安纳托利亚的许多地方，甚至希腊人进行的公开礼拜也已用土耳其语进行。” —— 约翰·平克顿，1817年"
+ grefm_cappadocia.001.a: "[ROOT.GetCountry.GetName]必须找到属于自己的出路。"

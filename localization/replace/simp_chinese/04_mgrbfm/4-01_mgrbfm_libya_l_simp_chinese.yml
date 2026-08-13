@@ -1,0 +1,7 @@
+﻿l_simp_chinese:
+ je_mgrbfm_libya_centralization: "巩固省份"
+ je_mgrbfm_libya_centralization_reason: "千百年来，[ROOT.GetCountry.GetName]的沿海地区一直只是帝国权力的前哨。随着新时代的到来，人们再次推动建立一个真正的[ROOT.GetCountry.GetAdjectiveNoFormatting]国家机器，[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]可以从这个国家行使真正的主权。"
+ je_mgrbfm_libya_centralization_complete: "[ROOT.GetCountry.GetNameNoFlag]拥有#bold 10个或更多#![concept_institution]$gbbf_investment_levels$（当前为#v [JournalEntry.MakeScope.Var('mgrbfm_institution_investment_var').GetValue]#!）"
+ je_mgrbfm_libya_centralization_lobby: "$gbbf_journal_lobby$\n数千年来，的黎波里塔尼亚海岸不过是帝国主义权力的前哨站。随着世界进入新时代，建立完善国家机构的需求日益迫切，苏丹将借此行使真正的主权。"
+ modifier_mgrbfm_informal_administration: "非正式行政"
+ modifier_turkfm_centralized_authority: "中央集权"

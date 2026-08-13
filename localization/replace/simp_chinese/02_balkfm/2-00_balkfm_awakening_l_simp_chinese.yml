@@ -1,0 +1,13 @@
+﻿l_simp_chinese:
+ je_balkfm_cultural_identity: "民族认同"
+ je_balkfm_cultural_identity_reason: "[ROOT.GetCountry.GetAdjectiveNoFormatting]人民受奥斯曼统治已超过四个世纪。自从奥斯曼征服以来，[ROOT.GetCountry.GetAdjectiveNoFormatting]的土地被分割成许多奥斯曼行政单位，撕裂了身份认同。这种情况随着数十位受过西方教育的复兴主义思想家的出现而开始改变，他们共同主张[ROOT.GetCountry.GetAdjectiveNoFormatting]认同的持续存在，以及[ROOT.GetCountry.GetAdjectiveNoFormatting]人民有权且有责任推翻他们的土耳其压迫者。$gbbf_linebreak_normal$#yellow [ROOT.GetCountry.GetAdjectiveNoFormatting]复兴主义#!运动已获得#bold [GetPlayer.MakeScope.Var('balkfm_revivalism_var').GetValue]/1000#!声势。预计下个月将改变#tooltippable;tooltip:[Country.GetTooltipTag],je_balkfm_cultural_identity_sources [GetPlayer.MakeScope.ScriptValue('balkfm_revivalism_progress_value')]#!$gbbf_linebreak_normal$进度受以下因素影响：\n•提高我们的[concept_literacy]\n•提高我们的[concept_prestige]以及$gbbf_intelligentsia$的[concept_clout]\n•研究[GetTechnology('nationalism').GetName]\n•提高我们的[concept_autonomy]\n•完成#bold 保加利亚督主教区#![concept_journal_entry]"
+ je_balkfm_cultural_identity_status: "#yellow 复兴主义运动#!正在为#bold $je_earn_recognition$#![concept_journal_entry]贡献[GetPlayer.MakeScope.ScriptValue('balkfm_revivalism_recognition_value')]点势头。"
+ je_balkfm_cultural_identity_sources: "[Country.MakeScope.GetScriptValueDesc('balkfm_revivalism_progress_value')]"
+ je_balkfm_national_awakening: "$je_balkan_national_awakenings$"
+ je_balkfm_national_awakening_reason: "$je_balkan_national_awakenings_reason$"
+ je_balkfm_cultural_identity_lobby: "几个世纪以来，我们的人民一直生活在异族帝国的铁蹄之下。随着数十位接受过西方教育的复兴运动思想家的涌现，我们的人民已经开始觉醒，意识到争取自身文化认同是不可推卸的责任。"
+ je_balkfm_national_awakening_lobby: "虽然我们的国家迈出了走向建国的第一步，但它依然是一片由农民组成的土地。我们的大多数民众仍然透过村落和氏族的狭隘狭隘视角来看待世界，而非视彼此为同胞手足。我们必须激发出民众头脑中的文化[concept_fervor]，从而将人民凝聚为一个统一的民族。"
+ balkfm_cultural_identity_progressbar: "文化认同进度"
+ balkfm_cultural_identity_progressbar_desc: "文化认同"
+ balkfm_national_awakening_progressbar: "民族觉醒进度"
+ balkfm_national_awakening_progressbar_desc: "民族觉醒"

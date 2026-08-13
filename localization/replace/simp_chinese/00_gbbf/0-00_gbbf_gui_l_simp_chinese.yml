@@ -1,0 +1,4 @@
+﻿l_simp_chinese:
+ gbbf_gui_missing_dependency_header: "所需依赖项缺失！"
+ gbbf_gui_missing_dependency_body: "$gbbf_name$需要$gbbf_cmf$才能运行。请通过Steam或GitHub页面下载。\n\n如果找不到，请查看Steam创意工坊中$gbbf_name$的说明，其中会提供Steam版本和GitHub版本的链接。"
+ gbbf_gui_missing_dependency_tooltip: "抱歉老大，但您#italic 必须#!#bold #yellow 安装并启用#!#!$gbbf_cmf$模组才能使用$gbbf_name$"

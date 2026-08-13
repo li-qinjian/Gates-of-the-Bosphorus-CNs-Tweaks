@@ -1,0 +1,6 @@
+﻿l_simp_chinese:
+ je_mgrbfm_securing_fezzan: "掌控费赞"
+ je_mgrbfm_securing_fezzan_reason: "[ROOT.GetCountry.GetName]作为一个半独立实体已存在了数代之久。然而，与其众多邻国一样，欧洲[GetTechnology('colonization').GetName]的威胁与$turkfm_tanzimat$改革的压力正步步紧逼这个治理薄弱的政体。[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]必须团结各部族，方能守住他们的自由。"
+ je_mgrbfm_securing_fezzan_lobby: "费赞作为一个半独立实体已存在了数代之久。然而，与其众多邻国一样，欧洲殖民主义的威胁与坦齐马特的压力正步步紧逼这个治理薄弱的政体。"
+ mgrbfm_nafusi_pact_name: "与奈富塞人结盟"
+ mgrbfm_nafusi_pact_desc: "$establish_pact_with_nafusis_desc$"

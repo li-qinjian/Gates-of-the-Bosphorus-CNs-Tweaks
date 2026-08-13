@@ -1,0 +1,5 @@
+﻿l_simp_chinese:
+ grefm_theodoro.001.t: "“小狄奥多罗”的[GetCulture('urum').GetName]#yellow 人#!"
+ grefm_theodoro.001.d: "几个世纪以来，希腊人一直生活在黑海沿岸，并发展出一种独特的希腊突厥融合文化，这种文化在[ROOT.GetCountry.GetName]蓬勃发展。虽然他们讲土耳其语，[GetCulture('urum').GetName]人信奉[GetReligion('orthodox').GetName]信仰，并自认为是$grefm_greek$人。\n\n在[ROOT.GetCountry.GetPowerBloc.GetName]的统治下，这些希腊人变得愈加重要，因为沙皇寻求在奥斯曼帝国境内对东正教人民施加宗主权。"
+ grefm_theodoro.001.f: "尽管许多人声称乌鲁姆人不过是“受洗的鞑靼人”，但乌鲁姆人始终坚持信仰，尽管失去了母语，他们依然保留着希腊的传统。"
+ grefm_theodoro.001.a: "[ROOT.GetCountry.GetName]必须找到属于自己的出路。"

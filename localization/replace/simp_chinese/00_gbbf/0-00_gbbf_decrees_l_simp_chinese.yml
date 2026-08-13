@@ -1,0 +1,4 @@
+﻿l_simp_chinese:
+ decree_gbbf_suppress_senusiyya: "镇压$eqfm_senusiyya_movement$"
+ decree_gbbf_suppress_senusiyya_desc: "围捕塞努西耶的追随者并将他们赶出我们的城市。"
+ decree_gbbf_suppress_senusiyya_possible: "$eqfm_senusiyya_movement$在此[concept_state_region]设有据点。"
