@@ -27,6 +27,10 @@
  trigger_prussia_danish_war: "促成石勒苏益格-荷尔斯泰因危机"
  trigger_prussia_danish_war_desc: "石勒苏益格和荷尔斯泰因两个公国长期处于丹麦统治之下，但其中有大量德意志人居住。普鲁士作为德意志诸邦的领导者，一直寻求解放这些德意志同胞。我们可以促使普鲁士对丹麦采取行动，要求解放这两个公国。"
 
+ # 赛土战争
+ trigger_serbia_turkey_war: "促成塞尔维亚-奥斯曼战争"
+ trigger_serbia_turkey_war_desc: "塞尔维亚公国虽然名义上是奥斯曼帝国的附庸，但实际上已经获得了高度自治。塞尔维亚人渴望摆脱奥斯曼的统治，实现完全独立。我们可以促使塞尔维亚对奥斯曼采取行动，争取独立。"
+
  # 兰芳独立决议
  support_lanfang_independence: "支持兰芳独立"
  support_lanfang_independence_desc: "兰芳共和国虽然是大清的附庸，但是由汉人主导，反满情绪强烈。我们可以通过外交手段支持兰芳的独立运动，增强其摆脱宗主国控制的决心。"

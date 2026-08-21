@@ -36,9 +36,10 @@
 			NOT = { has_claim_by = root }
 			OR = {
 				#NOT = { is_in_geographic_region = geographic_region_europe }
-				#is_capital = no
-				#is_incorporated = no
-				is_split_state = yes
+				AND = {
+					is_incorporated = no
+					is_split_state = yes
+				}
 				is_homeland_of_country_cultures = root
 				NOT = { is_homeland_of_country_cultures = scope:target_country }
 				state_region = {
