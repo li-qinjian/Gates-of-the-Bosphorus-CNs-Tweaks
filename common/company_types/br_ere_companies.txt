@@ -1,6 +1,6 @@
 ﻿#BR mod unique E.R.E Companies
 company_br_byz_mining_steel = {
-	icon = "gfx/interface/icons/company_icons/company_br_byz_mining_steel.dds"
+	icon = "gfx/interface/icons/company_icons/basic_metal_mining.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
 
 	flavored_company = yes
@@ -33,7 +33,10 @@ company_br_byz_mining_steel = {
 	attainable = {
 		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
 			any_scope_state = {
-				state_region = s:STATE_KASTAMONU
+				OR = {
+					state_region = s:STATE_KASTAMONU
+					state_region = s:STATE_TRABZON
+				}
 			}
 		}
 	}
@@ -41,10 +44,16 @@ company_br_byz_mining_steel = {
 	possible = {
 		#has_technology_researched = steelworking
 		any_scope_state = {
-			#state_region = s:STATE_KASTAMONU
+			OR = {
+				state_region = s:STATE_KASTAMONU
+				state_region = s:STATE_TRABZON
+			}
 			is_incorporated = yes
 			any_scope_building = {
-				is_building_type = building_coal_mine
+			  	OR = {
+					is_building_type = building_coal_mine
+					is_building_type = building_iron_mine
+				}
 				level >= 5
 			}
 		}
