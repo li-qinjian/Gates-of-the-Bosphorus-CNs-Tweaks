@@ -29,9 +29,10 @@
 	valid = {
 		# trigger in addition to some basic validation code-side
 		# scopes: root = holder, creator_country, diplomatic_play, target_country, target_state, stakeholder, target_region, article_options
-		# scope:target_country = {
-		# 	is_country_type = unrecognized
-		# }
+		scope:target_country = {
+			num_subjects < 1
+			is_country_type = unrecognized
+		}
 		can_reach_target_country = yes
 	}
 

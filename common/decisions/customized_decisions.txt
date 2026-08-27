@@ -1,7 +1,6 @@
 ﻿gernman_unification = {
 	is_shown = {
 		is_player = yes
-		NOT = { exists = c:GER }
 		is_diplomatic_play_committed_participant = no
 	}
 
@@ -85,10 +84,10 @@
 				}
 				set_strategy = ai_strategy_maintain_power_balance
 			}
-			# set_mutual_secret_goal = {
-			# 	country = c:AUS
-			# 	secret_goal = none
-			# }
+			set_mutual_secret_goal = {
+				country = c:AUS
+				secret_goal = none
+			}
 		}
 	}
 
@@ -317,129 +316,111 @@ dei_annex_split_puppet = {
 	}
 }
 
-# disband_all_basic_companies = {
-# 	is_shown = {
-# 		is_player = yes
-# 		year < 1850
-# 	}
+disband_all_basic_companies = {
+	is_shown = {
+		is_player = yes
+		#year < 1850
+	}
 
-# 	possible = {
-# 		is_diplomatic_play_committed_participant = no
-# 		is_player = yes
-# 	}
+	possible = {
+		is_diplomatic_play_committed_participant = no
+		is_player = yes
+	}
 
-# 	when_taken = {
-# 		every_country = {
-# 			limit = {
-# 				is_player = no
-# 				is_diplomatic_play_committed_participant = no
-# 				#country_rank >= rank_value:minor_power
-# 			}
-# 			every_company = {
-# 				if = {
-# 					limit = {
-# 						OR = {
-# 							is_company_type = company_type:company_basic_forestry
-# 							is_company_type = company_type:company_basic_wine_and_fruit
-# 							is_company_type = company_type:company_basic_agriculture_1
-# 							is_company_type = company_type:company_basic_agriculture_2
-# 							is_company_type = company_type:company_basic_silk_and_dye
-# 							is_company_type = company_type:company_basic_metal_mining
-# 							is_company_type = company_type:company_basic_mineral_mining
-# 							is_company_type = company_type:company_basic_paper
-# 							is_company_type = company_type:company_basic_metalworks
-# 							is_company_type = company_type:company_basic_fishing
-# 							is_company_type = company_type:company_basic_colonial_plantations_1
-# 							is_company_type = company_type:company_basic_colonial_plantations_2
-# 							is_company_type = company_type:company_basic_fabrics
-# 							is_company_type = company_type:company_basic_textiles
-# 							is_company_type = company_type:company_mantero_seta
-# 						}
-# 					}
-# 					owner ?= {
-# 						remove_company = prev.type
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
+	when_taken = {
+		every_country = {
+			limit = {
+				is_player = no
+				is_diplomatic_play_committed_participant = no
+				#country_rank >= rank_value:minor_power
+			}
+			every_company = {
+				if = {
+					limit = {
+						OR = {
+							is_company_type = company_type:company_basic_forestry
+							is_company_type = company_type:company_basic_wine_and_fruit
+							is_company_type = company_type:company_basic_agriculture_1
+							is_company_type = company_type:company_basic_agriculture_2
+							is_company_type = company_type:company_basic_silk_and_dye
+							is_company_type = company_type:company_basic_metal_mining
+							is_company_type = company_type:company_basic_mineral_mining
+							is_company_type = company_type:company_basic_paper
+							is_company_type = company_type:company_basic_metalworks
+							is_company_type = company_type:company_basic_fishing
+							is_company_type = company_type:company_basic_colonial_plantations_1
+							is_company_type = company_type:company_basic_colonial_plantations_2
+							is_company_type = company_type:company_basic_fabrics
+							is_company_type = company_type:company_basic_textiles
+							is_company_type = company_type:company_basic_weapons
+							#is_company_type = company_type:company_mantero_seta
+						}
+					}
+					owner ?= {
+						remove_company = prev.type
+					}
+				}
+			}
+		}
+	}
 
-# 	ai_chance = {
-# 		value = 0
-# 	}
-# }
+	ai_chance = {
+		value = 0
+	}
+}
 
-# turkey_annex_split_puppet = {
-# 	is_shown = {
-# 		is_player = yes
-# 		c:TUR ?= {
-# 			any_subject_or_below = {
-# 				count > 0
-# 			}
-# 		}
-# 	}
+turkey_annex_split_puppet = {
+	is_shown = {
+		is_player = yes
+		c:TUR ?= {
+			any_subject_or_below = {
+				count > 0
+			}
+		}
+	}
 
-# 	possible = {
-# 		c:TUR = {
-# 			is_diplomatic_play_committed_participant = no
-# 			any_subject_or_below = {
-# 				capital = {
-# 					is_split_state = yes
-# 					state_region = {
-# 						any_scope_state = { owner = c:TUR }
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
+	possible = {
+		c:TUR = {
+			is_diplomatic_play_committed_participant = no
+			any_subject_or_below = {
+				capital = {
+					is_split_state = yes
+					state_region = {
+						any_scope_state = { owner = c:TUR }
+					}
+				}
+			}
+		}
+	}
 
-# 	when_taken = {
-# 		c:TUR = {
-# 			random_subject_or_below = {
-# 				limit = {
-# 					capital = {
-# 						is_split_state = yes
-# 						state_region = {
-# 							any_scope_state = { owner = c:TUR }
-# 						}
-# 					}
-# 				}
-# 				save_scope_as = turkey_annexation_target
-# 			}
-# 			if = {
-# 				limit = { exists = scope:turkey_annexation_target }
-# 				create_diplomatic_play = {
-# 					name = annex_subject
-# 					target_country = scope:turkey_annexation_target
-# 					type = dp_annex_subject
-# 				}
-# 			}
-# 		}
+	when_taken = {
+		c:TUR = {
+			random_subject_or_below = {
+				limit = {
+					capital = {
+						is_split_state = yes
+						state_region = {
+							any_scope_state = { owner = c:TUR }
+						}
+					}
+				}
+				save_scope_as = turkey_annexation_target
+			}
+			if = {
+				limit = { exists = scope:turkey_annexation_target }
+				create_diplomatic_play = {
+					name = annex_subject
+					target_country = scope:turkey_annexation_target
+					type = dp_annex_subject
+				}
+			}
+		}
+	}
 
-# 		if = {
-# 			limit = {
-# 				c:TRI ?= {
-# 					is_subject_of = c:TUR
-# 					NOT = { market.owner = c:TUR }
-# 				}
-# 			}
-# 			ROOT = { transfer_subject = c:TRI }
-# 		}
-
-# 		c:AUS ?= {
-# 			random_scope_state = {
-# 				limit = {
-# 					state_region = s:STATE_MONTENEGRO
-# 				}
-# 				set_state_owner = c:BYZ
-# 			}
-# 		}
-# 	}
-
-# 	ai_chance = {
-# 		value = 0
-# 	}
-# }
+	ai_chance = {
+		value = 0
+	}
+}
 
 # remove_claims_outside_rumelia_anatolia = {
 # 	is_shown = {
