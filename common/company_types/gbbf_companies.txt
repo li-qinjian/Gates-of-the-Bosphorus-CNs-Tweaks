@@ -95,12 +95,11 @@ REPLACE:company_kouppas = {
 	preferred_headquarters = { STATE_ATTICA }
 
 	building_types = {
-		building_motor_industry
 		building_tooling_workshop
+		building_motor_industry
 	}
 
 	extension_building_types = {
-		#building_automotive_industry
 		building_steel_mill
 	}
 
@@ -425,11 +424,11 @@ REPLACE:company_orient_express = {
 
 	building_types = {
 		building_railway
-		building_iron_mine
+		building_coal_mine	
 	}
 
 	extension_building_types = {
-		building_coal_mine
+		building_iron_mine
 	}
 
 	potential = {
@@ -453,14 +452,15 @@ REPLACE:company_orient_express = {
 			is_incorporated = yes
 			any_scope_building = {
 				is_building_type = building_railway
-				level >= 5
+				level >= 2
 			}
-			count >= 3
+			count >= 5
 		}
 	}
 
 	prosperity_modifier = {
-		country_prestige_mult = 0.1
+		#country_prestige_mult = 0.1
+		state_assimilation_mult = 0.1
 	}
 
 	ai_will_do = {
