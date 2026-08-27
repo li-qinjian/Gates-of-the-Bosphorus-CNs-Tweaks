@@ -329,7 +329,6 @@
 # 				set_character_as_ruler = yes
 # 			}
 # 		}
-# 		annex_country = c:BOH
 # 		# create_diplomatic_pact = {
 # 		# 	country = c:BOH
 # 		# 	type = puppet
@@ -826,4 +825,10 @@
 # 			value = 1
 # 		}
 # 	}
+# }
+
+# c:PER = {
+# 	annex = c:KUR_JEL
+# 	annex = c:KUR_SHK
+# 	annex = c:KUR_ARD
 # }
