@@ -52,6 +52,9 @@
  turkey_annex_split_puppet: "让奥斯曼帝国吞并附庸"
  turkey_annex_split_puppet_desc: "让奥斯曼帝国对其首都位于分裂州的小型傀儡国发起吞并博弈。"
 
+ remove_claims_outside_rumelia_anatolia: "放弃鲁米利亚和安纳托利亚以外的宣称"
+ remove_claims_outside_rumelia_anatolia_desc: "放弃我国在鲁米利亚和安纳托利亚以外所有地区的宣称。"
+
  # 土耳其迁都决议
  turkey_move_capital_to_ankara: "将首都迁至安卡拉"
  turkey_move_capital_to_ankara_desc: "失去色雷斯地区后，首都伊斯坦布尔已经不再安全。奥斯曼土耳其政权不得不将首都迁至腹地安卡拉。"
@@ -62,5 +65,5 @@
  hk_treatyport: "香港条约港"
  hk_treatyport_desc: "根据中英《南京条约》，香港成为英国的条约港。"
 
-#  kill_specified_character: "处决指定角色"
-#  kill_specified_character_desc: "处决指定角色。"
+ decree_romanisation: "罗马化"
+ decree_romanisation_desc: "鼓励采用罗马的语言、习俗和法律，以将该省与帝国统一。"

@@ -814,3 +814,16 @@
 # 		value = 0
 # 	}
 # }
+
+# custom_tooltip = {
+# 	text = every_pop_converts_tt
+# 	every_scope_pop = {
+# 		limit = {
+# 			culture = scope:old_national_culture
+# 		}
+# 		change_pop_culture = {
+# 			target = scope:new_national_culture
+# 			value = 1
+# 		}
+# 	}
+# }

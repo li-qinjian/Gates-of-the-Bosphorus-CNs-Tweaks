@@ -1,0 +1,37 @@
+﻿
+decree_romanisation = {
+	texture = "gfx/interface/icons/decree/decree_promote_national_values.dds"		
+	unlocking_technologies = {
+		nationalism
+	}
+
+	state_trigger = { 
+		is_incorporated = yes
+		owner = { NOT = { has_law_or_variant = law_type:law_guaranteed_liberties } }
+		owner = {
+			country_has_primary_culture = cu:rhomaios
+		}
+	}
+	
+	modifier = {
+		# state_allow_assimilation_in_homeland_bool = yes
+		# state_assimilation_mult = 2.0
+		# state_conversion_mult = 2.0
+		# state_mortality_mult = 0.1
+		# state_radicalism_increases_violent_hostility_mult = 0.6
+		# state_radicalism_increases_cultural_erasure_mult = 0.5
+		# state_radicalism_increases_open_prejudice_mult = 0.4
+		state_assimilation_mult = 0.5
+		state_conversion_mult = 0.5
+		state_allow_assimilation_in_homeland_bool = yes
+		state_allow_assimilation_without_presence_bool = yes
+		state_allow_conversion_without_presence_bool = yes
+		state_radicalism_increases_violent_hostility_mult = 0.5
+		state_radicalism_increases_cultural_erasure_mult = 0.4
+		state_radicalism_increases_open_prejudice_mult = 0.3
+	}
+
+	cost = 100
+	
+	ai_will_do = { always = no }
+}
