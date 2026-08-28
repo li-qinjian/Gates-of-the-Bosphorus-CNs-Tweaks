@@ -45,7 +45,10 @@
 				}
 			}
 		}
-		can_reach_target_country = yes
+		OR = {
+			is_player = yes
+			can_reach_target_country = yes
+		}
 	}
 
 	maneuvers = {
