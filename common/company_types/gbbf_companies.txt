@@ -9,7 +9,7 @@ REPLACE:company_basileiades = {
 
 	building_types = {
 		building_explosives_factory
-		building_munition_plant
+		building_chemical_plant
 	}
 
 	extension_building_types = {
@@ -46,8 +46,8 @@ REPLACE:company_basileiades = {
 			is_incorporated = yes
 			any_scope_building = {
 				OR = {
-					is_building_type = building_sulfur_mine
 					is_building_type = building_explosives_factory
+					is_building_type = building_chemical_plant
 				}
 				level >= 5
 			}
@@ -66,7 +66,7 @@ REPLACE:company_basileiades = {
 	}
 
 	ai_construction_targets = {
-		building_sulfur_mine = {
+		building_chemical_plant = {
 			level = 5
 			state_trigger = {
 				state_region = s:STATE_ATTICA

@@ -5,7 +5,7 @@ company_br_byz_mining_steel = {
 
 	flavored_company = yes
 
-	preferred_headquarters = { STATE_KASTAMONU STATE_TRABZON }
+	preferred_headquarters = { STATE_KASTAMONU }
 
 	replaces_company = company_basic_metal_mining
 
@@ -33,10 +33,7 @@ company_br_byz_mining_steel = {
 	attainable = {
 		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
 			any_scope_state = {
-				OR = {
-					state_region = s:STATE_KASTAMONU
-					state_region = s:STATE_TRABZON
-				}
+				state_region = s:STATE_KASTAMONU
 			}
 		}
 	}
@@ -44,16 +41,10 @@ company_br_byz_mining_steel = {
 	possible = {
 		#has_technology_researched = steelworking
 		any_scope_state = {
-			OR = {
-				state_region = s:STATE_KASTAMONU
-				state_region = s:STATE_TRABZON
-			}
+			state_region = s:STATE_KASTAMONU
 			is_incorporated = yes
 			any_scope_building = {
-			  	OR = {
-					is_building_type = building_coal_mine
-					is_building_type = building_iron_mine
-				}
+				is_building_type = building_coal_mine
 				level >= 5
 			}
 		}
@@ -85,4 +76,3 @@ company_br_byz_mining_steel = {
 		value = 3 # Higher base value for flavored companies
 	}
 }
-
