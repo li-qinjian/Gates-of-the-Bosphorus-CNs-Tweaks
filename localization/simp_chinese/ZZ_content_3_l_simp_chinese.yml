@@ -50,8 +50,8 @@
  dei_annex_split_puppet: "让荷属东印度吞并附庸"
  dei_annex_split_puppet_desc: "让荷属东印度对其首都位于分裂州的小型傀儡国发起吞并博弈。"
 
- turkey_annex_split_puppet: "让奥斯曼帝国吞并附庸"
- turkey_annex_split_puppet_desc: "让奥斯曼帝国对其首都位于分裂州的小型傀儡国发起吞并博弈。"
+ annex_kurdish_tribes: "吞并库尔德部落"
+ annex_kurdish_tribes_desc: "吞并库尔德部落"
 
  remove_claims_outside_rumelia_anatolia: "放弃鲁米利亚和安纳托利亚以外的宣称"
  remove_claims_outside_rumelia_anatolia_desc: "放弃我国在鲁米利亚和安纳托利亚以外所有地区的宣称。"

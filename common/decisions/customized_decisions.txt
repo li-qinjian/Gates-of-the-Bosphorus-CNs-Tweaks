@@ -316,64 +316,70 @@ dei_annex_split_puppet = {
 	}
 }
 
-disband_all_basic_companies = {
-	is_shown = {
-		is_player = yes
-		#year < 1850
-	}
+# disband_all_basic_companies = {
+# 	is_shown = {
+# 		is_player = yes
+# 		#year < 1850
+# 	}
 
-	possible = {
-		is_diplomatic_play_committed_participant = no
-		is_player = yes
-	}
+# 	possible = {
+# 		is_player = yes
+# 	}
 
-	when_taken = {
-		every_country = {
-			limit = {
-				is_player = no
-				is_diplomatic_play_committed_participant = no
-				#country_rank >= rank_value:minor_power
-			}
-			every_company = {
-				if = {
-					limit = {
-						OR = {
-							is_company_type = company_type:company_basic_forestry
-							is_company_type = company_type:company_basic_wine_and_fruit
-							is_company_type = company_type:company_basic_agriculture_1
-							is_company_type = company_type:company_basic_agriculture_2
-							is_company_type = company_type:company_basic_silk_and_dye
-							is_company_type = company_type:company_basic_metal_mining
-							is_company_type = company_type:company_basic_mineral_mining
-							is_company_type = company_type:company_basic_paper
-							is_company_type = company_type:company_basic_metalworks
-							is_company_type = company_type:company_basic_fishing
-							is_company_type = company_type:company_basic_colonial_plantations_1
-							is_company_type = company_type:company_basic_colonial_plantations_2
-							is_company_type = company_type:company_basic_fabrics
-							is_company_type = company_type:company_basic_textiles
-							is_company_type = company_type:company_basic_weapons
-							#is_company_type = company_type:company_mantero_seta
-						}
-					}
-					owner ?= {
-						remove_company = prev.type
-					}
-				}
-			}
-		}
-	}
+# 	when_taken = {
+# 		every_country = {
+# 			limit = {
+# 				is_player = no
+# 				is_diplomatic_play_committed_participant = no
+# 				#country_rank >= rank_value:minor_power
+# 			}
+# 			every_company = {
+# 				if = {
+# 					limit = {
+# 						OR = {
+# 							is_company_type = company_type:company_basic_forestry
+# 							is_company_type = company_type:company_basic_wine_and_fruit
+# 							is_company_type = company_type:company_basic_agriculture_1
+# 							is_company_type = company_type:company_basic_agriculture_2
+# 							is_company_type = company_type:company_basic_silk_and_dye
+# 							is_company_type = company_type:company_basic_metal_mining
+# 							is_company_type = company_type:company_basic_mineral_mining
+# 							is_company_type = company_type:company_basic_paper
+# 							is_company_type = company_type:company_basic_metalworks
+# 							is_company_type = company_type:company_basic_fishing
+# 							is_company_type = company_type:company_basic_colonial_plantations_1
+# 							is_company_type = company_type:company_basic_colonial_plantations_2
+# 							is_company_type = company_type:company_basic_fabrics
+# 							is_company_type = company_type:company_basic_textiles
+# 							is_company_type = company_type:company_basic_weapons
+# 							#is_company_type = company_type:company_mantero_seta
+# 						}
+# 					}
+# 					owner ?= {
+# 						remove_company = prev.type
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
 
-	ai_chance = {
-		value = 0
-	}
-}
+# 	ai_chance = {
+# 		value = 0
+# 	}
+# }
 
-turkey_annex_split_puppet = {
+annex_kurdish_tribes = {
 	is_shown = {
 		is_player = yes
 		c:TUR ?= {
 			any_subject_or_below = {
+				country_has_primary_culture = cu:kurdish
+				count > 0
+			}
+		}
+		c:PER ?= {
+			any_subject_or_below = {
+				country_has_primary_culture = cu:kurdish
 				count > 0
 			}
 		}
@@ -382,27 +388,38 @@ turkey_annex_split_puppet = {
 	possible = {
 		c:TUR = {
 			is_diplomatic_play_committed_participant = no
-			any_subject_or_below = {
-				capital = {
-					is_split_state = yes
-					state_region = {
-						any_scope_state = { owner = c:TUR }
-					}
-				}
-			}
+		}
+		c:PER = {
+			is_diplomatic_play_committed_participant = no
 		}
 	}
 
 	when_taken = {
+		# if = {
+		# 	limit = {
+		# 		exists = c:KUR_JEL
+		# 	}
+		# 	c:PER ?= {
+		# 		annex = c:KUR_JEL
+		# 	}
+		# }
+		# c:PER = {
+		# 	annex = c:KUR_JEL
+		# 	annex = c:KUR_SHK
+		# 	annex = c:KUR_ARD
+		# }
+		# c:TUR = {
+		# 	annex = c:KUR_BAB
+		# 	annex = c:KUR_BOK
+		# 	annex = c:KUR_BAY
+		# 	annex = c:KUR_HAK
+		# 	annex = c:KUR_SOR
+		# }
 		c:TUR = {
 			random_subject_or_below = {
 				limit = {
-					capital = {
-						is_split_state = yes
-						state_region = {
-							any_scope_state = { owner = c:TUR }
-						}
-					}
+					NOT = { has_truce_with = c:TUR }
+					country_has_primary_culture = cu:kurdish
 				}
 				save_scope_as = turkey_annexation_target
 			}
@@ -411,6 +428,23 @@ turkey_annex_split_puppet = {
 				create_diplomatic_play = {
 					name = annex_subject
 					target_country = scope:turkey_annexation_target
+					type = dp_annex_subject
+				}
+			}
+		}
+		c:PER = {
+			random_subject_or_below = {
+				limit = {
+					NOT = { has_truce_with = c:PER }
+					country_has_primary_culture = cu:kurdish
+				}
+				save_scope_as = persia_annexation_target
+			}
+			if = {
+				limit = { exists = scope:persia_annexation_target }
+				create_diplomatic_play = {
+					name = annex_subject
+					target_country = scope:persia_annexation_target
 					type = dp_annex_subject
 				}
 			}
