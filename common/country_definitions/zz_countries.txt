@@ -31,3 +31,12 @@ REPLACE:SYR = {
 	religion = sunni
 	capital = STATE_SYRIA
 }
+
+REPLACE:BYZ = { # Byzantine Empire
+	color = rgb{ 147  82  173 }
+	country_type = recognized
+	tier = empire
+	cultures = { rhomaios }
+	capital = STATE_EASTERN_THRACE
+	valid_as_home_country_for_separatists = { always = no }
+}
