@@ -2,6 +2,9 @@
 	is_shown = {
 		is_player = yes
 		is_diplomatic_play_committed_participant = no
+		c:GER = {
+			NOT = { has_truce_with = c:AUS }
+		}
 	}
 
 	possible = {
@@ -17,7 +20,7 @@
 				is_diplomatic_play_committed_participant = no
 			}
 			c:GER = {
-				has_strategy = ai_strategy_territorial_expansion
+				is_diplomatic_play_committed_participant = no
 			}
 		}
 	}
@@ -78,17 +81,13 @@
 		# 	}
 		# }
 		c:GER ?= {
-			if = {
-				limit = {
-					has_strategy = ai_strategy_territorial_expansion
-				}
-				set_strategy = ai_strategy_maintain_power_balance
-			}
+			create_bidirectional_truce = { country = c:AUS months = 60 }
 			set_mutual_secret_goal = {
 				country = c:AUS
 				secret_goal = none
 			}
 		}
+
 	}
 
 	ai_chance = {
@@ -226,26 +225,32 @@ support_lanfang_independence = {
 play_as_random_tag = {
 	is_shown = {
 		is_player = yes
-		is_diplomatic_play_committed_participant = no
+		#is_diplomatic_play_committed_participant = no
 	}
 
 	possible = {
 		is_player = yes
-		is_diplomatic_play_committed_participant = no
+		#is_diplomatic_play_committed_participant = no
+		c:HUN ?= {
+			liberty_desire > 75
+		}
 	}
 
 	when_taken = {
-		random_subject_or_below = {
-			limit = {
-				country_rank >= rank_value:minor_power
-				#liberty_desire > 50
-			}
-			save_scope_as = subject_target
+		c:HUN ?= {
+			add_liberty_desire = -50
 		}
-		if = {
-			limit = { exists = scope:subject_target }
-			play_as = scope:subject_target
-		}
+		# random_subject_or_below = {
+		# 	limit = {
+		# 		country_rank >= rank_value:minor_power
+		# 		#liberty_desire > 50
+		# 	}
+		# 	save_scope_as = subject_target
+		# }
+		# if = {
+		# 	limit = { exists = scope:subject_target }
+		# 	play_as = scope:subject_target
+		# }
 	}
 
 	ai_chance = {
@@ -478,6 +483,15 @@ annex_kurdish_tribes = {
 # 	}
 
 # 	when_taken = {
+# 		every_scope_pop = {
+# 			limit = {
+# 				culture = cu:greek
+# 			}
+# 			change_pop_culture = {
+# 				target = cu:rhomaios
+# 				value = 1
+# 			}
+# 		}
 # 		every_state = {
 # 			limit = {
 # 				has_claim_by = ROOT
