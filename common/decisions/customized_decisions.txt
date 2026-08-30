@@ -87,7 +87,9 @@
 				secret_goal = none
 			}
 		}
-
+		c:HUN ?= {
+			add_liberty_desire = -25
+		}
 	}
 
 	ai_chance = {
@@ -231,15 +233,62 @@ play_as_random_tag = {
 	possible = {
 		is_player = yes
 		#is_diplomatic_play_committed_participant = no
-		c:HUN ?= {
-			liberty_desire > 75
-		}
 	}
 
 	when_taken = {
-		c:HUN ?= {
-			add_liberty_desire = -50
+		#play_as = c:CHI
+		# c:CHI ?= {
+		# 	# create_bidirectional_truce = { country = c:RUS months = 60 }
+		# 	add_primary_culture = cu:han
+		# 	every_scope_pop = {
+		# 		limit = {
+		# 			culture = cu:manchu
+		# 			OR = {
+		# 				is_pop_type = peasants
+		# 				is_pop_type = laborers
+		# 			}
+		# 		}
+		# 		change_pop_culture = {
+		# 			target = cu:han
+		# 			value = 0.5
+		# 		}
+		# 	}
+		# }
+
+		c:POR ?= {
+			add_liberty_desire = -25
 		}
+
+		# Return Macau to tag c:CHI 
+		random_scope_state = {
+			limit = {
+				owner = ROOT
+				state_region = s:STATE_BOSNIA
+				#is_treaty_port = yes
+			}
+			set_state_owner = c:AUS
+		}
+
+		c:AUS ?= {
+			random_scope_state = {
+				limit = {
+					owner = c:AUS
+					state_region = s:STATE_MONTENEGRO
+					#is_treaty_port = yes
+				}
+				set_state_owner = ROOT
+			}
+		}
+		# Transfer WAL to player country
+		if = {
+			limit = {
+				c:WAL ?= {
+					is_subject_of = c:AUS
+				}
+			}
+			ROOT = { transfer_subject = c:WAL }
+		}
+
 		# random_subject_or_below = {
 		# 	limit = {
 		# 		country_rank >= rank_value:minor_power
@@ -321,57 +370,56 @@ dei_annex_split_puppet = {
 	}
 }
 
-# disband_all_basic_companies = {
-# 	is_shown = {
-# 		is_player = yes
-# 		#year < 1850
-# 	}
+disband_all_basic_companies = {
+	is_shown = {
+		is_player = yes
+	}
 
-# 	possible = {
-# 		is_player = yes
-# 	}
+	possible = {
+		is_player = yes
+	}
 
-# 	when_taken = {
-# 		every_country = {
-# 			limit = {
-# 				is_player = no
-# 				is_diplomatic_play_committed_participant = no
-# 				#country_rank >= rank_value:minor_power
-# 			}
-# 			every_company = {
-# 				if = {
-# 					limit = {
-# 						OR = {
-# 							is_company_type = company_type:company_basic_forestry
-# 							is_company_type = company_type:company_basic_wine_and_fruit
-# 							is_company_type = company_type:company_basic_agriculture_1
-# 							is_company_type = company_type:company_basic_agriculture_2
-# 							is_company_type = company_type:company_basic_silk_and_dye
-# 							is_company_type = company_type:company_basic_metal_mining
-# 							is_company_type = company_type:company_basic_mineral_mining
-# 							is_company_type = company_type:company_basic_paper
-# 							is_company_type = company_type:company_basic_metalworks
-# 							is_company_type = company_type:company_basic_fishing
-# 							is_company_type = company_type:company_basic_colonial_plantations_1
-# 							is_company_type = company_type:company_basic_colonial_plantations_2
-# 							is_company_type = company_type:company_basic_fabrics
-# 							is_company_type = company_type:company_basic_textiles
-# 							is_company_type = company_type:company_basic_weapons
-# 							#is_company_type = company_type:company_mantero_seta
-# 						}
-# 					}
-# 					owner ?= {
-# 						remove_company = prev.type
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
+	when_taken = {
+		every_country = {
+			limit = {
+				is_player = no
+				is_diplomatic_play_committed_participant = no
+				#country_rank >= rank_value:minor_power
+			}
+			every_company = {
+				if = {
+					limit = {
+						OR = {
+							is_company_type = company_type:company_basic_forestry
+							is_company_type = company_type:company_basic_wine_and_fruit
+							is_company_type = company_type:company_basic_agriculture_1
+							is_company_type = company_type:company_basic_agriculture_2
+							is_company_type = company_type:company_basic_silk_and_dye
+							is_company_type = company_type:company_basic_metal_mining
+							is_company_type = company_type:company_basic_mineral_mining
+							is_company_type = company_type:company_basic_paper
+							is_company_type = company_type:company_basic_metalworks
+							is_company_type = company_type:company_basic_fishing
+							is_company_type = company_type:company_basic_colonial_plantations_1
+							is_company_type = company_type:company_basic_colonial_plantations_2
+							is_company_type = company_type:company_basic_fabrics
+							is_company_type = company_type:company_basic_textiles
+							is_company_type = company_type:company_basic_weapons
+							#is_company_type = company_type:company_mantero_seta
+						}
+					}
+					owner ?= {
+						remove_company = prev.type
+					}
+				}
+			}
+		}
+	}
 
-# 	ai_chance = {
-# 		value = 0
-# 	}
-# }
+	ai_chance = {
+		value = 0
+	}
+}
 
 annex_kurdish_tribes = {
 	is_shown = {
@@ -583,4 +631,3 @@ annex_kurdish_tribes = {
 # 		value = 0
 # 	}
 # }
-

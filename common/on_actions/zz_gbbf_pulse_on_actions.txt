@@ -160,6 +160,11 @@ balkfm_monthly_pulse = {
 								c:YUG ?= this
 							}
 						}
+						overlord ?= {
+							NOT = {
+								c:BYZ ?= this
+							}
+						}
 					}
 				}
 				add_modifier = {

@@ -36,7 +36,7 @@
 			NOT = { has_claim_by = root }
 			OR = {
 				is_homeland_of_country_cultures = root
-				NOT = { is_homeland_of_country_cultures = scope:target_country }
+				#NOT = { is_homeland_of_country_cultures = scope:target_country }
 				state_region = {
 					any_scope_state = { 
 						is_treaty_port = no
