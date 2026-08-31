@@ -161,6 +161,7 @@ per_annex_kurdish_tribes = {
 unify_yemen = {
 	is_shown = {
 		is_player = yes
+		exists = c:LAH
 	}
 
     possible = {
@@ -191,6 +192,7 @@ unify_yemen = {
 unify_malay = {
 	is_shown = {
 		is_player = yes
+		exists = c:PRK
 	}
 
     possible = {
@@ -219,6 +221,7 @@ unify_malay = {
 unify_kenya = {
 	is_shown = {
 		is_player = yes
+		exists = c:MJT
 	}
 
     possible = {
