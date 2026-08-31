@@ -79,55 +79,55 @@ disband_all_basic_companies = {
 	}
 }
 
-# remove_claims_outside_rumelia_anatolia = {
-# 	is_shown = {
-# 		is_player = yes
-# 		any_scope_state = {
-# 			limit = {
-# 				has_claim_by = ROOT
-# 				NOT = {
-# 					OR = {
-# 						is_in_geographic_region = geographic_region_rumelia
-# 						is_in_geographic_region = geographic_region_anatolia
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
+remove_claims_outside_rumelia_anatolia = {
+	is_shown = {
+		is_player = yes
+		any_scope_state = {
+			limit = {
+				has_claim_by = ROOT
+				NOT = {
+					OR = {
+						is_in_geographic_region = geographic_region_rumelia
+						is_in_geographic_region = geographic_region_anatolia
+					}
+				}
+			}
+		}
+	}
 
-# 	possible = {
-# 		is_player = yes
-# 		is_diplomatic_play_committed_participant = no
-# 	}
+	possible = {
+		is_player = yes
+		is_diplomatic_play_committed_participant = no
+	}
 
-# 	when_taken = {
-# 		every_scope_pop = {
-# 			limit = {
-# 				culture = cu:greek
-# 			}
-# 			change_pop_culture = {
-# 				target = cu:rhomaios
-# 				value = 1
-# 			}
-# 		}
-# 		every_state = {
-# 			limit = {
-# 				has_claim_by = ROOT
-# 				NOT = {
-# 					OR = {
-# 						is_in_geographic_region = geographic_region_rumelia
-# 						is_in_geographic_region = geographic_region_anatolia
-# 					}
-# 				}
-# 			}
-# 			state_region = { remove_claim = ROOT }
-# 		}
-# 	}
+	when_taken = {
+		# every_scope_pop = {
+		# 	limit = {
+		# 		culture = cu:greek
+		# 	}
+		# 	change_pop_culture = {
+		# 		target = cu:rhomaios
+		# 		value = 1
+		# 	}
+		# }
+		every_state = {
+			limit = {
+				has_claim_by = ROOT
+				NOT = {
+					OR = {
+						is_in_geographic_region = geographic_region_rumelia
+						is_in_geographic_region = geographic_region_anatolia
+					}
+				}
+			}
+			state_region = { remove_claim = ROOT }
+		}
+	}
 
-# 	ai_chance = {
-# 		value = 0
-# 	}
-# }
+	ai_chance = {
+		value = 0
+	}
+}
 
 
 # relocate_african_pops_to_slaveholding_subject_capital = {
