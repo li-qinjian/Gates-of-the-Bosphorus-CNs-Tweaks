@@ -36,14 +36,10 @@
 			has_claim_by = root
 			OR = {
 				is_incorporated = no
-				state_region = {
-					any_scope_state = { owner = root }
-				}
 				is_homeland_of_country_cultures = root
 				NOT = { is_homeland_of_country_cultures = scope:target_country }
-				any_neighbouring_state = {
-					owner = root
-					is_homeland_of_country_cultures = root
+				state_region = {
+					any_scope_state = { owner = root }
 				}
 			}
 		}

@@ -116,13 +116,7 @@
 # PRK: "霹雳"
 # PRK_ADJ: "霹雳"
 
-# c:MAH ?= {
-#     create_diplomatic_play = {
-#         name = annex_country
-#         target_country = c:LAH
-#         type = dp_annex_country
-#     }
-# }
+
 
 # c:USA ?= {
 # 	every_scope_state = {
@@ -662,63 +656,6 @@
 # 	}
 # }
 
-# unify_tiny_countries = {
-# 	is_shown = {
-# 		is_player = yes
-# 	}
-
-#     possible = {
-# 		is_diplomatic_play_committed_participant = no
-# 		year < 1860
-# 	}
-
-#     when_taken = {
-# 		if = {
-# 			limit = {
-# 				exists = c:ZAI
-# 				exists = c:KAT
-# 				exists = c:MAH
-# 				exists = c:LAH
-# 			}
-# 			c:ZAI ?= {
-# 				annex = c:KAT
-# 				annex = c:MAH
-# 				annex = c:LAH
-# 			}
-# 		}
-
-# 		if = {
-# 			limit = {
-# 				exists = c:JOH
-# 				exists = c:SEL
-# 				exists = c:PRK
-# 			}
-# 			c:JOH ?= {
-# 				annex = c:SEL
-# 				annex = c:PRK
-# 			}
-# 		}
-
-# 		if = {
-# 			limit = {
-# 				exists = c:ISQ
-# 				exists = c:WSG
-# 				exists = c:GLD
-# 				exists = c:MJT
-# 			}
-# 			c:GLD ?= {
-# 				annex = c:WSG
-# 				annex = c:ISQ
-# 				annex = c:MJT
-# 			}
-# 		}
-#     }
-
-#     ai_chance = {
-# 		value = 0
-#     }
-# }
-
 # turkey_move_capital_to_ankara = {
 # 	is_shown = {
 # 		is_player = yes
@@ -827,11 +764,6 @@
 # 	}
 # }
 
-# c:PER = {
-# 	annex = c:KUR_JEL
-# 	annex = c:KUR_SHK
-# 	annex = c:KUR_ARD
-# }
 
 # random_scope_state = {
 # 	limit = {

@@ -1,0 +1,247 @@
+﻿
+dei_annex_split_puppet = {
+	is_shown = {
+		is_player = yes
+		is_diplomatic_play_committed_participant = no
+		c:DEI ?= {
+			any_subject_or_below = {
+				count > 0
+			}
+		}
+	}
+
+	possible = {
+		c:DEI = {
+			#is_at_war = no
+			is_diplomatic_play_committed_participant = no
+			any_subject_or_below = {
+				is_subject_type = subject_type_puppet
+				liberty_desire < 25
+				num_states <= 1
+				capital = {
+					is_split_state = yes
+					state_region = {
+						any_scope_state = { owner = c:DEI }
+					}
+				}
+				NOT = { has_truce_with = c:DEI }
+			}
+		}
+	}
+
+	when_taken = {
+		c:DEI = {
+			random_subject_or_below = {
+				limit = {
+					is_subject_type = subject_type_puppet
+					liberty_desire < 25
+					num_states <= 1
+					capital = {
+						is_split_state = yes
+						state_region = {
+							any_scope_state = { owner = c:DEI }
+						}
+					}
+					NOT = { has_truce_with = c:DEI }
+				}
+				save_scope_as = dei_annexation_target
+			}
+			if = {
+				limit = { exists = scope:dei_annexation_target }
+				create_diplomatic_play = {
+					name = annex_subject
+					target_country = scope:dei_annexation_target
+					type = dp_annex_subject
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tur_annex_kurdish_tribes = {
+	is_shown = {
+		is_player = yes
+		c:TUR ?= {
+			any_subject_or_below = {
+				country_has_primary_culture = cu:kurdish
+				count > 0
+			}
+		}
+	}
+
+	possible = {
+		c:TUR = {
+			is_diplomatic_play_committed_participant = no
+		}
+	}
+
+	when_taken = {
+		# c:TUR = {
+		# 	annex = c:KUR_BAB
+		# 	annex = c:KUR_BOK
+		# 	annex = c:KUR_BAY
+		# 	annex = c:KUR_HAK
+		# 	annex = c:KUR_SOR
+		# }
+		c:TUR = {
+			random_subject_or_below = {
+				limit = {
+					NOT = { has_truce_with = c:TUR }
+					country_has_primary_culture = cu:kurdish
+				}
+				save_scope_as = turkey_annexation_target
+			}
+			if = {
+				limit = { exists = scope:turkey_annexation_target }
+				create_diplomatic_play = {
+					name = annex_subject
+					target_country = scope:turkey_annexation_target
+					type = dp_annex_subject
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+per_annex_kurdish_tribes = {
+	is_shown = {
+		is_player = yes
+		c:PER ?= {
+			any_subject_or_below = {
+				country_has_primary_culture = cu:kurdish
+				count > 0
+			}
+		}
+	}
+
+	possible = {
+		c:PER = {
+			is_diplomatic_play_committed_participant = no
+		}
+	}
+
+	when_taken = {
+		# c:PER = {
+		# 	annex = c:KUR_JEL
+		# 	annex = c:KUR_SHK
+		# 	annex = c:KUR_ARD
+		# }
+		c:PER = {
+			random_subject_or_below = {
+				limit = {
+					NOT = { has_truce_with = c:PER }
+					country_has_primary_culture = cu:kurdish
+				}
+				save_scope_as = persia_annexation_target
+			}
+			if = {
+				limit = { exists = scope:persia_annexation_target }
+				create_diplomatic_play = {
+					name = annex_subject
+					target_country = scope:persia_annexation_target
+					type = dp_annex_subject
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+unify_yemen = {
+	is_shown = {
+		is_player = yes
+	}
+
+    possible = {
+		is_diplomatic_play_committed_participant = no
+	}
+
+    when_taken = {
+		if = {
+			limit = {
+				exists = c:ZAI
+				exists = c:KAT
+				exists = c:MAH
+				exists = c:LAH
+			}
+			c:ZAI ?= {
+				annex = c:KAT
+				annex = c:MAH
+				annex = c:LAH
+			}
+		}
+    }
+
+    ai_chance = {
+		value = 0
+    }
+}
+
+unify_malay = {
+	is_shown = {
+		is_player = yes
+	}
+
+    possible = {
+		is_diplomatic_play_committed_participant = no
+	}
+
+    when_taken = {
+		if = {
+			limit = {
+				exists = c:JOH
+				exists = c:SEL
+				exists = c:PRK
+			}
+			c:JOH ?= {
+				annex = c:SEL
+				annex = c:PRK
+			}
+		}
+    }
+
+    ai_chance = {
+		value = 0
+    }
+}
+
+unify_kenya = {
+	is_shown = {
+		is_player = yes
+	}
+
+    possible = {
+		is_diplomatic_play_committed_participant = no
+	}
+
+    when_taken = {
+		if = {
+			limit = {
+				exists = c:ISQ
+				exists = c:WSG
+				exists = c:GLD
+				exists = c:MJT
+			}
+			c:GLD ?= {
+				annex = c:WSG
+				annex = c:ISQ
+				annex = c:MJT
+			}
+		}
+    }
+
+    ai_chance = {
+		value = 0
+    }
+}

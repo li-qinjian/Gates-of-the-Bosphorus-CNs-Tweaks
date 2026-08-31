@@ -21,16 +21,6 @@
  play_as_random_tag: "扮演某随机国家"
  play_as_random_tag_desc: "扮演某随机国家。"
 
- unify_tiny_countries: "合并小国"
- unify_tiny_countries_desc: "合并也门，马六甲。"
-
- # 德意志统一
- gernman_unification: "德意志统一"
- gernman_unification_desc: "推动德意志统一进程。"
-
- # 整合军工产业
- assemble_serbia_arms_industry: "整合军工产业"
- assemble_serbia_arms_industry_desc: "整合军工产业。"
 
  # 兰芳独立决议
  support_lanfang_independence: "支持兰芳独立"
@@ -46,12 +36,6 @@
  relocate_african_pops_to_slaveholding_subject_capital: "迁移非洲族裔人口至蓄奴附庸首都"
  relocate_african_pops_to_slaveholding_subject_capital_desc: "在我国已经废除奴隶制的前提下，将所有属于非洲文化传承组的人口迁移至仍在蓄奴的附庸国首都州。"
 
- # DEI Annexation Decision
- dei_annex_split_puppet: "让荷属东印度吞并附庸"
- dei_annex_split_puppet_desc: "让荷属东印度对其首都位于分裂州的小型傀儡国发起吞并博弈。"
-
- annex_kurdish_tribes: "吞并库尔德部落"
- annex_kurdish_tribes_desc: "吞并库尔德部落"
 
  remove_claims_outside_rumelia_anatolia: "放弃鲁米利亚和安纳托利亚以外的宣称"
  remove_claims_outside_rumelia_anatolia_desc: "放弃我国在鲁米利亚和安纳托利亚以外所有地区的宣称。"
@@ -68,3 +52,43 @@
 
  decree_romanisation: "罗马化"
  decree_romanisation_desc: "鼓励采用罗马的语言、习俗和法律，以将该省与帝国统一。"
+
+ # German Unification
+ prussia_danish_war: "普鲁士-丹麦战争"
+ prussia_danish_war_desc: "普鲁士与丹麦之间的战争，涉及对施莱斯维希-荷尔斯泰因问题的争夺。"
+ control_baden: "控制巴登"
+ control_baden_desc: "通过战争手段控制巴登公国。"
+ control_bavaria: "控制巴伐利亚"
+ control_bavaria_desc: "通过战争手段控制巴伐利亚公国。"
+ prussia_military_reform: "普鲁士军事改革"
+ prussia_military_reform_desc: "普鲁士进行了一系列军事改革，以增强其军事实力和战斗力。"
+
+ # AI annex tiny states
+ dei_annex_split_puppet: "让荷属东印度吞并附庸"
+ dei_annex_split_puppet_desc: "让荷属东印度对其首都位于分裂州的小型傀儡国发起吞并博弈。"
+ tur_annex_kurdish_tribes: "吞并库尔德部落"
+ tur_annex_kurdish_tribes_desc: "吞并库尔德部落"
+ per_annex_kurdish_tribes: "吞并库尔德部落"
+ per_annex_kurdish_tribes_desc: "吞并库尔德部落"
+ unify_yemen: "统一也门"
+ unify_yemen_desc: "统一也门"
+ unify_malay: "统一马六甲"
+ unify_malay_desc: "统一马六甲"
+ unify_kenya: "统一肯尼亚"
+ unify_kenya_desc: "统一肯尼亚"
+
+  # China Affairs
+ lanfang_war: "兰芳战争"
+ lanfang_war_desc: "支持兰芳独立的战争。"
+
+ lang_liberty_desire: "支持兰芳独立"
+ lang_liberty_desire_desc: "支持兰芳独立。"
+
+ trade_lanfang: "交换兰芳"
+ trade_lanfang_desc: "用澳门换取兰芳的控制权。"
+  
+ beiyang_rule: "北洋统治"
+ beiyang_rule_desc: "北洋军阀掌握政权的时期，标志着中国进入军阀混战的时代。"
+
+ manchu_rule: "满清统治"
+ manchu_rule_desc: "满清统治时期，标志着中国由汉人政权转向满人政权，社会结构和文化受到满清影响。"

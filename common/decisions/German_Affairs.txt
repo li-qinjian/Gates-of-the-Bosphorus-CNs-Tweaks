@@ -1,0 +1,226 @@
+﻿prussia_danish_war = {
+	is_shown = {
+		is_player = yes
+		exists = c:HOL
+		exists = c:SCH
+		c:PRU = {
+			has_technology_researched = nationalism
+			is_unification_candidate = GER
+			is_diplomatic_play_committed_participant = no
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = je_schleswig_holstein_question_state_ownership_desc
+			#any_scope_state = { state_region = s:STATE_SCHLESWIG_HOLSTEIN }
+			s:STATE_SCHLESWIG_HOLSTEIN = {
+				any_scope_state = {
+					OR = {
+						NOT = {
+							owner = {
+								OR = {
+									country_has_primary_culture = cu:north_german
+									country_has_primary_culture = cu:south_german
+								}
+							}
+						}
+						owner = {
+							is_subject_of = c:DEN
+						}
+					}
+				}
+			}
+		}
+		c:AUS = {
+			has_technology_researched = nationalism
+			is_unification_candidate = GER
+			is_diplomatic_play_committed_participant = no
+		}
+	}
+
+	when_taken = {
+		#Prussia Military Access
+		# create_treaty = {
+		# 	first_country = c:PRU
+		# 	second_country = c:HAN
+
+		# 	is_draft = no
+		# 	#entered_into_force_on = 1836.1.1
+		# 	binding_period = { years = 10 } # 10 year binding period after start of game
+
+		# 	articles_to_create = {
+		# 		{
+		# 			article = military_access
+		# 			source_country = c:HAN
+		# 			target_country = c:PRU
+		# 		}
+		# 		{
+		# 			article = military_access
+		# 			source_country = c:PRU
+		# 			target_country = c:HAN
+		# 		}
+		# 	}
+		# }
+		c:PRU ?= {
+			create_diplomatic_play = {
+				name = liberate_subject
+				target_country = c:SCH
+				type = dp_liberate_subject
+				
+				#add_initiator_backers = { c:AUS }
+				
+				add_war_goal = {
+					holder = c:PRU
+					type = annex_country
+					target_country = c:HOL
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+control_baden = {
+	is_shown = {
+		is_player = yes
+		is_diplomatic_play_committed_participant = no
+		exists = c:NGF
+		c:BAD ?= {
+			is_subject = no
+		}
+	}
+
+	possible = {
+		c:NGF = {
+			is_unification_candidate = GER
+			is_diplomatic_play_committed_participant = no
+			NOT = { has_truce_with = c:BAD }
+		}
+	}
+
+	when_taken = {
+		if = {
+			limit = {
+				exists = c:BAD
+			}
+			c:NGF ?= {
+				create_diplomatic_play = { 
+					name = make_protectorate
+					target_country = c:BAD
+					type = dp_make_protectorate
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+control_bavaria = {
+	is_shown = {
+		is_player = yes
+		is_diplomatic_play_committed_participant = no
+		exists = c:NGF
+		c:BAV ?= {
+			is_subject = no
+		}
+	}
+
+	possible = {
+		c:NGF = {
+			is_unification_candidate = GER
+			is_diplomatic_play_committed_participant = no
+			NOT = { has_truce_with = c:BAV }
+		}
+	}
+
+	when_taken = {
+		if = {
+			limit = {
+				exists = c:BAV
+			}
+			c:NGF ?= {
+				create_diplomatic_play = { 
+					name = make_protectorate
+					target_country = c:BAV
+					type = dp_make_protectorate
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+prussia_military_reform = {
+	is_shown = {
+		is_player = yes
+		exists = c:PRU
+		exists = c:NGF	
+	}
+
+	possible = {
+		OR = {
+			c:PRU = {
+				has_technology_researched = nationalism
+				is_unification_candidate = GER
+				is_at_war = yes
+			}
+			c:NGF = {
+				has_technology_researched = pan-nationalism
+				is_unification_candidate = GER
+				is_at_war = yes
+			}
+		}
+	}
+
+	when_taken = {
+		if = {
+			limit = {
+				exists = c:PRU
+			}
+			c:PRU ?= {
+				remove_modifier = modifier_bul_militarisation_complete
+				add_modifier = {
+					name = modifier_bul_militarisation_complete
+					days = very_long_modifier_time
+					is_decaying = yes
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				exists = c:NGF
+			}
+			c:NGF ?= {
+				remove_modifier = modifier_bul_militarisation_complete
+				add_modifier = {
+					name = modifier_bul_militarisation_complete
+					days = very_long_modifier_time
+					is_decaying = yes
+				}
+			}
+		}
+
+		# c:GER ?= {
+		# 	create_bidirectional_truce = { country = c:AUS months = 60 }
+		# 	set_mutual_secret_goal = {
+		# 		country = c:AUS
+		# 		secret_goal = none
+		# 	}
+		# }
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}

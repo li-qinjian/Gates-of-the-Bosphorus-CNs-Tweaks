@@ -1,0 +1,271 @@
+﻿ban_opium = {
+	is_shown = {
+		is_player = yes
+		exists = market
+		market.owner = root
+		NOT = { is_banning_goods = g:opium }
+		any_primary_culture = {
+			has_cultural_obsession = opium
+		}
+	}
+
+	possible = {
+		is_player = yes
+		NOT = { has_law_or_variant = law_type:law_free_trade }
+		exists = market
+	}
+
+	when_taken = {
+		add_banned_goods = g:opium
+		every_primary_culture = {
+			limit = {
+				has_cultural_obsession = opium
+			}
+			remove_cultural_obsession = opium
+		}
+	}
+
+    ai_chance = {
+		value = 0
+    }
+}
+
+lanfang_war = {
+	is_shown = {
+		is_player = yes
+		NOT = { c:LAN = THIS }
+		exists = c:STG
+	}
+
+	possible = {
+		exists = c:STG
+	}
+
+	when_taken = {
+		# Create a diplomatic play for c:LAN
+		if = {
+			limit = {
+				c:LAN ?= {
+					is_diplomatic_play_committed_participant = no
+				}
+				exists = c:STG
+			}
+			c:LAN ?= {
+				create_diplomatic_play = {
+					target_state = s:STATE_WEST_BORNEO.region_state:STG
+					name = conquer_state
+					type = dp_conquer_state
+
+					add_initiator_backers = { c:BRU }
+				}
+				#create_bidirectional_truce = { country = c:DEI months = 12 }
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+lang_liberty_desire = {
+	is_shown = {
+		is_player = yes
+		NOT = { c:LAN = THIS }
+		c:LAN ?= {
+			is_subject_of = c:CHI
+		}
+	}
+
+	possible = {
+		c:LAN ?= {
+			liberty_desire < 50
+		}
+	}
+
+	when_taken = {
+		c:LAN ?= {
+			add_liberty_desire = 45
+		}
+		# Decrease payments diplomatic pact between c:CHI and c:LAN
+		c:CHI ?= {
+			if = {
+				limit = {
+					NOT = {
+						has_diplomatic_pact = {
+							who = c:LAN
+							type = decrease_payments
+						}
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:LAN
+					type = decrease_payments
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+trade_lanfang = {
+	is_shown = {
+		is_player = yes
+		NOT = { c:LAN = THIS }
+		c:LAN ?= {
+			is_subject_of = c:CHI
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			owner = ROOT
+			state_region = s:STATE_GUANGDONG
+			#is_treaty_port = yes
+		}
+	}
+
+	when_taken = {
+		# Return Macau to tag c:CHI 
+		random_scope_state = {
+			limit = {
+				owner = ROOT
+				state_region = s:STATE_GUANGDONG
+				#is_treaty_port = yes
+			}
+			set_state_owner = c:CHI
+		}
+
+		# Transfer lanfang to player country
+		if = {
+			limit = {
+				c:LAN ?= {
+					is_subject_of = c:CHI
+				}
+			}
+			ROOT = { transfer_subject = c:LAN }
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+manchu_rule = {
+	is_shown = {
+		is_player = yes
+		#is_diplomatic_play_committed_participant = no
+		c:CHI ?= { 
+			NOT = { has_truce_with = c:RUS } 
+		}
+	}
+
+	possible = {
+		is_player = yes
+		#is_diplomatic_play_committed_participant = no
+	}
+
+	when_taken = {
+		#play_as = c:CHI
+		c:CHI ?= {
+			add_primary_culture = cu:han
+			every_scope_pop = {
+				limit = {
+					culture = cu:manchu
+					OR = {
+						is_pop_type = peasants
+						is_pop_type = laborers
+					}
+				}
+				change_pop_culture = {
+					target = cu:han
+					value = 0.5
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+beiyang_rule = {
+	is_shown = {
+		is_player = yes
+		exists = c:BEI
+		#is_diplomatic_play_committed_participant = no
+	}
+
+	possible = {
+		is_player = yes
+		#is_diplomatic_play_committed_participant = no
+	}
+
+	when_taken = {
+		#play_as = c:CHI
+		# c:CHI ?= {
+		# 	# create_bidirectional_truce = { country = c:RUS months = 60 }
+		# 	add_primary_culture = cu:han
+		# 	every_scope_pop = {
+		# 		limit = {
+		# 			culture = cu:manchu
+		# 			OR = {
+		# 				is_pop_type = peasants
+		# 				is_pop_type = laborers
+		# 			}
+		# 		}
+		# 		change_pop_culture = {
+		# 			target = cu:han
+		# 			value = 0.5
+		# 		}
+		# 	}
+		# }
+
+		c:BEI ?= {
+		    remove_primary_culture = cu:manchu
+			if = {
+				limit = {
+					NOT = {
+						has_law = law_type:law_presidential_republic
+					}
+				}
+				activate_law = law_type:law_presidential_republic
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						any_scope_character = {
+							is_heir = yes
+						}
+					}
+					random_scope_character = {
+						limit = {
+							is_heir = yes
+						}
+						kill_character = yes
+					}
+				}
+			}
+
+			create_character = {
+				template = chi_general_yuan_shikai
+				on_created = {
+					set_character_as_ruler = yes
+				}
+			}
+		}
+		# c:MCH ?= {
+		#     add_primary_culture = cu:han
+		# }
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
