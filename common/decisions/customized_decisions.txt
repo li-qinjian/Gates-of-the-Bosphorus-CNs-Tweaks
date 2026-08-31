@@ -1,85 +1,26 @@
 ﻿play_as_random_tag = {
 	is_shown = {
 		is_player = yes
-		#is_diplomatic_play_committed_participant = no
+		is_diplomatic_play_committed_participant = no
 	}
 
 	possible = {
 		is_player = yes
-		#is_diplomatic_play_committed_participant = no
+		is_diplomatic_play_committed_participant = no
 	}
 
 	when_taken = {
-		#play_as = c:CHI
-		# c:CHI ?= {
-		# 	# create_bidirectional_truce = { country = c:RUS months = 60 }
-		# 	add_primary_culture = cu:han
-		# 	every_scope_pop = {
-		# 		limit = {
-		# 			culture = cu:manchu
-		# 			OR = {
-		# 				is_pop_type = peasants
-		# 				is_pop_type = laborers
-		# 			}
-		# 		}
-		# 		change_pop_culture = {
-		# 			target = cu:han
-		# 			value = 0.5
-		# 		}
-		# 	}
-		# }
-
-		# c:POR ?= {
-		# 	add_liberty_desire = -25
-		# }
-
-		# c:BEI ?= {
-		#     remove_primary_culture = cu:manchu
-		# 	if = {
-		# 		limit = {
-		# 			NOT = {
-		# 				has_law = law_type:law_presidential_republic
-		# 			}
-		# 		}
-		# 		activate_law = law_type:law_presidential_republic
-		# 	}
-		# 	hidden_effect = {
-		# 		if = {
-		# 			limit = {
-		# 				any_scope_character = {
-		# 					is_heir = yes
-		# 				}
-		# 			}
-		# 			random_scope_character = {
-		# 				limit = {
-		# 					is_heir = yes
-		# 				}
-		# 				kill_character = yes
-		# 			}
-		# 		}
-		# 	}
-
-		# 	create_character = {
-		# 		template = chi_general_yuan_shikai
-		# 		on_created = {
-		# 			set_character_as_ruler = yes
-		# 		}
-		# 	}
-		# }
-		# c:MCH ?= {
-		#     add_primary_culture = cu:han
-		# }
-		# random_subject_or_below = {
-		# 	limit = {
-		# 		country_rank >= rank_value:minor_power
-		# 		#liberty_desire > 50
-		# 	}
-		# 	save_scope_as = subject_target
-		# }
-		# if = {
-		# 	limit = { exists = scope:subject_target }
-		# 	play_as = scope:subject_target
-		# }
+		random_subject_or_below = {
+			limit = {
+				country_rank >= rank_value:minor_power
+				#liberty_desire > 50
+			}
+			save_scope_as = subject_target
+		}
+		if = {
+			limit = { exists = scope:subject_target }
+			play_as = scope:subject_target
+		}
 	}
 
 	ai_chance = {

@@ -36,6 +36,9 @@
 			overlord = {
 				is_subject = no
 			}
+			capital = {
+				is_split_state = no
+			}
 		}
 		OR = {
 			has_law = law_type:law_monarchy
@@ -45,10 +48,7 @@
 				}
 			}
 		}
-		OR = {
-			is_player = yes
-			can_reach_target_country = yes
-		}
+		can_reach_target_country = yes
 	}
 
 	maneuvers = {
