@@ -15,16 +15,11 @@
  verrier.1013.h: "我们不需要外国人的帮助！"
 
  # 切换TAG
- play_as_hellas: "扮演希腊"
- play_as_hellas_desc: "扮演希腊。"
+#  play_as_hellas: "扮演希腊"
+#  play_as_hellas_desc: "扮演希腊。"
 
  play_as_random_tag: "扮演某随机国家"
  play_as_random_tag_desc: "扮演某随机国家。"
-
-
- # 兰芳独立决议
- support_lanfang_independence: "支持兰芳独立"
- support_lanfang_independence_desc: "兰芳共和国虽然是大清的附庸，但是由汉人主导，反满情绪强烈。我们可以通过外交手段支持兰芳的独立运动，增强其摆脱宗主国控制的决心。"
 
  # 太平天国恢复中华决议
 #  tpg_restore_china: "恢复中华"
@@ -33,12 +28,11 @@
  disband_all_basic_companies: "解散所有通用公司"
  disband_all_basic_companies_desc: "解散所有通用公司。"
 
- relocate_african_pops_to_slaveholding_subject_capital: "迁移非洲族裔人口至蓄奴附庸首都"
- relocate_african_pops_to_slaveholding_subject_capital_desc: "在我国已经废除奴隶制的前提下，将所有属于非洲文化传承组的人口迁移至仍在蓄奴的附庸国首都州。"
+#  relocate_african_pops_to_slaveholding_subject_capital: "迁移非洲族裔人口至蓄奴附庸首都"
+#  relocate_african_pops_to_slaveholding_subject_capital_desc: "在我国已经废除奴隶制的前提下，将所有属于非洲文化传承组的人口迁移至仍在蓄奴的附庸国首都州。"
 
-
- remove_claims_outside_rumelia_anatolia: "放弃鲁米利亚和安纳托利亚以外的宣称"
- remove_claims_outside_rumelia_anatolia_desc: "放弃我国在鲁米利亚和安纳托利亚以外所有地区的宣称。"
+#  remove_claims_outside_rumelia_anatolia: "放弃鲁米利亚和安纳托利亚以外的宣称"
+#  remove_claims_outside_rumelia_anatolia_desc: "放弃我国在鲁米利亚和安纳托利亚以外所有地区的宣称。"
 
  # 土耳其迁都决议
  turkey_move_capital_to_ankara: "将首都迁至安卡拉"
@@ -46,9 +40,6 @@
 
  annex_poland: "吞并波兰"
  annex_poland_desc: "让奥地利对波兰发起吞并博弈。"
-
- hk_treatyport: "香港条约港"
- hk_treatyport_desc: "根据中英《南京条约》，香港成为英国的条约港。"
 
  decree_romanisation: "罗马化"
  decree_romanisation_desc: "鼓励采用罗马的语言、习俗和法律，以将该省与帝国统一。"
@@ -66,9 +57,9 @@
  # AI annex tiny states
  dei_annex_split_puppet: "让荷属东印度吞并附庸"
  dei_annex_split_puppet_desc: "让荷属东印度对其首都位于分裂州的小型傀儡国发起吞并博弈。"
- tur_annex_kurdish_tribes: "吞并库尔德部落"
+ tur_annex_kurdish_tribes: "土耳其吞并库尔德部落"
  tur_annex_kurdish_tribes_desc: "吞并库尔德部落"
- per_annex_kurdish_tribes: "吞并库尔德部落"
+ per_annex_kurdish_tribes: "波斯吞并库尔德部落"
  per_annex_kurdish_tribes_desc: "吞并库尔德部落"
  unify_yemen: "统一也门"
  unify_yemen_desc: "统一也门"
@@ -78,17 +69,15 @@
  unify_kenya_desc: "统一肯尼亚"
 
   # China Affairs
+ hk_treatyport: "香港条约港"
+ hk_treatyport_desc: "根据中英《南京条约》，香港成为英国的条约港。"
  lanfang_war: "兰芳战争"
- lanfang_war_desc: "支持兰芳独立的战争。"
-
- lang_liberty_desire: "支持兰芳独立"
- lang_liberty_desire_desc: "支持兰芳独立。"
-
- trade_lanfang: "交换兰芳"
- trade_lanfang_desc: "用澳门换取兰芳的控制权。"
-  
+ lanfang_war_desc: "兰芳西当战争"
+ lang_liberty_desire: "兰芳反满"
+ lang_liberty_desire_desc: "兰芳反满情绪高涨"
+#  trade_lanfang: "交换兰芳"
+#  trade_lanfang_desc: "用澳门换取兰芳的控制权。"
  beiyang_rule: "北洋统治"
  beiyang_rule_desc: "北洋军阀掌握政权的时期，标志着中国进入军阀混战的时代。"
-
  manchu_rule: "满清统治"
  manchu_rule_desc: "满清统治时期，标志着中国由汉人政权转向满人政权，社会结构和文化受到满清影响。"

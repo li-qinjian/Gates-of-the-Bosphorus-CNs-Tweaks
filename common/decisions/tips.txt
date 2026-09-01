@@ -99,25 +99,6 @@
 #     }
 # }
 
-# YEM: "也门"
-# YEM_ADJ: "也门"
-# MAH: "迈赫拉"
-# MAH_ADJ: "迈赫拉"
-# KAT: "卡迪里"
-# KAT_ADJ: "卡迪里"
-# ZAI: "阿扎勒"
-# ZAI_ADJ: "阿扎勒"
-# LAH: "拉赫季"
-# LAH_ADJ: "拉赫季"
-# JOH: "柔佛"
-# JOH_ADJ: "柔佛"
-# SEL: "雪兰莪"
-# SEL_ADJ: "雪兰莪"
-# PRK: "霹雳"
-# PRK_ADJ: "霹雳"
-
-
-
 # c:USA ?= {
 # 	every_scope_state = {
 # 		limit = {
@@ -205,14 +186,6 @@
 # 	}
 # }
 
-# c:GBR ?= {
-# 	create_diplomatic_play = {
-# 		name = opium_war
-# 		target_state = s:STATE_SHAOZHOU.region_state:CHI
-# 		target_country = c:CHI
-# 		type = dp_take_treaty_port
-# 	}
-# }
 
 # c:NGF ?= {
 # 	create_diplomatic_play = {
@@ -691,65 +664,6 @@
 # 	}
 # }
 
-# hk_treatyport = {
-# 	is_shown = {
-# 		is_player = yes
-# 		year > 1840
-# 		year < 1850
-# 		c:CHI ?= {
-# 			NOT = { has_truce_with = c:GBR }
-# 			owns_entire_state_region = STATE_SHAOZHOU
-# 		}
-# 	}
-
-# 	possible = {
-# 		exists = c:GBR
-# 		exists = c:CHI
-# 		NOT = { c:GBR = THIS }
-# 		c:CHI ?= {
-# 			NOT = { has_truce_with = c:GBR }
-# 			owns_entire_state_region = STATE_SHAOZHOU
-# 		}
-# 	}
-
-# 	when_taken = {
-# 		# HK Treaty Port
-# 		create_treaty = {
-# 			name = treaty_name_gbr_chinese_agreement
-# 			first_country = c:GBR
-# 			second_country = c:CHI
-
-# 			is_draft = no
-# 			entered_into_force_on = 1840.1.1 # Establishment of British Hong Kong
-# 			binding_period = { years = 99 } # 99 year binding period after start of game
-
-# 			articles_to_create = {
-# 				{
-# 					article = treaty_port
-# 					source_country = c:CHI
-# 					target_country = c:GBR
-# 					inputs = {
-# 						{ state = s:STATE_SHAOZHOU.region_state:CHI }
-# 					}
-# 				}
-# 			}
-# 		}
-# 		# Lost Opium Wars
-# 		c:CHI ?= {
-# 			create_bidirectional_truce = { country = c:GBR months = 120 }
-# 			#add_primary_culture = cu:han
-# 			add_modifier = {
-# 				name = opium_wars_lost
-# 				days = very_long_modifier_time
-# 				is_decaying = yes
-# 			}
-# 		}
-# 	}
-
-# 	ai_chance = {
-# 		value = 0
-# 	}
-# }
 
 # custom_tooltip = {
 # 	text = every_pop_converts_tt
