@@ -9,12 +9,12 @@ REPLACE:company_basileiades = {
 
 	building_types = {
 		building_explosives_factory
-		building_glassworks
+		building_munition_plant
 	}
 
 	extension_building_types = {
 		building_sulfur_mine
-		building_lead_mine
+		building_glassworks
 	}
 
 	possible_prestige_goods = {
@@ -45,10 +45,7 @@ REPLACE:company_basileiades = {
 			state_region = s:STATE_ATTICA
 			is_incorporated = yes
 			any_scope_building = {
-				OR = {
-					is_building_type = building_explosives_factory
-					is_building_type = building_glassworks
-				}
+				is_building_type = building_explosives_factory
 				level >= 5
 			}
 		}
@@ -67,12 +64,6 @@ REPLACE:company_basileiades = {
 
 	ai_construction_targets = {
 		building_explosives_factory = {
-			level = 5
-			state_trigger = {
-				state_region = s:STATE_ATTICA
-			}
-		}
-		building_glassworks = {
 			level = 5
 			state_trigger = {
 				state_region = s:STATE_ATTICA
@@ -186,7 +177,7 @@ REPLACE:company_zastava = {
 
 	building_types = {
 		building_arms_industry
-		building_munition_plant
+		building_artillery_foundry
 	}
 
 	extension_building_types = {
@@ -681,12 +672,12 @@ REPLACE:company_mantero_seta = {
 	potential = {
 		has_dlc_feature = mp1_content
 		has_interest_marker_in_region = sr:region_southern_europe
-		country_has_primary_culture = cu:north_italian
 	}
 
 	attainable = {
 		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
 			s:STATE_LOMBARDY = {
+				is_homeland_of_country_cultures = root
 				any_scope_state = {
 					owner = root
 				}
@@ -742,14 +733,14 @@ REPLACE:company_mantero_seta = {
 
 #BR mod unique E.R.E Companies
 company_br_byz_mining_steel = {
-	icon = "gfx/interface/icons/company_icons/basic_metal_mining.dds"
+	icon = "gfx/interface/icons/company_icons/basic_mineral_mining.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
 
 	flavored_company = yes
 
-	preferred_headquarters = { STATE_KASTAMONU STATE_TRABZON }
+	preferred_headquarters = { STATE_KASTAMONU }
 
-	replaces_company = company_basic_metal_mining
+	replaces_company = company_basic_mineral_mining
 
 	building_types = {
 		building_coal_mine
@@ -775,10 +766,7 @@ company_br_byz_mining_steel = {
 	attainable = {
 		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
 			any_scope_state = {
-				OR = {
-					state_region = s:STATE_KASTAMONU
-					state_region = s:STATE_TRABZON
-				}
+				state_region = s:STATE_KASTAMONU
 			}
 		}
 	}
@@ -786,16 +774,10 @@ company_br_byz_mining_steel = {
 	possible = {
 		#has_technology_researched = steelworking
 		any_scope_state = {
-			OR = {
-				state_region = s:STATE_KASTAMONU
-				state_region = s:STATE_TRABZON
-			}
+			state_region = s:STATE_KASTAMONU
 			is_incorporated = yes
 			any_scope_building = {
-			  	OR = {
-					is_building_type = building_coal_mine
-					is_building_type = building_iron_mine
-				}
+			  	is_building_type = building_coal_mine
 				level >= 5
 			}
 		}
