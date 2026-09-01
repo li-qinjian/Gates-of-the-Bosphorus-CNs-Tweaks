@@ -30,6 +30,47 @@
 	}
 }
 
+build_basic_farm = {
+	is_shown = {
+		is_player = yes
+		any_scope_state = {
+			is_incorporated = no
+			has_famine = yes
+		}
+	}
+
+	possible = {
+		is_player = yes
+		is_diplomatic_play_committed_participant = no
+	}
+
+	when_taken = {
+		random_scope_state = {
+			limit = {
+				has_famine = yes
+				is_incorporated = no
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_scope_building = {
+							is_building_type = building_wheat_farm
+						}
+					}
+				}
+				create_building = {
+					building = building_wheat_farm
+					level = 1
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
 disband_all_basic_companies = {
 	is_shown = {
 		is_player = yes

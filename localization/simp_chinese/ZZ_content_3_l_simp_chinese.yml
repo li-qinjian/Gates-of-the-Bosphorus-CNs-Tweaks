@@ -21,6 +21,9 @@
  play_as_random_tag: "扮演某随机国家"
  play_as_random_tag_desc: "扮演某随机国家。"
 
+ build_basic_farm: "建设基础农场"
+ build_basic_farm_desc: "建设基础农场，以缓解饥荒。"
+
  # 太平天国恢复中华决议
 #  tpg_restore_china: "恢复中华"
 #  tpg_restore_china_desc: "太平天国已经推翻了满清的统治，现在是时候建立以天京（南京）为都城的新王朝，恢复汉人的荣光，重建中华正统。"
