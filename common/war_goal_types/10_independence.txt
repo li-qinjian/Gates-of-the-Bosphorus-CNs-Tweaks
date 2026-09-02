@@ -28,7 +28,8 @@
 		# trigger in addition to some basic validation code-side
 		# scopes: root = holder, creator_country, diplomatic_play, target_country, target_state, stakeholder, target_region, article_options
 		root.overlord = scope:target_country
-		NOT = {	
+		NOT = {
+			is_subject_type = subject_type_crown_land
 			is_subject_type = subject_type_personal_union
 		}
 	}
