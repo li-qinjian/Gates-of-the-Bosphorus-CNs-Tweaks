@@ -56,7 +56,9 @@
  control_bavaria_desc: "通过战争手段控制巴伐利亚公国。"
  prussia_military_reform: "普鲁士军事改革"
  prussia_military_reform_desc: "普鲁士进行了一系列军事改革，以增强其军事实力和战斗力。"
-
+ restore_austria_empire: "恢复奥地利帝国"
+ restore_austria_empire_desc: "通过一系列政治和军事手段，恢复奥地利帝国的统治。"
+ 
  # AI annex tiny states
  dei_annex_split_puppet: "让荷属东印度吞并附庸"
  dei_annex_split_puppet_desc: "让荷属东印度对其首都位于分裂州的小型傀儡国发起吞并博弈。"

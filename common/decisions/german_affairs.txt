@@ -224,3 +224,89 @@ prussia_military_reform = {
 		value = 0
 	}
 }
+
+restore_austria_empire = {
+	is_shown = {
+		is_player = yes
+		exists = c:AUS
+	}
+
+	possible = {
+		c:AUS = {
+			is_subject = no
+		}
+	}
+
+	when_taken = {
+		# c:HUN ?= {
+		# 	if = {
+		# 		limit = {
+		# 			NOT = {
+		# 				has_law = law_type:law_monarchy
+		# 			}
+		# 		}
+		# 		activate_law = law_type:law_monarchy
+		# 	}
+		# }
+		c:AUS ?= {
+			if = {
+				limit = {
+					NOT = {
+						has_law = law_type:law_monarchy
+					}
+				}
+				activate_law = law_type:law_monarchy
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						has_law = law_type:law_interventionism
+					}
+				}
+				activate_law = law_type:law_interventionism
+			}
+
+			if = {
+				limit = {
+					has_law = law_type:law_monarchy
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							any_scope_character = {
+								is_heir = yes
+							}
+						}
+						random_scope_character = {
+							limit = {
+								is_heir = yes
+							}
+							kill_character = yes
+						}
+					}
+				}
+
+				create_character = {
+					# Franz Joseph I of Austria
+					template = aus_franz_josef_I_habsburg_template
+					on_created = {
+						set_character_as_ruler = yes
+					}
+				}
+			}
+
+			annex = c:BOH
+			#annex = c:HUN
+
+			# create_diplomatic_pact = {
+			# 	country = c:HUN
+			# 	type = personal_union
+			# }
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}

@@ -149,22 +149,6 @@
 # 	multiplier = 40
 # }
 
-# c:SPA ?= {
-# 	create_diplomatic_play = {
-# 		name = transfer_subject
-# 		target_country = c:CON
-# 		type = dp_transfer_subject
-        
-# 		#add_initiator_backers = { c:AUS }
-        
-# 		# add_war_goal = {
-# 		# 	holder = c:PRU
-# 		# 	type = annex_country
-# 		# 	target_country = c:HOL
-# 		# }
-# 	}
-# }
-
 # c:LAN ?= {
 # 	#add_modifier = { name = colonial_administration }
 # 	add_culture_acceptance_modifier = {
@@ -268,40 +252,7 @@
 
 
 
-# c:AUS ?= {
-# 	if = {
-# 		limit = {
-# 			has_law = law_type:law_monarchy
-# 		}
-# 		hidden_effect = {
-# 			if = {
-# 				limit = {
-# 					any_scope_character = {
-# 						is_heir = yes
-# 					}
-# 				}
-# 				random_scope_character = {
-# 					limit = {
-# 						is_heir = yes
-# 					}
-# 					kill_character = yes
-# 				}
-# 			}
-# 		}
 
-# 		create_character = {
-# 			# Franz Joseph I of Austria
-# 			template = aus_franz_josef_I_habsburg_template
-# 			on_created = {
-# 				set_character_as_ruler = yes
-# 			}
-# 		}
-# 		# create_diplomatic_pact = {
-# 		# 	country = c:BOH
-# 		# 	type = puppet
-# 		# }
-# 	}
-# }
 #c:GRE = {
 #	create_diplomatic_play = {
 #		target_state = s:STATE_CRETE.region_state:EGY
@@ -451,27 +402,6 @@
 #     if = {
 #         limit = { enacting_any_law = yes }
 #         cancel_enactment = yes
-#     }
-# }
-
-# c:TPG ?= {
-#     if = {
-#         limit = {
-#             NOT = {
-#                 has_law = law_type:law_canton_system
-#             }
-#         }
-#         activate_law = law_type:law_canton_system
-#     }
-# # 		}
-# KOR ?= {
-#     if = {
-#         limit = {
-#             NOT = {
-#                 has_law = law_type:law_closed_borders
-#             }
-#         }
-#         activate_law = law_type:law_closed_borders
 #     }
 # }
 
@@ -707,4 +637,13 @@
 # 		}
 # 	}
 # 	ROOT = { transfer_subject = c:WAL }
+# }
+
+# ruler = {
+#     if = {
+#     	limit = {
+#     		has_trait = romantic
+#     	}
+#     	remove_trait = romantic
+#     }
 # }
