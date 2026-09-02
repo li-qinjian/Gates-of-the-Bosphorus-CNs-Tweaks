@@ -74,7 +74,7 @@ build_basic_farm = {
 disband_all_basic_companies = {
 	is_shown = {
 		is_player = yes
-		year < 1845
+		year < 1850
 	}
 
 	possible = {
@@ -107,7 +107,7 @@ disband_all_basic_companies = {
 							is_company_type = company_type:company_basic_fabrics
 							is_company_type = company_type:company_basic_textiles
 							is_company_type = company_type:company_basic_weapons
-							#is_company_type = company_type:company_mantero_seta
+							is_company_type = company_type:company_basic_home_goods
 						}
 					}
 					owner ?= {

@@ -3,11 +3,6 @@
 		is_player = yes
 		exists = c:HOL
 		exists = c:SCH
-		c:PRU = {
-			has_technology_researched = nationalism
-			is_unification_candidate = GER
-			is_diplomatic_play_committed_participant = no
-		}
 	}
 
 	possible = {
@@ -31,6 +26,11 @@
 					}
 				}
 			}
+		}
+		c:PRU = {
+			has_technology_researched = nationalism
+			is_unification_candidate = GER
+			is_diplomatic_play_committed_participant = no
 		}
 		c:AUS = {
 			has_technology_researched = nationalism
