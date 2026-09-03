@@ -24,10 +24,6 @@
  build_basic_farm: "建设基础农场"
  build_basic_farm_desc: "建设基础农场，以缓解饥荒。"
 
- # 太平天国恢复中华决议
-#  tpg_restore_china: "恢复中华"
-#  tpg_restore_china_desc: "太平天国已经推翻了满清的统治，现在是时候建立以天京（南京）为都城的新王朝，恢复汉人的荣光，重建中华正统。"
-
  disband_all_basic_companies: "解散所有通用公司"
  disband_all_basic_companies_desc: "解散所有通用公司。"
 
@@ -84,3 +80,5 @@
  beiyang_rule_desc: "北洋军阀掌握政权的时期，标志着中国进入军阀混战的时代。"
  chuangguan-dong: "闯关东"
  chuangguan-dong_desc: "清朝末期，汉人向东北地区大规模迁移的历史事件，标志着中国社会结构和人口分布的重大变化。"
+ tpg_restore_china: "恢复中华"
+ tpg_restore_china_desc: "太平天国已经推翻了满清的统治，现在是时候建立以天京（南京）为都城的新王朝，恢复汉人的荣光，重建中华正统。"

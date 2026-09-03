@@ -323,3 +323,65 @@ beiyang_rule = {
 	}
 }
 
+tpg_restore_china = {
+	is_shown = {
+		c:TPG ?= THIS
+		NOT = { exists = c:CHI }
+	}
+
+	possible = {
+		is_diplomatic_play_committed_participant = no
+	}
+
+	when_taken = {
+		c:TPG ?= {
+			if = {
+				limit = {
+					any_scope_state = {
+						state_region = s:STATE_NANJING
+					}
+				}
+				set_capital = STATE_NANJING
+
+				s:STATE_NANJING = {
+					random_scope_state = {
+						set_hub_name = {
+							type = city
+							name = HUB_NAME_STATE_NANJING_city_heavenly_capital
+						}
+					}
+				}
+			}
+		} 
+
+		c:TPG ?= {
+			if = {
+				limit = {
+					NOT = {
+						has_law = law_type:law_canton_system
+					}
+				}
+				activate_law = law_type:law_canton_system
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = { exists = c:CHI }
+			}
+			change_tag = CHI
+		}
+		
+		c:CHI ?= {
+			set_variable = {
+				name = china_warlord_explosion
+				value = 0
+			}
+			add_journal_entry = { type = je_warlord_china }
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}
