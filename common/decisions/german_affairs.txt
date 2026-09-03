@@ -229,11 +229,14 @@ restore_austria_empire = {
 	is_shown = {
 		is_player = yes
 		exists = c:AUS
+		c:AUS = {
+			country_rank < rank_value:minor_power
+		}
 	}
 
 	possible = {
 		c:AUS = {
-			is_subject = no
+			country_rank < rank_value:minor_power
 		}
 	}
 
@@ -306,37 +309,37 @@ restore_austria_empire = {
 			# }
 		}
 
-		c:AUS ?= {
-			if = {
-				limit = {
-					country_rank >= rank_value:great_power
-				}
-			}
-			create_power_bloc = {
-				name = METTERNICH_SYSTEM
+		# c:AUS ?= {
+		# 	if = {
+		# 		limit = {
+		# 			country_rank >= rank_value:great_power
+		# 		}
+		# 	}
+		# 	create_power_bloc = {
+		# 		name = METTERNICH_SYSTEM
 
-				map_color = { 219 211 157 }
+		# 		map_color = { 219 211 157 }
 
-				founding_date = 1815.6.9 # Final agreement of the 1814 Congress of Vienna
-				identity = identity_ideological_union
-				principle = principle_creative_legislature_1
+		# 		founding_date = 1815.6.9 # Final agreement of the 1814 Congress of Vienna
+		# 		identity = identity_ideological_union
+		# 		principle = principle_creative_legislature_1
 
 
-				# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
-				# member = c:MOD
-				# member = c:TUS
-				# member = c:PAR
-				# member = c:SIC
-			}
-			if = {
-				limit = {
-					has_dlc_feature = power_bloc_features
-				}
-				power_bloc = {
-					add_principle = principle_defensive_cooperation_1
-				}
-			}
-		}
+		# 		# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
+		# 		# member = c:MOD
+		# 		# member = c:TUS
+		# 		# member = c:PAR
+		# 		# member = c:SIC
+		# 	}
+		# 	if = {
+		# 		limit = {
+		# 			has_dlc_feature = power_bloc_features
+		# 		}
+		# 		power_bloc = {
+		# 			add_principle = principle_defensive_cooperation_1
+		# 		}
+		# 	}
+		# }
 	}
 
 	ai_chance = {

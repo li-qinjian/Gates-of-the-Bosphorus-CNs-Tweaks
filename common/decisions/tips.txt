@@ -144,11 +144,6 @@
 #     }
 # }
 
-# add_culture_acceptance_modifier = {
-# 	culture = cu:han
-# 	multiplier = 40
-# }
-
 # c:LAN ?= {
 # 	#add_modifier = { name = colonial_administration }
 # 	add_culture_acceptance_modifier = {
@@ -186,7 +181,6 @@
 # 	}
 # }
 
-#add_banned_goods = g:opium
 # c:ZUL ?= {
 # 	make_independent = yes
 # 	create_bidirectional_truce = { country = c:GBR months = 60 }
@@ -245,14 +239,6 @@
 # 	remove_homeland = cu:turkish
 # }
 
-# c:PON ?= {
-# 	make_independent = yes
-# 	create_bidirectional_truce = { country = c:GRE months = 60 }
-# }
-
-
-
-
 #c:GRE = {
 #	create_diplomatic_play = {
 #		target_state = s:STATE_CRETE.region_state:EGY
@@ -262,24 +248,6 @@
 #		add_initiator_backers = { c:GBR }
 #	}
 #}
-# c:PRU = {
-# 	if = {
-# 		limit = { 
-# 			country_rank >= rank_value:great_power
-# 			NOT = { has_journal_entry = je_north_german_unification } 
-# 		}
-# 		add_journal_entry = {
-# 			type = je_north_german_unification
-# 		}
-# 	}
-# }
-# c:HAW = {
-# 	add_culture_acceptance_modifier = {
-# 		culture = cu:han
-# 		multiplier = 20
-# 	}
-# }
-
 
 # tpg_restore_china = {
 # 	is_shown = {
@@ -672,4 +640,12 @@
 # 		add_claim = ROOT
 # 	}
 # }
+
+# c:AUS = {
+# 	add_culture_acceptance_modifier = {
+# 		culture = cu:czech
+# 		multiplier = 40
+# 	}
+# }
+
 # change_infamy = -5

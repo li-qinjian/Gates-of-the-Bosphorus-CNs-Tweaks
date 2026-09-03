@@ -5,6 +5,7 @@ dei_annex_split_puppet = {
 		is_diplomatic_play_committed_participant = no
 		c:DEI ?= {
 			any_subject_or_below = {
+				num_states <= 1
 				count > 0
 			}
 		}
@@ -46,14 +47,15 @@ dei_annex_split_puppet = {
 				}
 				save_scope_as = dei_annexation_target
 			}
-			if = {
-				limit = { exists = scope:dei_annexation_target }
-				create_diplomatic_play = {
-					name = annex_subject
-					target_country = scope:dei_annexation_target
-					type = dp_annex_subject
-				}
-			}
+			annex = scope:dei_annexation_target
+			# if = {
+			# 	limit = { exists = scope:dei_annexation_target }
+			# 	create_diplomatic_play = {
+			# 		name = annex_subject
+			# 		target_country = scope:dei_annexation_target
+			# 		type = dp_annex_subject
+			# 	}
+			# }
 		}
 	}
 
@@ -95,14 +97,15 @@ tur_annex_kurdish_tribes = {
 				}
 				save_scope_as = turkey_annexation_target
 			}
-			if = {
-				limit = { exists = scope:turkey_annexation_target }
-				create_diplomatic_play = {
-					name = annex_subject
-					target_country = scope:turkey_annexation_target
-					type = dp_annex_subject
-				}
-			}
+			annex = scope:turkey_annexation_target
+			# if = {
+			# 	limit = { exists = scope:turkey_annexation_target }
+			# 	create_diplomatic_play = {
+			# 		name = annex_subject
+			# 		target_country = scope:turkey_annexation_target
+			# 		type = dp_annex_subject
+			# 	}
+			# }
 		}
 	}
 
@@ -142,14 +145,15 @@ per_annex_kurdish_tribes = {
 				}
 				save_scope_as = persia_annexation_target
 			}
-			if = {
-				limit = { exists = scope:persia_annexation_target }
-				create_diplomatic_play = {
-					name = annex_subject
-					target_country = scope:persia_annexation_target
-					type = dp_annex_subject
-				}
-			}
+			annex = scope:persia_annexation_target
+			# if = {
+			# 	limit = { exists = scope:persia_annexation_target }
+			# 	create_diplomatic_play = {
+			# 		name = annex_subject
+			# 		target_country = scope:persia_annexation_target
+			# 		type = dp_annex_subject
+			# 	}
+			# }
 		}
 	}
 

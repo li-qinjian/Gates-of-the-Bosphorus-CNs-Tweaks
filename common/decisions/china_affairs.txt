@@ -99,45 +99,7 @@ hk_treatyport = {
 	}
 }
 
-lanfang_war = {
-	is_shown = {
-		is_player = yes
-		NOT = { c:LAN = THIS }
-		exists = c:STG
-	}
-
-	possible = {
-		exists = c:STG
-	}
-
-	when_taken = {
-		# Create a diplomatic play for c:LAN
-		if = {
-			limit = {
-				c:LAN ?= {
-					is_diplomatic_play_committed_participant = no
-				}
-				exists = c:STG
-			}
-			c:LAN ?= {
-				create_diplomatic_play = {
-					target_state = s:STATE_WEST_BORNEO.region_state:STG
-					name = conquer_state
-					type = dp_conquer_state
-
-					add_initiator_backers = { c:BRU }
-				}
-				#create_bidirectional_truce = { country = c:DEI months = 12 }
-			}
-		}
-	}
-
-	ai_chance = {
-		value = 0
-	}
-}
-
-lang_liberty_desire = {
+lanfang_issue = {
 	is_shown = {
 		is_player = yes
 		NOT = { c:LAN = THIS }
@@ -156,6 +118,16 @@ lang_liberty_desire = {
 	}
 
 	when_taken = {
+		# Annex STG
+		if = {
+			limit = {
+				exists = c:STG
+			}
+			c:LAN ?= {
+				annex = c:STG
+			}
+		}
+		# Add liberty desire to c:LAN
 		c:LAN ?= {
 			add_liberty_desire = 45
 		}
@@ -227,35 +199,44 @@ lang_liberty_desire = {
 # 	}
 # }
 
-manchu_rule = {
+chuangguan-dong = {
 	is_shown = {
 		is_player = yes
-		#is_diplomatic_play_committed_participant = no
 		c:CHI ?= { 
 			NOT = { country_has_primary_culture = cu:han } 
 		}
 	}
 
 	possible = {
-		is_player = yes
-		#is_diplomatic_play_committed_participant = no
+		c:CHI ?= { 
+			is_diplomatic_play_committed_participant = no
+		}
 	}
 
 	when_taken = {
-		#play_as = c:CHI
 		c:CHI ?= {
 			add_primary_culture = cu:han
-			every_scope_pop = {
+			# Change the culture of Manchu peasants and laborers in incorporated states that are Manchu homeland but not Han homeland to Han culture
+			every_scope_state = {
 				limit = {
-					culture = cu:manchu
-					OR = {
-						is_pop_type = peasants
-						is_pop_type = laborers
+					is_incorporated = yes
+					state_region = {
+						is_homeland = cu:manchu
+						NOT = { is_homeland = cu:han }
 					}
 				}
-				change_pop_culture = {
-					target = cu:han
-					value = 0.5
+				every_scope_pop = {
+					limit = {
+						culture = cu:manchu
+						OR = {
+							is_pop_type = peasants
+							is_pop_type = laborers
+						}
+					}
+					change_pop_culture = {
+						target = cu:han
+						value = 0.75
+					}
 				}
 			}
 		}
