@@ -238,6 +238,7 @@ chuangguan-dong = {
 						value = 0.75
 					}
 				}
+				add_homeland = cu:han
 			}
 		}
 	}
