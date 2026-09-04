@@ -1,26 +1,19 @@
 ﻿
-decree_romanisation = {
-	texture = "gfx/interface/icons/decree/decree_promote_national_values.dds"		
+REPLACE:decree_promote_national_values = {
+	texture = "gfx/interface/icons/decree/decree_promote_national_values.dds"
 	unlocking_technologies = {
-		pan-nationalism
+		nationalism
+	}
+
+	country_trigger = {
+		NOT = { has_law_or_variant = law_type:law_guaranteed_liberties }
 	}
 
 	state_trigger = { 
 		is_incorporated = yes
-		owner = { NOT = { has_law_or_variant = law_type:law_guaranteed_liberties } }
-		owner = {
-			country_has_primary_culture = cu:rhomaios
-		}
 	}
-	
+
 	modifier = {
-		# state_allow_assimilation_in_homeland_bool = yes
-		# state_assimilation_mult = 2.0
-		# state_conversion_mult = 2.0
-		# state_mortality_mult = 0.1
-		# state_radicalism_increases_violent_hostility_mult = 0.6
-		# state_radicalism_increases_cultural_erasure_mult = 0.5
-		# state_radicalism_increases_open_prejudice_mult = 0.4
 		state_assimilation_mult = 0.5
 		state_conversion_mult = 0.5
 		state_allow_assimilation_in_homeland_bool = yes
@@ -30,8 +23,258 @@ decree_romanisation = {
 		state_radicalism_increases_cultural_erasure_mult = 0.4
 		state_radicalism_increases_open_prejudice_mult = 0.3
 	}
-
 	cost = 100
-	
-	ai_will_do = { always = no }
+
+	ai_weight = {
+		value = 0
+
+		if = {
+			limit = {
+				scope:country = {
+					NOR = {
+						has_law_or_variant = law_type:law_multicultural
+						has_law_or_variant = law_type:law_subjecthood
+					}
+				}
+				primary_cultures_percent_state <= 0.9
+			}
+
+			if = { # Colonies
+				limit = {
+					scope:country = {
+						is_not_in_geographic_region = geographic_region_europe
+						any_primary_culture = {
+							has_discrimination_trait_group = heritage_group_european
+						}
+						NOR = {
+							has_government_type = gov_chartered_company
+							c:BIC ?= this
+							c:DEI ?= this
+						}
+					}
+				}
+				add = 300
+			}
+			else_if = {
+				limit = {
+					scope:country = {
+						OR = {
+							has_strategy = ai_strategy_reactionary_agenda
+							has_strategy = ai_strategy_conservative_agenda
+						}
+					}
+				}
+				add = 100
+			}
+			else_if = {
+				limit = {
+					scope:country = {
+						has_strategy = ai_strategy_nationalist_agenda
+					}
+				}
+				add = 200
+			}
+
+
+			if = {
+				limit = {
+					primary_cultures_percent_state <= 0.1
+				}
+				multiply = 5.0
+			}
+			else_if = {
+				limit = {
+					primary_cultures_percent_state <= 0.3
+				}
+				multiply = 3.0
+			}
+			else_if = {
+				limit = {
+					primary_cultures_percent_state <= 0.5
+				}
+				multiply = 2.0
+			}
+
+			if = {
+				limit = {
+					is_homeland_of_country_cultures = scope:country
+				}
+				multiply = 5.0
+			}
+		}
+
+		if = {
+			limit = {
+				OR = {
+					NOT = { scope:country = { has_law_or_variant = law_type:law_total_separation } }
+					AND = {
+						scope:country = { is_not_in_geographic_region = geographic_region_africa }
+						is_in_geographic_region = geographic_region_africa
+					}
+				}
+				religion_percent_state = {
+					target = scope:country.religion
+					value <= 0.9
+				}
+			}
+
+			if = {
+				limit = {
+					scope:country = {
+						has_strategy = ai_strategy_conservative_agenda
+					}
+				}
+				add = 50
+			}
+			else_if = {
+				limit = {
+					scope:country = {
+						has_strategy = ai_strategy_reactionary_agenda
+					}
+				}
+				add = 100
+			}
+
+			if = {
+				limit = {
+					scope:country = {
+						OR = {
+							has_law_or_variant = law_type:law_state_religion
+							has_law_or_variant = law_type:law_state_atheism
+						}
+					}
+				}
+				add = 50
+			}
+
+			if = {
+				limit = {
+					religion_percent_state = {
+						target = scope:country.religion
+						value <= 0.1
+					}
+				}
+				multiply = 5.0
+			}
+			else_if = {
+				limit = {
+					religion_percent_state = {
+						target = scope:country.religion
+						value <= 0.3
+					}
+				}
+				multiply = 3.0
+			}
+			else_if = {
+				limit = {
+					religion_percent_state = {
+						target = scope:country.religion
+						value <= 0.5
+					}
+				}
+				multiply = 2.0
+			}
+		}
+
+		if = {
+			limit = {
+				state_population < 100000
+			}
+			multiply = 0
+		}
+		else_if = {
+			limit = {
+				state_population > 300000
+			}
+			multiply = 2.0
+		}
+		else_if = {
+			limit = {
+				scope:country = {
+					OR = {
+						has_law = law_type:law_cultural_exclusion
+						has_law = law_type:law_freedom_of_conscience
+					}
+				}
+			}
+			multiply = 0.5
+		}
+		else_if = {
+			limit = {
+				scope:country = {
+					OR = {
+						has_law = law_type:law_multicultural
+						has_law = law_type:law_total_separation
+					}
+				}
+			}
+			multiply = 0.1
+		}
+
+		if = { # Deliberately placed here since we want the AI to ignore laws for this
+			limit = {
+				scope:country = {
+					has_journal_entry = je_south_american_national_identity
+				}
+			}
+			add = 500
+		}
+		if = {
+			limit = {
+				scope:country = {
+					has_journal_entry = je_vernacular_policy
+					has_variable = chose_assimilation_var
+				}
+				is_homeland_of_country_cultures = scope:country
+			}
+			add = 1000
+		}
+		if = {
+			limit = {
+				scope:country = {
+					has_journal_entry = je_colonize_korea
+				}
+				is_in_geographic_region = geographic_region_korea
+			}
+			add = 500
+		}
+
+		# For Japanese religion Journal Entry
+		# If Shinbutsu Bunri is active and the Taikyo Proclamation has been made
+		# Only pursue this aggressively with a pious ruler or Devout in government
+		if = {
+			limit = {
+				scope:country = {
+					has_journal_entry = je_shinbutsu_bunri
+					country_has_state_religion = rel:shinto
+					OR = {
+						has_ruling_interest_group = ig_devout
+						ruler = { has_ideology = ideology:ideology_pious }
+					}
+				}
+			}
+			add = 500
+		}
+
+		if = {
+			limit = {
+				primary_cultures_percent_state > 0.9
+				religion_percent_state = {
+					target = scope:country.religion
+					value > 0.9
+				}
+			}
+			multiply = 0
+		}
+		else_if = {
+			limit = {
+				primary_cultures_percent_state > 0.5
+				religion_percent_state = {
+					target = scope:country.religion
+					value > 0.5
+				}
+			}
+			multiply = 0.5
+		}
+	}
 }
