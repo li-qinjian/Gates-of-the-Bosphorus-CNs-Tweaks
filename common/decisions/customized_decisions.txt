@@ -74,7 +74,7 @@ build_basic_farm = {
 disband_all_basic_companies = {
 	is_shown = {
 		is_player = yes
-		year < 1850
+		year < 1840
 	}
 
 	possible = {
