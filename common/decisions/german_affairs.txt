@@ -91,6 +91,7 @@ control_baden = {
 		exists = c:NGF
 		c:BAD ?= {
 			is_subject = no
+			is_in_power_bloc = no
 		}
 	}
 
@@ -129,6 +130,7 @@ control_bavaria = {
 		exists = c:NGF
 		c:BAV ?= {
 			is_subject = no
+			is_in_power_bloc = no
 		}
 	}
 
@@ -163,8 +165,10 @@ control_bavaria = {
 prussia_military_reform = {
 	is_shown = {
 		is_player = yes
-		exists = c:PRU
-		exists = c:NGF	
+		OR = {
+			exists = c:PRU
+			exists = c:NGF	
+		}
 	}
 
 	possible = {
@@ -175,7 +179,7 @@ prussia_military_reform = {
 				is_at_war = yes
 			}
 			c:NGF = {
-				has_technology_researched = pan-nationalism
+				has_technology_researched = nationalism
 				is_unification_candidate = GER
 				is_at_war = yes
 			}
@@ -210,7 +214,6 @@ prussia_military_reform = {
 				}
 			}
 		}
-
 		# c:GER ?= {
 		# 	create_bidirectional_truce = { country = c:AUS months = 60 }
 		# 	set_mutual_secret_goal = {

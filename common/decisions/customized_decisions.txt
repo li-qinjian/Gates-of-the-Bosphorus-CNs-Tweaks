@@ -1,14 +1,14 @@
 ﻿play_as_random_tag = {
 	is_shown = {
 		is_player = yes
-		any_subject_or_below = {
-			count > 0
-		}
+		# any_subject_or_below = {
+		# 	count > 0
+		# }
 	}
 
 	possible = {
 		is_player = yes
-		is_diplomatic_play_committed_participant = no
+		#is_diplomatic_play_committed_participant = no
 	}
 
 	when_taken = {

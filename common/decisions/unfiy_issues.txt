@@ -226,6 +226,7 @@ unify_kenya = {
 	is_shown = {
 		is_player = yes
 		exists = c:MJT
+		year > 1860
 	}
 
     possible = {

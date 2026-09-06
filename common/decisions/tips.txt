@@ -320,25 +320,25 @@
 # }
 
 
-# play_as_hellas = {
-# 	is_shown = {
-# 		is_player = yes
-# 		NOT = { c:GRE = THIS }
-# 	}
+play_as_hellas = {
+	is_shown = {
+		is_player = yes
+		NOT = { c:GRE = THIS }
+	}
 
-# 	possible = {
-# 		is_player = yes
-# 		NOT = { c:GRE = THIS }
-# 	}
+	possible = {
+		is_player = yes
+		NOT = { c:GRE = THIS }
+	}
 
-# 	when_taken = {
-# 		play_as = c:GRE
-# 	}
+	when_taken = {
+		play_as = c:GRE
+	}
 
-# 	ai_chance = {
-# 		value = 0
-# 	}
-# }
+	ai_chance = {
+		value = 0
+	}
+}
 
 # remove_claims_outside_rumelia_anatolia = {
 # 	is_shown = {
@@ -572,3 +572,22 @@
 # }
 
 # change_infamy = -5
+
+# c:TUR = {
+# 	annex = c:GRE_SAM
+# }
+# c:PRU = {
+# 	annex = c:HOL
+# 	add_modifier = {
+# 		name = schleswig_holstein_question_solver
+# 		days = long_modifier_time
+# 	}
+# }
+
+# random_country = {
+# 	limit = {
+# 		owns_entire_state_region = STATE_EAST_SWITZERLAND
+# 	}
+# 	save_scope_as = target_country
+# 	c:SWI = { annex = scope:target_country }
+# }
