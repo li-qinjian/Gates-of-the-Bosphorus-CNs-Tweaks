@@ -17,7 +17,7 @@
  turkfm_sick_man.007.a: "我们必须联合才能生存于世。"
  turkfm_sick_man.007.b: "[ROOT.GetCountry.GetName]将塑造自己的命运。"
  turkfm_sick_man.008.t: "欧洲卒夫"
- turkfm_sick_man.008.d: ""
+ turkfm_sick_man.008.d: "[SCOPE.sCountry('ottoman_scope').GetName]未能实现现代化，也未能重新在世界舞台上确立自身地位。秃鹫开始盘旋，帝国的末日日渐临近。我们的臣民也试图趁乱脱离苏丹的掌控。"
  turkfm_sick_man.008.f: "$turkfm_sublime_porte$陷入了沉寂。几天来，[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]闭门不出。对边境传来的噩耗毫不在意，现在病夫已死，不会再有复兴。"
  turkfm_sick_man.008.a: "我们确是真主所有的，我们必定只归依他。"
  turkfm_sick_man.009.t: "欧洲健夫"

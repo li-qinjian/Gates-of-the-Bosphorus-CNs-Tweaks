@@ -196,3 +196,8 @@
  grefm_dialect_rhomaiika: "#bold #green 罗马#!#!"
  grefm_value_from_greek_homelands: "拥有[GetCulture('greek').GetName][concept_homeland]$gbbf_states$"
  grefm_value_from_rhomaios_homelands: "拥有[GetCulture('rhomaios').GetName][concept_homeland]$gbbf_states$"
+ notification_grefm_steady_progress_tooltip: "#header $notification_grefm_steady_progress_name$#!$gbbf_linebreak_normal$$notification_grefm_steady_progress_desc$"
+ notification_grefm_minor_collapse_tooltip: "#header $notification_grefm_minor_collapse_name$#!$gbbf_linebreak_normal$$notification_grefm_minor_collapse_desc$"
+ notification_grefm_major_collapse_tooltip: "#header $notification_grefm_major_collapse_name$#!$gbbf_linebreak_normal$$notification_grefm_major_collapse_desc$"
+ notification_grefm_popular_interest_tooltip: "#header $notification_grefm_popular_interest_name$#!$gbbf_linebreak_normal$$notification_grefm_popular_interest_desc$"
+ notification_grefm_palace_discovered_tooltip: "#header $notification_grefm_palace_discovered_name$#!$gbbf_linebreak_normal$$notification_grefm_palace_discovered_desc$"

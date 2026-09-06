@@ -1,5 +1,5 @@
 ﻿l_simp_chinese:
- balkfm_peles_castle_decision: "建造派勒斯城堡"
+ balkfm_peles_castle_decision: "建造佩莱什城堡"
  balkfm_peles_castle_decision_desc: "罗马尼亚终于建立了公国联盟。国王提议建造一座皇家庄园，来提升这个年轻国家的合法性和威望。"
  balkfm_friend_with_all_great_powers_tt: "[SCOPE.GetRootScope.GetCountry.GetName]与在该区域拥有[concept_interest]的所有[concept_great_power]有#bold 正面#!关系。"
  balkfm_weaksauce_tt: "#red 这将放弃复兴拜占庭#!！"
@@ -142,3 +142,4 @@
  balkfm_trs_provoke_name: "在特兰西瓦尼亚挑起叛乱"
  balkfm_trs_provoke_desc: "特兰西瓦尼亚的[GetCulture('romanian').GetName]分离主义者已策划好一场旨在反抗奥地利统治的起义。如今，只待我们在后勤与物资方面予以支援。"
  balkfm_proclaim_triune_name: "宣告三一王国"
+ notification_grefm_megali_idea_bulgaria_tooltip: "#header $notification_grefm_megali_idea_bulgaria_name$#!$gbbf_linebreak_normal$$notification_grefm_megali_idea_bulgaria_desc$"

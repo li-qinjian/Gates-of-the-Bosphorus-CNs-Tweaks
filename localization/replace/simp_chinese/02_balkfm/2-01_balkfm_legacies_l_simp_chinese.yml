@@ -100,3 +100,4 @@
  balkfm_add_state_reform_agenda: "$balkfm_state_reform_agenda$将被添加至#bold $je_balkfm_legacies$#![concept_journal_entry]中"
  balkfm_add_economic_reform_agenda: "$balkfm_economic_reform_agenda$将被添加至#bold $je_balkfm_legacies$#![concept_journal_entry]中"
  balkfm_add_social_reform_agenda: "$balkfm_social_reform_agenda$将被添加至#bold $je_balkfm_legacies$#![concept_journal_entry]中"
+ notification_balkfm_security_reform_invalid_tooltip: "#header $notification_balkfm_security_reform_invalid_name$#!$gbbf_linebreak_normal$$notification_balkfm_security_reform_invalid_desc$"

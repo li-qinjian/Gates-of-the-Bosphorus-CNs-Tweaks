@@ -18,3 +18,5 @@
  gov_walaya: "省督国"
  gov_walaya_desc: "这是一种权力集中在[Concept('concept_ruler','$RULER_TITLE_WALI$')]手中的[concept_government_type]。\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  RULER_TITLE_WALI: "省督"
+ gov_byzantine_empire_desc: "这种[concept_government_type]下，权力属于[Concept('concept_ruler','$RULER_TITLE_BASILEUS$')]\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+ gov_byzantine_empire_autocratic_desc: "这种[concept_government_type]下，全部权力属于[Concept('concept_ruler','$RULER_TITLE_BASILEUS$')]\n\n$TRANSFER_OF_POWER_NAME_DESC$"

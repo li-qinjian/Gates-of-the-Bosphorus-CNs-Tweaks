@@ -17,7 +17,7 @@
  grefm_greek_nationalism.003.b: "[SCOPE.sState('attica_scope').GetCityHubName]符合我们的需要。"
  grefm_greek_nationalism.006.t: "语言问题"
  grefm_greek_nationalism.006.d: "自独立以来，[SCOPE.gsInterestGroup('ig_intelligentsia_scope').GetName]一直在推动采用一种名为$grefm_dialect_katharevousa$的希腊语。不过人们还是继续使用$grefm_dialect_demotic$，而每个地区都有自己的希腊地方方言。同时，[SCOPE.gsInterestGroup('ig_devout_scope').GetName]继续使用可追溯到希腊化时期的$grefm_dialect_khoine$。"
- grefm_greek_nationalism.006.f: "历史注释：在1976年之前，希腊语中哪一种方言应该被提升为官方语言一直是备受争论的话题。希腊语存在几千年，直到塞尔柱土耳其人的到来，他们在希腊各族群之间划出了物理分界线，导致许多方言分化到几乎无法相互理解的地步。"
+ grefm_greek_nationalism.006.f: "历史注释：在1976年之前，希腊语中哪一种方言应该被提升为官方语言一直是备受争论的话题。希腊语存在几千年，直到塞尔柱突厥人的到来，他们在希腊各族群之间划出了物理分界线，导致许多方言分化到几乎无法相互理解的地步。"
  grefm_greek_nationalism.006.a: "我们的语言将把我们联系在一起。"
  grefm_greek_nationalism.006.tt1: "支持$grefm_dialect_demotic$或$grefm_dialect_katharevousa$将增加我们的#bold 希腊化#!倾向。"
  grefm_greek_nationalism.006.tt2: "支持$grefm_dialect_khoine$或$grefm_dialect_rhomaiika$将增加我们的#bold 罗马化#!倾向。"

@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
  je_turkfm_sick_man_main: "欧洲病夫"
- je_turkfm_sick_man_main_reason: "受希腊和塞尔维亚革命以及埃及叛乱的冲击，让[ROOT.GetCountry.GetName]逐步衰败，$turkfm_sublime_porte$的权威开始受人质疑，《亚得里亚堡条约》和《屈塔希亚公约》让帝国饱受羞辱，哪怕[ROOT.GetCountry.GetCapital.GetCityHubName]的政府正竭力抵御列强的侵袭，但许多人还是预测帝国即将解体，此外#o #tooltip:[GetRawTextTooltipTag('eqfm_balkan_cultures_desc_tt')] 巴尔干附属国#!#!也在虎视眈眈地寻求脱离帝国的机会。"
+ je_turkfm_sick_man_main_reason: "受希腊和塞尔维亚革命以及埃及叛乱的冲击，让[ROOT.GetCountry.GetName]逐步衰败，$turkfm_sublime_porte$的权威开始受人质疑，《亚得里亚堡条约》和《屈塔希亚公约》让帝国饱受羞辱，哪怕[ROOT.GetCountry.GetCapital.GetCityHubName]的政府正竭力抵御列强的侵袭，但许多人还是预测帝国即将解体，此外，$eqfm_rumelian_subjects$也在虎视眈眈地寻求脱离帝国的机会。"
  je_turkfm_sick_man_crete: "病夫：收复克里特"
  je_turkfm_sick_man_crete_reason: "自希腊独立战争爆发以来，克里特岛一直被埃及非法占领。穆罕默德·阿里趁苏丹软弱之际，占领了该岛，并拒绝将其归还给我们，我们再也无法忍受这种侮辱。"
  je_turkfm_sick_man_caucasus: "病夫：征服高加索"

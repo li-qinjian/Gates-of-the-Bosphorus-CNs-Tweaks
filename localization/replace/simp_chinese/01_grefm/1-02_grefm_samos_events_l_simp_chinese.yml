@@ -20,7 +20,7 @@
  grefm_samos.005.f: "萨摩斯人民不甘心继续受压迫，他们把这个暴君赶出了岛屿。"
  grefm_samos.005.a: "让这位苏丹的下一任仆人来试试吧。"
  grefm_samos.006.t: "任命新总督"
- grefm_samos.006.d: "在奥斯曼帝国宫廷无休止的政治变动中，[ROOT.GetCountry.GetRuler.GetFullName]已被#bold 高门#!召回！随着他的离开，一名译员前来报告，[SCOPE.sCharacter('samos_next_ruler_scope').GetFullName]已被任命为[ROOT.GetCountry.GetName]的新总督。"
+ grefm_samos.006.d: "在奥斯曼帝国宫廷无休止的政治变动中，[ROOT.GetCountry.GetRuler.GetFullName]已被#bold 高门#!召回！随着他的离开，一名通译官前来报告，[SCOPE.sCharacter('samos_next_ruler_scope').GetFullName]已被任命为[ROOT.GetCountry.GetName]的新总督。"
  grefm_samos.006.f: "根据其对萨摩斯的条约权利，#bold 高门#!已经提名了群岛的下一任统治者，人民没有任何发言权。"
  grefm_samos.006.a: "他只是苏丹的另一个仆人。"
  grefm_samos.007.t: "领主[ROOT.GetCountry.GetRuler.GetFirstName]被废黜"

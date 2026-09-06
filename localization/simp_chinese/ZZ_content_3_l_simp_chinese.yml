@@ -15,8 +15,8 @@
  verrier.1013.h: "我们不需要外国人的帮助！"
 
  # 切换TAG
-#  play_as_hellas: "扮演希腊"
-#  play_as_hellas_desc: "扮演希腊。"
+ play_as_hellas: "扮演希腊"
+ play_as_hellas_desc: "扮演希腊。"
 
  play_as_random_tag: "扮演某随机国家"
  play_as_random_tag_desc: "扮演某随机国家。"

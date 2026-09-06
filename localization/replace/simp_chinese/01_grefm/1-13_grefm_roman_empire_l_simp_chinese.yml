@@ -2,7 +2,7 @@
  je_group_grefm_roman_empire: "紫凤凰"
  je_grefm_purple_pheonix: "紫凤凰"
  je_grefm_purple_pheonix_reason: "[GetCulture('rhomaios').GetName]领地曾经横跨巴尔干和安纳托利亚。随着[ROOT.GetCountry.GetName]的重生，我们将再次确保对这些土地的统治。"
- je_grefm_purple_pheonix_possible: "[ROOT.GetCountry.GetNameNoFlag]已经建立#bold 拜占庭#!"
+ je_grefm_purple_pheonix_possible: "[ROOT.GetCountry.GetNameNoFlag]成立了#bold 拜占庭#!"
  je_grefm_purple_pheonix_complete_1: "[ROOT.GetCountry.GetNameNoFlag]直接或间接控制巴尔干半岛的10个及以上的地区。"
  je_grefm_purple_pheonix_complete_2: "[ROOT.GetCountry.GetNameNoFlag]直接或间接控制安纳托利亚的9个及以上的地区。"
  je_grefm_rome_of_the_east: "东方的罗马"

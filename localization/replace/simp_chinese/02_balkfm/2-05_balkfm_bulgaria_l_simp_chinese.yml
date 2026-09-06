@@ -77,3 +77,4 @@
  modifier_balkfm_schismatic_efforts: "分裂影响"
  modifier_balkfm_awaiting_union: "等待联盟"
  je_balkfm_bul_stambolovism_reason: "[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle][ROOT.GetCountry.GetRuler.GetFirstName]的加冕仪式未能有效巩固保加利亚人民对君主制的信心。为弥补巴滕贝格亲王被废黜造成的损害，大臣#yellow 斯特凡·斯塔姆博洛夫#!及其支持者提出了一项计划，旨在证明[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]的价值，以免[ROOT.GetCountry.GetName]落入某个$gbbf_great_powers$的直接控制之下。\n\n当前[ROOT.GetCountry.GetRuler.GetPrimaryRoleTitle]拥有#tooltippable;tooltip:[Country.GetTooltipTag],je_balkfm_bul_stambolovism_breakdown [Country.MakeScope.ScriptValue('balkfm_stambolovism_value')|+=]#!#tooltippable;tooltip:[Country.GetTooltipTag],je_balkfm_bul_stambolovism_sources 正统性#!"
+ modifier_balkfm_expelled_metropolitan: "被驱逐的都主教"
