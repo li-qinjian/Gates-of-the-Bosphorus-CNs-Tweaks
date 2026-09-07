@@ -13,7 +13,6 @@ REPLACE:company_basileiades = {
 	}
 
 	extension_building_types = {
-		#building_tooling_workshop
 		building_railway
 	}
 
@@ -46,8 +45,8 @@ REPLACE:company_basileiades = {
 
 	prosperity_modifier = {
 		#country_ship_group_supply_ships_construction_efficiency_add = 0.2
-		state_infrastructure_mult = 0.05
-		state_trade_capacity_mult = 0.15
+		state_infrastructure_mult = 0.1
+		state_trade_capacity_mult = 0.1
 	}
 
 	ai_will_do = {
@@ -268,13 +267,13 @@ REPLACE:company_allatini_mills = {
 	}
 
 	possible_prestige_goods = {
-		prestige_good_generic_grain
+		prestige_good_generic_groceries
 	}
 
 	prestige_goods_trigger = {
 		custom_tooltip = {
-			text = je_prestige_goods_grain_complete_tt
-			has_variable = prestige_good_generic_grain_var
+			text = je_prestige_goods_groceries_complete_tt
+			has_variable = prestige_good_generic_groceries_var
 		}
 	}
 
@@ -306,11 +305,8 @@ REPLACE:company_allatini_mills = {
 	}
 
 	prosperity_modifier = {
-		building_food_industry_throughput_add = 0.1
-		#state_birth_rate_mult = 0.05
-		state_radicalism_increases_violent_hostility_mult = -0.1
-		state_radicalism_increases_cultural_erasure_mult = -0.1
-		state_radicalism_increases_open_prejudice_mult = -0.1
+		#building_food_industry_throughput_add = 0.1
+		state_assimilation_mult = 0.1
 	}
 
 	ai_will_do = {
@@ -738,34 +734,28 @@ REPLACE:company_mantero_seta = {
 }
 
 #BR mod unique E.R.E Companies
-company_br_byz_mineral_mining = {
-	icon = "gfx/interface/icons/company_icons/basic_mineral_mining.dds"
+company_pontus_mineral_metal_mining = {
+	icon = "gfx/interface/icons/company_icons/basic_metal_mining.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
 
 	flavored_company = yes
 
 	preferred_headquarters = { STATE_KASTAMONU }
 
-	replaces_company = company_basic_mineral_mining
+	#replaces_company = company_basic_mineral_mining
 
 	building_types = {
 		building_coal_mine
-		building_explosives_factory
-	}
-
-	extension_building_types = {
 		building_iron_mine
 	}
 
-	possible_prestige_goods = {
-		prestige_good_generic_explosives
+	extension_building_types = {
+		building_lead_mine
+		building_sulfur_mine
 	}
 
 	potential = {
-		OR = {
-			country_has_primary_culture = cu:rhomaios
-			country_has_primary_culture = cu:greek
-		}
+		has_interest_marker_in_region = sr:region_near_east
 	}
 
 	attainable = {
@@ -790,7 +780,6 @@ company_br_byz_mineral_mining = {
 
 	prosperity_modifier = {
 		building_steel_mill_throughput_add = 0.1
-		#state_pollution_reduction_health_mult = 0.05
 	}
 
 	ai_will_do = {
