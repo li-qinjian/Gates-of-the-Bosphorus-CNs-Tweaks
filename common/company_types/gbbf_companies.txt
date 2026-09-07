@@ -259,22 +259,21 @@ REPLACE:company_allatini_mills = {
 
 	building_types = {
 		building_wheat_farm
-		building_rye_farm
 		building_food_industry
 	}
 
 	extension_building_types = {
-		building_chemical_plant
+		building_rye_farm
 	}
 
 	possible_prestige_goods = {
-		prestige_good_generic_grain
+		prestige_good_generic_groceries
 	}
 
 	prestige_goods_trigger = {
 		custom_tooltip = {
-			text = je_prestige_goods_grain_complete_tt
-			has_variable = prestige_good_generic_grain_var
+			text = je_prestige_goods_groceries_complete_tt
+			has_variable = prestige_good_generic_groceries_var
 		}
 	}
 
@@ -735,8 +734,8 @@ REPLACE:company_mantero_seta = {
 }
 
 #BR mod unique E.R.E Companies
-company_br_byz_mineral_mining = {
-	icon = "gfx/interface/icons/company_icons/basic_mineral_mining.dds"
+company_pontus_mineral_metal_mining = {
+	icon = "gfx/interface/icons/company_icons/basic_metal_mining.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
 
 	flavored_company = yes
@@ -747,22 +746,16 @@ company_br_byz_mineral_mining = {
 
 	building_types = {
 		building_coal_mine
-		building_explosives_factory
-	}
-
-	extension_building_types = {
 		building_iron_mine
 	}
 
-	possible_prestige_goods = {
-		prestige_good_generic_explosives
+	extension_building_types = {
+		building_lead_mine
+		building_sulfur_mine
 	}
 
 	potential = {
-		OR = {
-			country_has_primary_culture = cu:rhomaios
-			country_has_primary_culture = cu:greek
-		}
+		has_interest_marker_in_region = sr:region_near_east
 	}
 
 	attainable = {
@@ -786,7 +779,7 @@ company_br_byz_mineral_mining = {
 	}
 
 	prosperity_modifier = {
-		building_coal_mine_throughput_add = 0.1
+		building_steel_mill_throughput_add = 0.1
 	}
 
 	ai_will_do = {
