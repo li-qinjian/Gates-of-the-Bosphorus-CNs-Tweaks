@@ -179,7 +179,7 @@ prussia_military_reform = {
 				is_at_war = yes
 			}
 			c:NGF = {
-				has_technology_researched = nationalism
+				has_technology_researched = pan-nationalism
 				is_unification_candidate = GER
 				is_at_war = yes
 			}

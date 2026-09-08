@@ -5,7 +5,6 @@
  BYZ_ADJ: "东罗马"
  HUB_NAME_STATE_NANJING_city_heavenly_capital: "天京"
  treaty_name_gbr_chinese_agreement: "南京条约"
- company_pontus_mineral_metal_mining: "本都矿冶联合公司"
 
  # 希腊大学
  verrier.1013.t: "奥森大学的第一批学生"
@@ -34,14 +33,14 @@
 #  remove_claims_outside_rumelia_anatolia_desc: "放弃我国在鲁米利亚和安纳托利亚以外所有地区的宣称。"
 
  # 土耳其迁都决议
- turkey_move_capital_to_ankara: "将首都迁至安卡拉"
- turkey_move_capital_to_ankara_desc: "失去色雷斯地区后，首都伊斯坦布尔已经不再安全。奥斯曼土耳其政权不得不将首都迁至腹地安卡拉。"
+#  turkey_move_capital_to_ankara: "将首都迁至安卡拉"
+#  turkey_move_capital_to_ankara_desc: "失去色雷斯地区后，首都伊斯坦布尔已经不再安全。奥斯曼土耳其政权不得不将首都迁至腹地安卡拉。"
 
- annex_poland: "吞并波兰"
- annex_poland_desc: "让奥地利对波兰发起吞并博弈。"
+#  annex_poland: "吞并波兰"
+#  annex_poland_desc: "让奥地利对波兰发起吞并博弈。"
 
- decree_romanisation: "罗马化"
- decree_romanisation_desc: "鼓励采用罗马的语言、习俗和法律，以将该省与帝国统一。"
+#  decree_romanisation: "罗马化"
+#  decree_romanisation_desc: "鼓励采用罗马的语言、习俗和法律，以将该省与帝国统一。"
 
  # German Unification
  prussia_danish_war: "普鲁士-丹麦战争"
