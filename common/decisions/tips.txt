@@ -591,3 +591,12 @@ play_as_hellas = {
 # 	save_scope_as = target_country
 # 	c:SWI = { annex = scope:target_country }
 # }
+
+# ruler = {
+# 	if = {
+# 		limit = {
+# 			has_trait = romantic
+# 		}
+# 		remove_trait = romantic
+# 	}
+# }
