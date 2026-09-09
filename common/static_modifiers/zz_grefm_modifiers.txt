@@ -23,10 +23,10 @@ REPLACE:modifier_prussia_of_the_balkans = {
 }
 
 
-REPLACE:modifier_bul_militarisation_complete = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	unit_army_defense_mult = 0.2
-	unit_army_offense_mult = 0.2
-	state_conscription_rate_mult = 0.1
-	unit_morale_recovery_mult = 0.25
-}
+# REPLACE:modifier_bul_militarisation_complete = {
+# 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+# 	unit_army_defense_mult = 0.2
+# 	unit_army_offense_mult = 0.2
+# 	state_conscription_rate_mult = 0.1
+# 	unit_morale_recovery_mult = 0.25
+# }
