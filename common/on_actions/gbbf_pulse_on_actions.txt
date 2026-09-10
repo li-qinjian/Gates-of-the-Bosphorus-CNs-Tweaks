@@ -188,9 +188,13 @@ balkfm_monthly_pulse = {
 				if = {
 					limit = {
 						is_subject = yes
+						has_technology_researched = pan-nationalism
 						overlord ?= {
 							NOT = {
-								c:YUG ?= this
+								OR = {
+									c:YUG ?= this
+									c:BYZ ?= this
+								}
 							}
 						}
 					}
