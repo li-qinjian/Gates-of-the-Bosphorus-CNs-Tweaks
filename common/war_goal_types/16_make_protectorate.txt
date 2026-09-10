@@ -33,9 +33,11 @@
 		# trigger in addition to some basic validation code-side
 		# scopes: root = holder, creator_country, diplomatic_play, target_country, target_state, stakeholder, target_region, article_options
 		scope:target_country = {
-			#num_states > 1
-			capital = {
-				is_split_state = no
+			OR = {
+				num_states > 1
+				capital = {
+					is_split_state = no
+				}
 			}
 		}
 		can_reach_target_country = yes

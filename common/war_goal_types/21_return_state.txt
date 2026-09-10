@@ -43,7 +43,7 @@
 				}
 			}
 		}
-		is_subject = no
+		NOT = { is_subject_type = subject_type_protectorate }
 	}
 
 	maneuvers = {
