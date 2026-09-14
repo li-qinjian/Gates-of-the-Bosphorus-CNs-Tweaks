@@ -99,7 +99,7 @@ relocate_african_pops_to_capital = {
 	}
 }
 
-relocate_unincorporated_split_primary_pops_to_capital = {
+relocate_primary_pops_to_capital = {
 	is_shown = {
 		is_player = yes
 	}
@@ -110,8 +110,10 @@ relocate_unincorporated_split_primary_pops_to_capital = {
 			is_incorporated = no
 			is_split_state = yes
 			any_scope_pop = {
+				is_pop_type = peasants
+				religion = rel:orthodox
 				culture = {
-					is_primary_culture_of = ROOT
+					has_discrimination_trait_group = heritage_group_european
 				}
 			}
 		}
@@ -126,10 +128,11 @@ relocate_unincorporated_split_primary_pops_to_capital = {
 			}
 			every_scope_pop = {
 				limit = {
-					culture = {
-						is_primary_culture_of = ROOT
-					}
 					is_pop_type = peasants
+					religion = rel:orthodox
+					culture = {
+						has_discrimination_trait_group = heritage_group_european
+					}
 				}
 				move_pop = root.capital
 			}
