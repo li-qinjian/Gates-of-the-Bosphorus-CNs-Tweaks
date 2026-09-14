@@ -23,6 +23,9 @@
  relocate_african_pops_to_capital: "集中非洲族裔人口"
  relocate_african_pops_to_capital_desc: "在我国已经废除奴隶制的前提下，将所有属于非洲文化传承组的人口迁移至首都州。"
 
+ relocate_unincorporated_split_primary_pops_to_capital: "回迁分治未整合区主流人口"
+ relocate_unincorporated_split_primary_pops_to_capital_desc: "将所有位于未整合且处于分治状态的地区中的主流文化人口迁移回首都州。"
+
  # German Unification
  prussia_danish_war: "普鲁士-丹麦战争"
  prussia_danish_war_desc: "普鲁士与丹麦之间的战争，涉及对施莱斯维希-荷尔斯泰因问题的争夺。"

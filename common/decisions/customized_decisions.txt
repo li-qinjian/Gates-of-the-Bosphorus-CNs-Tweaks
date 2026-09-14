@@ -98,3 +98,45 @@ relocate_african_pops_to_capital = {
 		value = 0
 	}
 }
+
+relocate_unincorporated_split_primary_pops_to_capital = {
+	is_shown = {
+		is_player = yes
+	}
+
+	possible = {
+		any_scope_state = {
+			is_capital = no
+			is_incorporated = no
+			is_split_state = yes
+			any_scope_pop = {
+				culture = {
+					is_primary_culture_of = ROOT
+				}
+			}
+		}
+	}
+
+	when_taken = {
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				is_incorporated = no
+				is_split_state = yes
+			}
+			every_scope_pop = {
+				limit = {
+					culture = {
+						is_primary_culture_of = ROOT
+					}
+					is_pop_type = peasants
+				}
+				move_pop = root.capital
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
