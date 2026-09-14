@@ -8,12 +8,24 @@ REPLACE:company_basileiades = {
 	preferred_headquarters = { STATE_ATTICA }
 
 	building_types = {
-		building_motor_industry
-		building_shipyard
+		building_explosives_factory
+		building_munition_plant
 	}
 
 	extension_building_types = {
-		building_railway
+		building_sulfur_mine
+		#building_steel_mill
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_explosives
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_explosives_complete_tt
+			has_variable = prestige_good_generic_explosives_var
+		}
 	}
 
 	potential = {
@@ -29,28 +41,21 @@ REPLACE:company_basileiades = {
 	}
 
 	possible = {
-		has_technology_researched = railways
 		any_scope_state = {
 			state_region = s:STATE_ATTICA
 			is_incorporated = yes
 			any_scope_building = {
-				OR = {
-					is_building_type = building_motor_industry
-					is_building_type = building_shipyard
-				}
+				is_building_type = building_explosives_factory
 				level >= 5
 			}
 		}
 	}
 
 	prosperity_modifier = {
-		#country_ship_group_supply_ships_construction_efficiency_add = 0.2
-		state_infrastructure_mult = 0.1
-		state_trade_capacity_mult = 0.1
+		country_military_goods_cost_mult = -0.1
 	}
 
 	ai_will_do = {
-		has_technology_researched = railways
 		any_scope_state = {
 			state_region = s:STATE_ATTICA
 			is_incorporated = yes
@@ -58,13 +63,7 @@ REPLACE:company_basileiades = {
 	}
 
 	ai_construction_targets = {
-		building_motor_industry = {
-			level = 5
-			state_trigger = {
-				state_region = s:STATE_ATTICA
-			}
-		}
-		building_shipyard = {
+		building_explosives_factory = {
 			level = 5
 			state_trigger = {
 				state_region = s:STATE_ATTICA
@@ -78,85 +77,94 @@ REPLACE:company_basileiades = {
 }
 
 # Achilleas Kouppas Machine Manufacturing A.E.
-# REPLACE:company_kouppas = {
-# 	icon = "gfx/interface/icons/company_icons/historical_company_icons/kouppas.dds"
-# 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+REPLACE:company_kouppas = {
+	icon = "gfx/interface/icons/company_icons/historical_company_icons/kouppas.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
 
-# 	flavored_company = yes
+	flavored_company = yes
 
-# 	preferred_headquarters = { STATE_ATTICA }
+	preferred_headquarters = { STATE_ATTICA }
 
-# 	building_types = {
-# 		building_tooling_workshop
-# 		building_steel_mill
-# 	}
+	building_types = {
+		building_tooling_workshop
+		building_motor_industry
+	}
 
-# 	extension_building_types = {
-# 		building_automotive_industry
-# 	}
+	extension_building_types = {
+		building_steel_mill
+	}
 
-# 	possible_prestige_goods = {
-# 		prestige_good_generic_tools
-# 	}
+	possible_prestige_goods = {
+		prestige_good_generic_tools
+	}
 
-# 	prestige_goods_trigger = {
-# 		custom_tooltip = {
-# 			text = je_prestige_goods_tools_complete_tt
-# 			has_variable = prestige_good_generic_tools_var
-# 		}
-# 	}
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_tools_complete_tt
+			has_variable = prestige_good_generic_tools_var
+		}
+	}
 
-# 	potential = {
-# 		has_interest_marker_in_region = sr:region_balkans
-# 	}
+	potential = {
+		has_interest_marker_in_region = sr:region_balkans
+	}
 
-# 	attainable = {
-# 		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
-# 			any_scope_state = {
-# 				state_region = s:STATE_ATTICA
-# 			}
-# 		}
-# 	}
+	attainable = {
+		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+			any_scope_state = {
+				state_region = s:STATE_ATTICA
+			}
+		}
+	}
 
-# 	possible = {
-# 		has_technology_researched = mechanical_tools
-# 		any_scope_state = {
-# 			state_region = s:STATE_ATTICA
-# 			is_incorporated = yes
-# 			any_scope_building = {
-# 				is_building_type = building_tooling_workshop
-# 				level >= 5
-# 			}
-# 		}
-# 	}
+	possible = {
+		has_technology_researched = mechanical_tools
+		any_scope_state = {
+			state_region = s:STATE_ATTICA
+			is_incorporated = yes
+			any_scope_building = {
+				OR = {
+					is_building_type = building_motor_industry
+					is_building_type = building_tooling_workshop
+				}
+				level >= 5
+			}
+		}
+	}
 
-# 	prosperity_modifier = {
-# 		building_group_bg_manufacturing_throughput_add = 0.05
-# 		# building_railway_throughput_add = 0.1
-# 		# building_steel_mill_throughput_add = 0.05
-# 	}
+	prosperity_modifier = {
+		building_group_bg_manufacturing_throughput_add = 0.05
+		# building_railway_throughput_add = 0.1
+		# building_steel_mill_throughput_add = 0.05
+	}
 
-# 	ai_will_do = {
-# 		has_technology_researched = mechanical_tools
-# 		any_scope_state = {
-# 			state_region = s:STATE_ATTICA
-# 			is_incorporated = yes
-# 		}
-# 	}
+	ai_will_do = {
+		has_technology_researched = mechanical_tools
+		any_scope_state = {
+			state_region = s:STATE_ATTICA
+			is_incorporated = yes
+		}
+	}
 
-# 	ai_construction_targets = {
-# 		building_tooling_workshop = {
-# 			level = 5
-# 			state_trigger = {
-# 				state_region = s:STATE_ATTICA
-# 			}
-# 		}
-# 	}
+	ai_construction_targets = {
+		building_motor_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_ATTICA
+			}
+		}
+		building_tooling_workshop = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_ATTICA
+			}
+		}
+	}
 
-# 	ai_weight = {
-# 		value = 3 # Higher base value for flavored companies
-# 	}
-# }
+	ai_weight = {
+		value = 3 # Higher base value for flavored companies
+	}
+}
 
 # Zastava
 REPLACE:company_zastava = {
@@ -169,11 +177,10 @@ REPLACE:company_zastava = {
 
 	building_types = {
 		building_arms_industry
-		building_munition_plant
+		building_artillery_foundry
 	}
 
 	extension_building_types = {
-		building_artillery_foundry
 		building_automotive_industry
 	}
 
