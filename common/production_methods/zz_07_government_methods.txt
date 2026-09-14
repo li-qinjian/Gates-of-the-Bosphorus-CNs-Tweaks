@@ -1,0 +1,28 @@
+﻿REPLACE:pm_vertical_filing_cabinets = {
+	texture = "gfx/interface/icons/production_method_icons/vertical_filing_cabinets.dds"
+	unlocking_technologies = {
+		central_archives
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_bureaucracy_add = 75	#vanilla 65
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_tax_capacity_add = 20		#vanilla 15
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 15		#vanilla 20
+		}
+
+		level_scaled = {
+			building_employment_clerks_add = 500
+		}
+	}
+}
