@@ -1,9 +1,9 @@
-REPLACE:modifier_grefm_bavarian_auxiliaries = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	unit_morale_loss_mult = -0.10
-	building_training_rate_mult = 0.10
-	country_military_tech_spread_mult = 0.10
-}
+# REPLACE:modifier_grefm_bavarian_auxiliaries = {
+# 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+# 	unit_morale_loss_mult = -0.10
+# 	building_training_rate_mult = 0.10
+# 	country_military_tech_spread_mult = 0.10
+# }
 
 # REPLACE:modifier_grefm_funding_bavarian_auxiliaries = {
 # 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds

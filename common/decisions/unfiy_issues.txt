@@ -1,68 +1,68 @@
 ﻿
-dei_annex_split_puppet = {
-	is_shown = {
-		is_player = yes
-		is_diplomatic_play_committed_participant = no
-		c:DEI ?= {
-			any_subject_or_below = {
-				num_states <= 1
-				count > 0
-			}
-		}
-	}
+# dei_annex_split_puppet = {
+# 	is_shown = {
+# 		is_player = yes
+# 		is_diplomatic_play_committed_participant = no
+# 		c:DEI ?= {
+# 			any_subject_or_below = {
+# 				num_states <= 1
+# 				count > 0
+# 			}
+# 		}
+# 	}
 
-	possible = {
-		c:DEI = {
-			#is_at_war = no
-			is_diplomatic_play_committed_participant = no
-			any_subject_or_below = {
-				is_subject_type = subject_type_puppet
-				liberty_desire < 25
-				num_states <= 1
-				capital = {
-					is_split_state = yes
-					state_region = {
-						any_scope_state = { owner = c:DEI }
-					}
-				}
-				NOT = { has_truce_with = c:DEI }
-			}
-		}
-	}
+# 	possible = {
+# 		c:DEI = {
+# 			#is_at_war = no
+# 			is_diplomatic_play_committed_participant = no
+# 			any_subject_or_below = {
+# 				is_subject_type = subject_type_puppet
+# 				liberty_desire < 25
+# 				num_states <= 1
+# 				capital = {
+# 					is_split_state = yes
+# 					state_region = {
+# 						any_scope_state = { owner = c:DEI }
+# 					}
+# 				}
+# 				NOT = { has_truce_with = c:DEI }
+# 			}
+# 		}
+# 	}
 
-	when_taken = {
-		c:DEI = {
-			random_subject_or_below = {
-				limit = {
-					is_subject_type = subject_type_puppet
-					liberty_desire < 25
-					num_states <= 1
-					capital = {
-						is_split_state = yes
-						state_region = {
-							any_scope_state = { owner = c:DEI }
-						}
-					}
-					NOT = { has_truce_with = c:DEI }
-				}
-				save_scope_as = dei_annexation_target
-			}
-			annex = scope:dei_annexation_target
-			# if = {
-			# 	limit = { exists = scope:dei_annexation_target }
-			# 	create_diplomatic_play = {
-			# 		name = annex_subject
-			# 		target_country = scope:dei_annexation_target
-			# 		type = dp_annex_subject
-			# 	}
-			# }
-		}
-	}
+# 	when_taken = {
+# 		c:DEI = {
+# 			random_subject_or_below = {
+# 				limit = {
+# 					is_subject_type = subject_type_puppet
+# 					liberty_desire < 25
+# 					num_states <= 1
+# 					capital = {
+# 						is_split_state = yes
+# 						state_region = {
+# 							any_scope_state = { owner = c:DEI }
+# 						}
+# 					}
+# 					NOT = { has_truce_with = c:DEI }
+# 				}
+# 				save_scope_as = dei_annexation_target
+# 			}
+# 			annex = scope:dei_annexation_target
+# 			# if = {
+# 			# 	limit = { exists = scope:dei_annexation_target }
+# 			# 	create_diplomatic_play = {
+# 			# 		name = annex_subject
+# 			# 		target_country = scope:dei_annexation_target
+# 			# 		type = dp_annex_subject
+# 			# 	}
+# 			# }
+# 		}
+# 	}
 
-	ai_chance = {
-		value = 0
-	}
-}
+# 	ai_chance = {
+# 		value = 0
+# 	}
+# }
 
 tur_annex_kurdish_tribes = {
 	is_shown = {
@@ -222,34 +222,33 @@ unify_malay = {
     }
 }
 
-unify_kenya = {
-	is_shown = {
-		is_player = yes
-		exists = c:MJT
-		year > 1860
-	}
+# unify_kenya = {
+# 	is_shown = {
+# 		is_player = yes
+# 		exists = c:MJT
+# 	}
 
-    possible = {
-		is_diplomatic_play_committed_participant = no
-	}
+#     possible = {
+# 		is_diplomatic_play_committed_participant = no
+# 	}
 
-    when_taken = {
-		if = {
-			limit = {
-				exists = c:ISQ
-				exists = c:WSG
-				exists = c:GLD
-				exists = c:MJT
-			}
-			c:GLD ?= {
-				annex = c:WSG
-				annex = c:ISQ
-				annex = c:MJT
-			}
-		}
-    }
+#     when_taken = {
+# 		if = {
+# 			limit = {
+# 				exists = c:ISQ
+# 				exists = c:WSG
+# 				exists = c:GLD
+# 				exists = c:MJT
+# 			}
+# 			c:GLD ?= {
+# 				annex = c:WSG
+# 				annex = c:ISQ
+# 				annex = c:MJT
+# 			}
+# 		}
+#     }
 
-    ai_chance = {
-		value = 0
-    }
-}
+#     ai_chance = {
+# 		value = 0
+#     }
+# }

@@ -1,119 +1,95 @@
 ﻿play_as_random_tag = {
 	is_shown = {
 		is_player = yes
-		# any_subject_or_below = {
-		# 	count > 0
-		# }
+		exists = c:BOH
 	}
 
 	possible = {
-		is_player = yes
-		#is_diplomatic_play_committed_participant = no
+		NOT = { c:BOH = THIS }
 	}
 
 	when_taken = {
-		random_subject_or_below = {
+		play_as = c:BOH
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+play_as_hellas = {
+	is_shown = {
+		is_player = yes
+		OR = {
+			exists = c:GRE
+			exists = c:BYZ
+		}
+	}
+
+	possible = {
+		OR = {
+			NOT = { c:GRE = THIS }
+			NOT = { c:BYZ = THIS }
+		}
+	}
+
+	when_taken = {
+		if = {
 			limit = {
-				country_rank >= rank_value:minor_power
-				liberty_desire > 50
+				exists = c:GRE
 			}
-			save_scope_as = subject_target
+			play_as = c:GRE
 		}
 		if = {
-			limit = { exists = scope:subject_target }
-			play_as = scope:subject_target
+			limit = {
+				exists = c:BYZ
+			}
+			play_as = c:BYZ
 		}
 	}
-
 	ai_chance = {
 		value = 0
 	}
 }
 
-build_basic_farm = {
+relocate_african_pops_to_capital = {
 	is_shown = {
 		is_player = yes
+		NOT = { 		
+			any_primary_culture = {
+				has_discrimination_trait_group = heritage_group_african
+			}
+		}
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_slavery_banned
 		any_scope_state = {
-			is_incorporated = no
-			has_famine = yes
+			is_capital = no
+			is_incorporated = yes
+			is_homeland = cu:turkish
+			any_scope_pop = {
+				culture = {
+					has_discrimination_trait_group = heritage_group_african
+				}
+			}
 		}
 	}
 
-	possible = {
-		is_player = yes
-		is_diplomatic_play_committed_participant = no
-	}
-
 	when_taken = {
-		random_scope_state = {
+		every_scope_state = {
 			limit = {
-				has_famine = yes
-				is_incorporated = no
+				is_capital = no
+				is_incorporated = yes
+				is_homeland = cu:turkish
 			}
-			if = {
+			every_scope_pop = {
 				limit = {
-					NOT = {
-						any_scope_building = {
-							is_building_type = building_wheat_farm
-						}
+					culture = {
+						has_discrimination_trait_group = heritage_group_african
 					}
 				}
-				create_building = {
-					building = building_wheat_farm
-					level = 1
-				}
-			}
-		}
-	}
-
-	ai_chance = {
-		value = 0
-	}
-}
-
-disband_all_basic_companies = {
-	is_shown = {
-		is_player = yes
-		year < 1840
-	}
-
-	possible = {
-		is_player = yes
-	}
-
-	when_taken = {
-		every_country = {
-			limit = {
-				is_player = no
-				is_diplomatic_play_committed_participant = no
-				#country_rank >= rank_value:minor_power
-			}
-			every_company = {
-				if = {
-					limit = {
-						OR = {
-							is_company_type = company_type:company_basic_forestry
-							is_company_type = company_type:company_basic_wine_and_fruit
-							is_company_type = company_type:company_basic_agriculture_1
-							is_company_type = company_type:company_basic_agriculture_2
-							is_company_type = company_type:company_basic_silk_and_dye
-							is_company_type = company_type:company_basic_metal_mining
-							is_company_type = company_type:company_basic_mineral_mining
-							is_company_type = company_type:company_basic_paper
-							is_company_type = company_type:company_basic_metalworks
-							is_company_type = company_type:company_basic_fishing
-							is_company_type = company_type:company_basic_colonial_plantations_1
-							is_company_type = company_type:company_basic_colonial_plantations_2
-							is_company_type = company_type:company_basic_fabrics
-							is_company_type = company_type:company_basic_textiles
-							is_company_type = company_type:company_basic_weapons
-							is_company_type = company_type:company_basic_home_goods
-						}
-					}
-					owner ?= {
-						remove_company = prev.type
-					}
-				}
+				move_pop = root.capital
 			}
 		}
 	}

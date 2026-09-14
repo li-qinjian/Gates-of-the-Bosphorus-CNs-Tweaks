@@ -320,26 +320,6 @@
 # }
 
 
-play_as_hellas = {
-	is_shown = {
-		is_player = yes
-		NOT = { c:GRE = THIS }
-	}
-
-	possible = {
-		is_player = yes
-		NOT = { c:GRE = THIS }
-	}
-
-	when_taken = {
-		play_as = c:GRE
-	}
-
-	ai_chance = {
-		value = 0
-	}
-}
-
 # remove_claims_outside_rumelia_anatolia = {
 # 	is_shown = {
 # 		is_player = yes
@@ -391,6 +371,98 @@ play_as_hellas = {
 # 	}
 # }
 
+# build_basic_farm = {
+# 	is_shown = {
+# 		is_player = yes
+# 		any_scope_state = {
+# 			is_incorporated = no
+# 			has_famine = yes
+# 		}
+# 	}
+
+# 	possible = {
+# 		is_player = yes
+# 		is_diplomatic_play_committed_participant = no
+# 	}
+
+# 	when_taken = {
+# 		random_scope_state = {
+# 			limit = {
+# 				has_famine = yes
+# 				is_incorporated = no
+# 			}
+# 			if = {
+# 				limit = {
+# 					NOT = {
+# 						any_scope_building = {
+# 							is_building_type = building_wheat_farm
+# 						}
+# 					}
+# 				}
+# 				create_building = {
+# 					building = building_wheat_farm
+# 					level = 1
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	ai_chance = {
+# 		value = 0
+# 	}
+# }
+
+# disband_all_basic_companies = {
+# 	is_shown = {
+# 		is_player = yes
+# 		year < 1840
+# 	}
+
+# 	possible = {
+# 		is_player = yes
+# 	}
+
+# 	when_taken = {
+# 		every_country = {
+# 			limit = {
+# 				is_player = no
+# 				is_diplomatic_play_committed_participant = no
+# 				#country_rank >= rank_value:minor_power
+# 			}
+# 			every_company = {
+# 				if = {
+# 					limit = {
+# 						OR = {
+# 							is_company_type = company_type:company_basic_forestry
+# 							is_company_type = company_type:company_basic_wine_and_fruit
+# 							is_company_type = company_type:company_basic_agriculture_1
+# 							is_company_type = company_type:company_basic_agriculture_2
+# 							is_company_type = company_type:company_basic_silk_and_dye
+# 							is_company_type = company_type:company_basic_metal_mining
+# 							is_company_type = company_type:company_basic_mineral_mining
+# 							is_company_type = company_type:company_basic_paper
+# 							is_company_type = company_type:company_basic_metalworks
+# 							is_company_type = company_type:company_basic_fishing
+# 							is_company_type = company_type:company_basic_colonial_plantations_1
+# 							is_company_type = company_type:company_basic_colonial_plantations_2
+# 							is_company_type = company_type:company_basic_fabrics
+# 							is_company_type = company_type:company_basic_textiles
+# 							is_company_type = company_type:company_basic_weapons
+# 							is_company_type = company_type:company_basic_home_goods
+# 						}
+# 					}
+# 					owner ?= {
+# 						remove_company = prev.type
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	ai_chance = {
+# 		value = 0
+# 	}
+# }
 
 # relocate_african_pops_to_slaveholding_subject_capital = {
 # 	is_shown = {
@@ -529,16 +601,6 @@ play_as_hellas = {
 # 	}
 # 	ROOT = { transfer_subject = c:WAL }
 # }
-
-# ruler = {
-#     if = {
-#     	limit = {
-#     		has_trait = romantic
-#     	}
-#     	remove_trait = romantic
-#     }
-# }
-
 
 # Add claims.
 # if = {
