@@ -365,41 +365,23 @@ REPLACE:company_bombay_burmah_trading_corporation = {
 	}
 
 	possible = {
-		OR = {
-			any_scope_state = {
-				state_region = s:STATE_BOMBAY
-				#is_incorporated = yes
-			}
-			s:STATE_BOMBAY ?= {
-				any_scope_state = {
-					owner = {
-						OR = {
-							any_scope_treaty = {
-								binds = ROOT
-								any_scope_article = {
-									has_type = trade_privilege
-								}
-							}
-							top_overlord ?= {
-								any_scope_treaty = {
-									binds = ROOT
-									any_scope_article = {
-										has_type = trade_privilege
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
 		any_scope_state = {
-			has_state_trait = state_trait_burmese_teak
+			#has_state_trait = state_trait_burmese_teak
 			any_scope_building = {
 				is_building_type = building_logging_camp
 				level >= 5
 			}
-			count >= 1
+		}
+		any_state_in_indochina = {
+			has_state_trait = state_trait_burmese_teak
+			any_scope_building = {
+				is_building_type = building_logging_camp
+				levels_owned_by_country = {
+					target = ROOT
+					value >= 5
+				}
+			}
+			count >= 2
 		}
 	}
 
@@ -412,7 +394,7 @@ REPLACE:company_bombay_burmah_trading_corporation = {
 		OR = {
 			any_scope_state = {
 				state_region = s:STATE_BOMBAY
-				#is_incorporated = yes
+				is_incorporated = yes
 			}
 			s:STATE_BOMBAY ?= {
 				any_scope_state = {
