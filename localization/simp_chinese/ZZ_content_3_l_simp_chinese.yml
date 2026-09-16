@@ -13,18 +13,21 @@
  verrier.1013.g: "这些知识将帮助我们缩小与列强的差距！"
  verrier.1013.h: "我们不需要外国人的帮助！"
 
+ restore_eastern_roman_empire: "重整罗马帝国"
+ restore_eastern_roman_empire: "重整罗马帝国，恢复罗马认同"
+
  # 切换TAG
  play_as_hellas: "扮演希腊"
  play_as_hellas_desc: "扮演希腊。"
 
- play_as_random_tag: "扮演某随机国家"
- play_as_random_tag_desc: "扮演某随机国家。"
+ play_as_lanfang: "扮演兰芳"
+ play_as_lanfang_desc: "扮演兰芳。"
 
- relocate_african_pops_to_capital: "集中非洲族裔人口"
- relocate_african_pops_to_capital_desc: "在我国已经废除奴隶制的前提下，将所有属于非洲文化传承组的人口迁移至首都州。"
+#  relocate_african_pops_to_capital: "集中非洲族裔人口"
+#  relocate_african_pops_to_capital_desc: "在我国已经废除奴隶制的前提下，将所有属于非洲文化传承组的人口迁移至首都州。"
 
- relocate_primary_pops_to_capital: "回迁分治未整合区欧洲东正教农民"
- relocate_primary_pops_to_capital_desc: "将所有位于未整合且处于分治状态的地区中，具有欧洲文化传承、信奉东正教的农民人口迁移回首都州。"
+#  relocate_primary_pops_to_capital: "回迁分治未整合区欧洲东正教农民"
+#  relocate_primary_pops_to_capital_desc: "将所有位于未整合且处于分治状态的地区中，具有欧洲文化传承、信奉东正教的农民人口迁移回首都州。"
 
  # German Unification
  prussia_danish_war: "普鲁士-丹麦战争"
@@ -75,9 +78,6 @@
 
 #  relocate_african_pops_to_slaveholding_subject_capital: "迁移非洲族裔人口至蓄奴附庸首都"
 #  relocate_african_pops_to_slaveholding_subject_capital_desc: "在我国已经废除奴隶制的前提下，将所有属于非洲文化传承组的人口迁移至仍在蓄奴的附庸国首都州。"
-
-#  remove_claims_outside_rumelia_anatolia: "放弃鲁米利亚和安纳托利亚以外的宣称"
-#  remove_claims_outside_rumelia_anatolia_desc: "放弃我国在鲁米利亚和安纳托利亚以外所有地区的宣称。"
 
  # 土耳其迁都决议
 #  turkey_move_capital_to_ankara: "将首都迁至安卡拉"

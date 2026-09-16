@@ -1,15 +1,15 @@
-﻿play_as_random_tag = {
+﻿play_as_lanfang = {
 	is_shown = {
 		is_player = yes
-		exists = c:BOH
+		NOT = { c:LAN = THIS }
 	}
 
 	possible = {
-		NOT = { c:BOH = THIS }
+		exists = c:LAN
 	}
 
 	when_taken = {
-		play_as = c:BOH
+		play_as = c:LAN
 	}
 
 	ai_chance = {
@@ -20,16 +20,14 @@
 play_as_hellas = {
 	is_shown = {
 		is_player = yes
-		OR = {
-			exists = c:GRE
-			exists = c:BYZ
-		}
+		NOT = { c:GRE = THIS }
+		NOT = { c:BYZ = THIS }
 	}
 
 	possible = {
 		OR = {
-			NOT = { c:GRE = THIS }
-			NOT = { c:BYZ = THIS }
+			exists = c:GRE
+			exists = c:BYZ
 		}
 	}
 
@@ -52,45 +50,64 @@ play_as_hellas = {
 	}
 }
 
-relocate_african_pops_to_capital = {
+restore_eastern_roman_empire = {
 	is_shown = {
 		is_player = yes
-		NOT = { 		
-			any_primary_culture = {
-				has_discrimination_trait_group = heritage_group_african
-			}
-		}
+		c:BYZ ?= THIS
+		# any_scope_state = {
+		# 	limit = {
+		# 		has_claim_by = ROOT
+		# 		NOT = {
+		# 			OR = {
+		# 				is_in_geographic_region = geographic_region_rumelia
+		# 				is_in_geographic_region = geographic_region_anatolia
+		# 			}
+		# 		}
+		# 	}
+		# }
 	}
 
 	possible = {
-		has_law_or_variant = law_type:law_slavery_banned
-		any_scope_state = {
-			is_capital = no
-			is_incorporated = yes
-			is_homeland = cu:turkish
-			any_scope_pop = {
-				culture = {
-					has_discrimination_trait_group = heritage_group_african
-				}
-			}
-		}
+		is_player = yes
+		is_diplomatic_play_committed_participant = no
 	}
 
 	when_taken = {
-		every_scope_state = {
+		every_scope_pop = {
 			limit = {
-				is_capital = no
-				is_incorporated = yes
-				is_homeland = cu:turkish
+				culture = cu:greek
 			}
-			every_scope_pop = {
-				limit = {
-					culture = {
-						has_discrimination_trait_group = heritage_group_african
+			change_pop_culture = {
+				target = cu:rhomaios
+				value = 1
+			}
+		}
+		every_state_region = {
+			limit = {
+				region = sr:region_balkans
+				any_scope_state = {
+					owner = ROOT
+					is_homeland = cu:turkish
+					NOT = { has_claim_by = c:TUR }
+					culture_percent_state = {
+						target = cu:turkish
+						value < 0.25
 					}
 				}
-				move_pop = root.capital
 			}
+			remove_homeland = cu:turkish
+		}
+		every_state = {
+			limit = {
+				has_claim_by = ROOT
+				NOT = {
+					OR = {
+						is_in_geographic_region = geographic_region_rumelia
+						is_in_geographic_region = geographic_region_anatolia
+					}
+				}
+			}
+			state_region = { remove_claim = ROOT }
 		}
 	}
 
@@ -99,47 +116,94 @@ relocate_african_pops_to_capital = {
 	}
 }
 
-relocate_primary_pops_to_capital = {
-	is_shown = {
-		is_player = yes
-	}
+# relocate_african_pops_to_capital = {
+# 	is_shown = {
+# 		is_player = yes
+# 		NOT = { 		
+# 			any_primary_culture = {
+# 				has_discrimination_trait_group = heritage_group_african
+# 			}
+# 		}
+# 	}
 
-	possible = {
-		any_scope_state = {
-			is_capital = no
-			is_incorporated = no
-			is_split_state = yes
-			any_scope_pop = {
-				is_pop_type = peasants
-				religion = rel:orthodox
-				culture = {
-					has_discrimination_trait_group = heritage_group_european
-				}
-			}
-		}
-	}
+# 	possible = {
+# 		has_law_or_variant = law_type:law_slavery_banned
+# 		any_scope_state = {
+# 			is_capital = no
+# 			is_incorporated = yes
+# 			is_homeland = cu:turkish
+# 			any_scope_pop = {
+# 				culture = {
+# 					has_discrimination_trait_group = heritage_group_african
+# 				}
+# 			}
+# 		}
+# 	}
 
-	when_taken = {
-		every_scope_state = {
-			limit = {
-				is_capital = no
-				is_incorporated = no
-				is_split_state = yes
-			}
-			every_scope_pop = {
-				limit = {
-					is_pop_type = peasants
-					religion = rel:orthodox
-					culture = {
-						has_discrimination_trait_group = heritage_group_european
-					}
-				}
-				move_pop = root.capital
-			}
-		}
-	}
+# 	when_taken = {
+# 		every_scope_state = {
+# 			limit = {
+# 				is_capital = no
+# 				is_incorporated = yes
+# 				is_homeland = cu:turkish
+# 			}
+# 			every_scope_pop = {
+# 				limit = {
+# 					culture = {
+# 						has_discrimination_trait_group = heritage_group_african
+# 					}
+# 				}
+# 				move_pop = root.capital
+# 			}
+# 		}
+# 	}
 
-	ai_chance = {
-		value = 0
-	}
-}
+# 	ai_chance = {
+# 		value = 0
+# 	}
+# }
+
+# relocate_primary_pops_to_capital = {
+# 	is_shown = {
+# 		is_player = yes
+# 	}
+
+# 	possible = {
+# 		any_scope_state = {
+# 			is_capital = no
+# 			is_incorporated = no
+# 			is_split_state = yes
+# 			any_scope_pop = {
+# 				is_pop_type = peasants
+# 				religion = rel:orthodox
+# 				culture = {
+# 					has_discrimination_trait_group = heritage_group_european
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	when_taken = {
+# 		every_scope_state = {
+# 			limit = {
+# 				is_capital = no
+# 				is_incorporated = no
+# 				is_split_state = yes
+# 			}
+# 			every_scope_pop = {
+# 				limit = {
+# 					is_pop_type = peasants
+# 					religion = rel:orthodox
+# 					culture = {
+# 						has_discrimination_trait_group = heritage_group_european
+# 					}
+# 				}
+# 				move_pop = root.capital
+# 			}
+# 		}
+# 	}
+
+# 	ai_chance = {
+# 		value = 0
+# 	}
+# }
